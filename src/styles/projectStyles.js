@@ -37,7 +37,7 @@ const theme = {
     mediumBig: "2.5rem",
     big: "3rem",
     veryBig: "3.5rem"
-  }
+  },
 };
 
 export default theme;
