@@ -20,9 +20,9 @@ export const Title = styled.h1`
 
   ${media.lessThan("large")`
     font-size: 1.5rem;
-    background-color: ${props => props.theme.color.firstDark};
+    background-color: green;
     color: white;
-    border: 10px solid orange;
+    border: 10px solid ${props => props.theme.color.firstDark};
   `}
   ${media.lessThan("medium")`
     font-size: 1rem;
