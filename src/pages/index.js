@@ -5,6 +5,7 @@ import { Title } from "./styles"
 
 import Layout from "../components/Layout";
 import SEO from "../components/seo"
+import TopBar from "../components/TopBar"
 
 const IndexPage = () => {
 
@@ -24,6 +25,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home"/>
+      <TopBar />
       <Link to="/About">About</Link>
       <Img 
         fluid={bkgImage.file.childImageSharp.fluid}

@@ -1,9 +1,9 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import "typeface-ubuntu";
-import "typeface-roboto";
 import GlobalStyles from "../styles/globalStyles";
 import theme from "../styles/projectStyles";
+import "typeface-ubuntu";
+import "typeface-roboto";
 
 const Layout = ({ children }) => {
   return (

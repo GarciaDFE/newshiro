@@ -6,8 +6,8 @@ const globalStyles = createGlobalStyle`
 
   html {
     font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    /*-ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;*/
   }
   body {
     margin: 0;
@@ -191,7 +191,7 @@ const globalStyles = createGlobalStyle`
     font: inherit;
   }
   html {
-    font: 112.5%/1.45em georgia, serif;
+    /*font: 112.5%/1.45em georgia, serif;*/
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -621,11 +621,12 @@ const globalStyles = createGlobalStyle`
   pre tt:after {
     content: "";
   }
+  /* 
   @media only screen and (max-width: 480px) {
     html {
       font-size: 100%;
     }
-  }
+  } */
 
   /* Minhas configurações adicionadas ao RESET do Meyer */
 

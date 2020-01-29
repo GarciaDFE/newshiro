@@ -46,7 +46,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#A00000`,
-        display: `shiro-ui`,
+        display: `template-ui`,
         icon: `src/images/globals/favicon.ico`, // 512x512px.
       },
     },
