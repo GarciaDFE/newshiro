@@ -1,44 +1,68 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
+
 import media from "../../styles/breakPoints"
 
-const Section = styled.section`
-   width: 100%;
-   max-width: 1440px;
-   height: 130px;
-   margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background-color: yellow; /*${props => props.theme.color.secondyLight};*/
-   /* ${media.lessThan("md")`
-      height: 60px;
-   `}
-   ${media.lessThan("sm")`
-      height: 40px;
-   `} */
+const MainNav = styled.nav`
+   background-color: aliceblue;
+   padding: 10px;
 `
 
-const Container = styled.div`
-   width: 100%;
-   max-width: 1200px;
-   height: 100%;
-   margin: 0 auto;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   background-color: aliceblue;
-   /* ${media.lessThan("lg")`
-      max-width: 1020px;
-      margin: 0 10px;
+const ListItem = styled.ul`
+   list-style: none;
+   margin: 0;
+   &.submenu {
+      display: none;
+   }
+`
+
+const Item = styled.li`
+   position: relative;
+   display: inline-flex;
+   margin: 0;
+   &:not(:last-child) {
+      margin-right: 45px;
+   }
+
+   ${media.lessThan("lg")`
+      &:not(:last-child) {
+         margin-right: 20px;
+      }
    `}
-   ${media.lessThan("md")`
-      max-width: 724px;
-      flex-direction: column;
-      justify-content: space-evenly;
-   `} */
+
+`
+
+const Action = styled(Link)`
+   font-family: ${props => props.theme.font.secondy};
+   font-size: ${props => props.theme.size.medium};
+   font-weight: normal;
+   color: ${props => props.theme.color.secondDark};
+   text-decoration: none;
+   &:after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: ${props => props.theme.color.firstDark};
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 200ms linear;
+      transform-origin: center;
+   }
+   &:hover:after {
+      transform: scale(1);
+   }
+
+   ${media.lessThan("lg")`
+      font-size: ${props => props.theme.size.mediumSmall};
+   `}
+
 `
 
 export {
-   Section,
-   Container,
+   MainNav,
+   ListItem,
+   Item,
+   Action
 }

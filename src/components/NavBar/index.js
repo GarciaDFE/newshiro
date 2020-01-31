@@ -1,17 +1,30 @@
 import React from "react";
-
-import { Section, Container } from "./styles"
-import Logo from "../../objects/Logo"
-import LinkButton from "../../objects/LinkButton"
+import { FaChevronDown } from "react-icons/fa"
+import { MainNav,ListItem,Item,Action } from "./styles"
 
 const NavBar = () => {
    return (
-      <Section>
-         <Container>
-            <Logo />
-            <LinkButton label="Orçamento" />
-         </Container>
-      </Section>
+      <MainNav>
+         <ListItem>
+            <Item><Action to="/">Início</Action></Item>
+            <Item><Action to="/About">Quem Somos</Action></Item>
+            <Item>
+               <Action to="/">
+                  Serviços
+                  <FaChevronDown 
+                     size={12} 
+                     style={{ marginLeft: 5 }}
+                  />
+               </Action>
+               <ListItem className="submenu">
+                     <Item><Action to="/">Reparos mecânicos</Action></Item>
+                     <Item><Action to="/">Retífica de polias de tração</Action></Item>
+                     <Item><Action to="/">Usinagens em geral</Action></Item>
+               </ListItem>
+            </Item>
+            <Item><Action to="/">Contatos</Action></Item>
+         </ListItem>
+      </MainNav>
    )
 }
 

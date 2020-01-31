@@ -1,12 +1,12 @@
 import React from "react";
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import { Title } from "./styles"
 
 import Layout from "../components/Layout";
 import SEO from "../components/seo"
 import TopBar from "../components/TopBar"
-import NavBar from "../components/NavBar"
+import Header from "../components/Header"
 
 const IndexPage = () => {
 
@@ -27,8 +27,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home"/>
       <TopBar />
-      <NavBar />
-      <Link to="/About">About</Link>
+      <Header />
       <Img 
         fluid={bkgImage.childImageSharp.fluid}
         alt="exemplo imagem fundo"
