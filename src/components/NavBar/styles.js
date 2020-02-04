@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
-
 import media from "../../styles/breakPoints"
 
 const MainNav = styled.nav`
+   box-sizing: border-box;
+   overflow-x: hidden;
    background-color: aliceblue;
-   padding: 10px;
 `
 
 const ListItem = styled.ul`
@@ -14,6 +14,23 @@ const ListItem = styled.ul`
    &.submenu {
       display: none;
    }
+
+   ${media.lessThan("md")`
+      position: absolute;
+      display: block;
+      top: 140px;
+      right: 0;
+      width: 260px;
+      height: auto;
+      padding: 10px;
+      text-decoration: none;
+      line-height: 50px;
+      background-color: aliceblue;
+      transform: translateX(200%);
+      transition: transform 300ms linear;
+      z-index: 10;
+   `}
+
 `
 
 const Item = styled.li`
@@ -27,6 +44,11 @@ const Item = styled.li`
    ${media.lessThan("lg")`
       &:not(:last-child) {
          margin-right: 20px;
+      }
+   `}
+   ${media.lessThan("md")`
+      &:not(:last-child) {
+         margin-right: 10px;
       }
    `}
 

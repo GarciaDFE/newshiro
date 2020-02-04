@@ -4,8 +4,9 @@ import { Link } from "gatsby";
 import imgLogo from "../images/globals/logo.svg"
 
 const Img = styled.img`
-   height: 110px;
+   height: 100%;
    margin: 0;
+   padding: 10px 0;
 `
 
 const LinkLogo = styled(Link)`

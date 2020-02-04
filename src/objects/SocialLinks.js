@@ -23,8 +23,13 @@ const ItemList = styled.li`
    height: 30px; /* setagem da altura dos ícones */
    margin: 0;
    text-indent: -9999px;
+   transition: transform 200ms linear;
    &:not(:first-child) {
       margin-left: 25px;
+   }
+   &:hover {
+      transform: scale(1.1);
+      transition: transform 200ms linear;
    }
 
    ${media.lessThan("lg")`

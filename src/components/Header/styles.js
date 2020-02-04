@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import media from "../../styles/breakPoints"
 
+import ButtonMenu from "../../objects/ButtonMenu"
+
+
 const Section = styled.header`
    width: 100%;
    max-width: 1440px;
@@ -10,10 +13,11 @@ const Section = styled.header`
    justify-content: center;
    align-items: center;
    background-color: yellow; /*${props => props.theme.color.secondyLight};*/
-   /* ${media.lessThan("md")`
-      height: 60px;
+
+   ${media.lessThan("md")`
+      height: 100px;
    `}
-   ${media.lessThan("sm")`
+   /* ${media.lessThan("sm")`
       height: 40px;
    `} */
 `
@@ -27,19 +31,19 @@ const Container = styled.section`
    justify-content: space-between;
    align-items: center;
    background-color: #FFFFFF;
+
    ${media.lessThan("lg")`
       max-width: 1020px;
       margin: 0 10px;
    `}
-   /*
-   ${media.lessThan("md")`
-      max-width: 724px;
-      flex-direction: column;
-      justify-content: space-evenly;
-   `} */
+`
+
+const NavButtonMenu = styled(ButtonMenu)`
+   flex: 1;
 `
 
 export {
    Section,
    Container,
+   NavButtonMenu
 }
