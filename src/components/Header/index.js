@@ -9,17 +9,33 @@ import { Section, Container, NavButtonMenu } from "./styles"
 
 const Header = () => {
    const [isopen, setIsopen] = useState(false);
+   const [isactive, setIsactive] = useState(false);
+   const [isshow, setIsshow] = useState(false);
 
    const handleClickButtonMenu = event => {
       event.preventDefault();
-      isopen ? setIsopen(false) : setIsopen(true);
+      if (isopen) {
+         setIsopen(false);
+         setIsactive(false);
+      } else {
+         setIsopen(true);
+         setIsactive(true);
+      }
+   }
+
+   const handleClickItemDropDown = event => {
+      event.preventDefault();
+      isshow ? setIsshow(false) : setIsshow(true)
    }
 
    return (
       <Section>
          <Container>
             <Logo />
-            <NavBar />
+            <NavBar 
+               isActive={isactive}
+               isShow={isshow}
+               onClick={handleClickItemDropDown}/>
             <NavButtonMenu
                isOpen={isopen} 
                onClick={handleClickButtonMenu}/>

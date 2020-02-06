@@ -3,7 +3,6 @@ import media from "../../styles/breakPoints"
 
 import ButtonMenu from "../../objects/ButtonMenu"
 
-
 const Section = styled.header`
    width: 100%;
    max-width: 1440px;
@@ -12,14 +11,12 @@ const Section = styled.header`
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: yellow; /*${props => props.theme.color.secondyLight};*/
+   background-color: ${props => props.theme.color.secondyClear};
 
    ${media.lessThan("md")`
       height: 100px;
    `}
-   /* ${media.lessThan("sm")`
-      height: 40px;
-   `} */
+
 `
 
 const Container = styled.section`
@@ -30,12 +27,17 @@ const Container = styled.section`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background-color: #FFFFFF;
+   background-color: ${props => props.theme.color.secondyClear};
 
    ${media.lessThan("lg")`
       max-width: 1020px;
       margin: 0 10px;
    `}
+
+   ${media.lessThan("md")`
+      margin: 0 20px;
+   `}
+
 `
 
 const NavButtonMenu = styled(ButtonMenu)`

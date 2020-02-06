@@ -7,9 +7,11 @@ const Container = styled.div`
    display: none;
    justify-content: flex-end;
    margin: 0 20px;
+
    ${media.lessThan("md")`
       display: flex;
    `}
+   
 `
 
 const WrapButton = styled.div`
@@ -24,10 +26,9 @@ const WrapButton = styled.div`
 const BarButton = styled.div`
       width: 40px;
       height: 5px;
-      background-color: black;
+      background-color: ${props => props.theme.color.secondyDark};
       margin: 3px 0;
       transition: 500ms;
-
       &.-open1 {
          -webkit-transform: rotate(-45deg) translate(-8px, 6px);
          transform: rotate(-45deg) translate(-9px, 6px);
@@ -39,7 +40,6 @@ const BarButton = styled.div`
          -webkit-transform: rotate(45deg) translate(-8px, -6px);
          transform: rotate(45deg) translate(-9px, -6px);
       }
-   
 `
 
 const ButtonMenu = ({ isOpen=false, onClick, className }) => {

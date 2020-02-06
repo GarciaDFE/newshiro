@@ -1,14 +1,14 @@
 import React from "react";
 import { FaChevronDown } from "react-icons/fa"
-import { MainNav,ListItem,Item,Action } from "./styles"
+import { MainNav, ListItem, Item, Action, ListSubItem, SubItem, SubAction } from "./styles"
 
-const NavBar = () => {
+const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
    return (
-      <MainNav>
-         <ListItem>
+      <MainNav className={className} >
+         <ListItem className={`${isActive ? "-isActive" : "" }`} >
             <Item><Action to="/">Início</Action></Item>
             <Item><Action to="/About">Quem Somos</Action></Item>
-            <Item>
+            <Item onClick={onClick}>
                <Action to="/">
                   Serviços
                   <FaChevronDown 
@@ -16,11 +16,17 @@ const NavBar = () => {
                      style={{ marginLeft: 5 }}
                   />
                </Action>
-               <ListItem className="submenu">
-                     <Item><Action to="/">Reparos mecânicos</Action></Item>
-                     <Item><Action to="/">Retífica de polias de tração</Action></Item>
-                     <Item><Action to="/">Usinagens em geral</Action></Item>
-               </ListItem>
+               <ListSubItem className={`${isShow ? "-isShow" : "" }`}>
+                     <SubItem>
+                        <SubAction to="/">Reparos mecânicos</SubAction>
+                     </SubItem>
+                     <SubItem>
+                        <SubAction to="/">Retífica de polias de tração</SubAction>
+                     </SubItem>
+                     <SubItem>
+                        <SubAction to="/">Usinagens em geral</SubAction>
+                     </SubItem>
+               </ListSubItem>
             </Item>
             <Item><Action to="/">Contatos</Action></Item>
          </ListItem>
