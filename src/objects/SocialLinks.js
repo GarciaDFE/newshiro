@@ -8,35 +8,32 @@ import IconEmail from "../images/globals/email-positivo.svg"
 
 const ListSocialLinks = styled.ul`
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
    list-style: none;
    margin: 0;
-
-   ${media.lessThan("md")`
-      display: none;
-   `}
+   height: 30px;/* setagem da altura dos ícones */
 `
 
 const ItemList = styled.li`
    width: 100%;
-   height: 30px; /* setagem da altura dos ícones */
+   height: 100%;
    margin: 0;
    text-indent: -9999px;
    transition: transform 200ms linear;
-   &:not(:first-child) {
+   /* &:not(:first-child) {
       margin-left: 25px;
-   }
+   } */
    &:hover {
       transform: scale(1.1);
       transition: transform 200ms linear;
    }
 
-   ${media.lessThan("lg")`
+   /* ${media.lessThan("lg")`
       &:not(:first-child) {
          margin-left: 10px;
       }
-   `}
+   `} */
 `
 
 const ButtonLink = styled.a`

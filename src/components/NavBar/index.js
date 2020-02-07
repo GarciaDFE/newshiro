@@ -1,6 +1,14 @@
 import React from "react";
 import { FaChevronDown } from "react-icons/fa"
-import { MainNav, ListItem, Item, Action, ListSubItem, SubItem, SubAction } from "./styles"
+
+import { MainNav, 
+         ListItem, 
+         Item, 
+         Action, 
+         ListSubItem, 
+         SubItem, 
+         SubAction, 
+         GroupSocialLinks } from "./styles"
 
 const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
    return (
@@ -29,7 +37,9 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
                </ListSubItem>
             </Item>
             <Item><Action to="/">Contatos</Action></Item>
+            <GroupSocialLinks className="-tablet"/>
          </ListItem>
+         <GroupSocialLinks className="-desktop"/>
       </MainNav>
    )
 }

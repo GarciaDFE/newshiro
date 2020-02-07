@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Logo from "../../objects/Logo"
 import NavBar from "../../components/NavBar"
 import ButtonAction from "../../objects/ButtonAction"
-import SocialLinks from "../../objects/SocialLinks"
 
 import { Section, Container, NavButtonMenu } from "./styles"
 
@@ -36,11 +35,10 @@ const Header = () => {
             <NavBar 
                isActive={isactive}
                isShow={isshow}
-               onClick={handleClickItemDropDown}/>
+               onClick={handleClickItemDropDown} />
             <NavButtonMenu
                isOpen={isopen} 
-               onClick={handleClickButtonMenu}/>
-            <SocialLinks />
+               onClick={handleClickButtonMenu} />
             <ButtonAction className="orcamento" label="Orçamento" />
          </Container>
       </Section>

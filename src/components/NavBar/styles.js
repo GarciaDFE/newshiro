@@ -2,9 +2,19 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import media from "../../styles/breakPoints"
 
+import SocialLinks from "../../objects/SocialLinks"
+
 const MainNav = styled.nav`
+   display: flex;
+   justify-content: space-between;
+   flex-grow: 1;
    box-sizing: border-box;
    padding: 10px 0;
+   margin: 0 60px;
+   ${media.lessThan("lg")`
+      margin: 0 40px 0 60px;
+   `}
+
    html,
    body {
       overflow-x: hidden;
@@ -14,6 +24,9 @@ const MainNav = styled.nav`
 const ListItem = styled.ul`
    list-style: none;
    margin: 0;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
 
    &.-isActive {
       transform: translateX(0);
@@ -173,6 +186,32 @@ const SubAction = styled(Link)`
 
 `
 
+const GroupSocialLinks = styled(SocialLinks)`
+   &.-tablet {
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: space-around;
+      align-items: center;
+      background-color: yellow;
+      margin: 0;
+      padding: 5px 0;
+   }
+   ${media.lessThan("900px")`
+      &.-desktop {
+         display: none;
+      }
+   `}
+   ${media.lessThan("md")`
+      &.-tablet {
+         display: inline-flex;
+      }
+   `}
+   
+`
+
+
+
 export {
    MainNav,
    ListItem,
@@ -180,6 +219,6 @@ export {
    Action,
    ListSubItem,
    SubItem,
-   SubAction
-
+   SubAction,
+   GroupSocialLinks
 }
