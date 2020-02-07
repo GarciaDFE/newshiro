@@ -5,11 +5,16 @@ import media from "../../styles/breakPoints"
 const MainNav = styled.nav`
    box-sizing: border-box;
    padding: 10px 0;
+   html,
+   body {
+      overflow-x: hidden;
+   }
 `
 
 const ListItem = styled.ul`
    list-style: none;
    margin: 0;
+
    &.-isActive {
       transform: translateX(0);
       transition: transform 300ms linear;

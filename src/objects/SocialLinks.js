@@ -58,10 +58,10 @@ const Icon = styled.img`
    
 `
 
-const SocialLinks = () => {
+const SocialLinks = ({ className }) => {
   
    return (
-         <ListSocialLinks>
+         <ListSocialLinks className={className}>
             <ItemList>
                <ButtonLink 
                   href="https://www.facebook.com/shirousinagens/"

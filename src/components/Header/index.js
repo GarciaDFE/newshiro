@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 import Logo from "../../objects/Logo"
 import NavBar from "../../components/NavBar"
+import ButtonAction from "../../objects/ButtonAction"
 import SocialLinks from "../../objects/SocialLinks"
-import LinkButton from "../../objects/LinkButton"
+
 import { Section, Container, NavButtonMenu } from "./styles"
 
 
@@ -39,8 +40,8 @@ const Header = () => {
             <NavButtonMenu
                isOpen={isopen} 
                onClick={handleClickButtonMenu}/>
-            <SocialLinks className="hide"/>
-            <LinkButton label="Orçamento" />
+            <SocialLinks />
+            <ButtonAction className="orcamento" label="Orçamento" />
          </Container>
       </Section>
    )

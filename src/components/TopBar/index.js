@@ -6,7 +6,7 @@ import { Section, Container, ItemTopbar } from "./styles"
 const icons = {
    color: "#A00000",
    size: "2rem",
-   marginRight: "5",
+   marginRight: "5px",
 }
 
 const TopBar = () => {

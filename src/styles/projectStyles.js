@@ -27,7 +27,8 @@ const theme = {
   },
   gradient: {
     primary: `linear-gradient(107deg, #c73c3c, #a00000))`,
-    secondy: `linear-gradient(45deg, rgba(0, 70, 124, 0.8), rgba(0, 0, 0, 0.5))`
+    secondy: `linear-gradient(45deg, rgba(0, 70, 124, 0.8), rgba(0, 0, 0, 0.5))`,
+    third: `linear-gradient(74deg, #000000, rgba(0, 0, 0, 0.5))`,
   },
   size: {
     verySmall: "1.4rem",

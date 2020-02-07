@@ -47,5 +47,5 @@ const NavButtonMenu = styled(ButtonMenu)`
 export {
    Section,
    Container,
-   NavButtonMenu
+   NavButtonMenu,
 }
