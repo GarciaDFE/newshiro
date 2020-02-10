@@ -11,14 +11,11 @@ const MainNav = styled.nav`
    box-sizing: border-box;
    padding: 10px 0;
    margin: 0 60px;
+
    ${media.lessThan("lg")`
       margin: 0 40px 0 60px;
    `}
 
-   html,
-   body {
-      overflow-x: hidden;
-   }
 `
 
 const ListItem = styled.ul`
@@ -27,7 +24,6 @@ const ListItem = styled.ul`
    display: flex;
    justify-content: flex-end;
    align-items: center;
-
    &.-isActive {
       transform: translateX(0);
       transition: transform 300ms linear;
@@ -42,7 +38,7 @@ const ListItem = styled.ul`
       height: auto;
       text-decoration: none;
       line-height: 50px;
-      background-color:  ${props => props.theme.color.firstDark};
+      background-color:  ${props => props.theme.color.secondyClear};
       transform: translateX(200%);
       transition: transform 300ms linear;
       z-index: 10;
@@ -75,7 +71,6 @@ const Item = styled.li`
       padding: 5px 0;
       &:not(:last-child) {
          margin-right: 0;
-         border-bottom: 1px solid ${props => props.theme.color.secondyClear};
       }
    `}
 
@@ -110,7 +105,7 @@ const Action = styled(Link)`
    ${media.lessThan("md")`
       display: block;
       width: 100%;
-      color: ${props => props.theme.color.secondyClear};
+      color: ${props => props.theme.color.secondyDark};
       padding-left: 20px;
       &:after {
          content: none;
@@ -177,7 +172,7 @@ const SubAction = styled(Link)`
    text-decoration: none;
 
    ${media.lessThan("md")`
-      color: ${props => props.theme.color.secondyClear};
+      color: ${props => props.theme.color.secondyDark};
       padding-left: 20px;
       &:hover {
          background-color: transparent;
@@ -186,22 +181,21 @@ const SubAction = styled(Link)`
 
 `
 
+// SOCIAL
 const GroupSocialLinks = styled(SocialLinks)`
    &.-tablet {
       width: 100%;
-      height: 100%;
       display: none;
-      justify-content: space-around;
-      align-items: center;
-      background-color: yellow;
-      margin: 0;
-      padding: 5px 0;
+      justify-content: space-evenly;
+      margin-top: 20px;
    }
-   ${media.lessThan("900px")`
+
+   ${media.lessThan("905px")`
       &.-desktop {
          display: none;
       }
    `}
+   
    ${media.lessThan("md")`
       &.-tablet {
          display: inline-flex;
@@ -209,8 +203,6 @@ const GroupSocialLinks = styled(SocialLinks)`
    `}
    
 `
-
-
 
 export {
    MainNav,

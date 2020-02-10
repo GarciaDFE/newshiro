@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import media from "../styles/breakPoints"
 
 import IconFacebook from "../images/globals/facebook-square.svg"
 import IconYoutube from "../images/globals/youtube-positivo.svg"
@@ -8,32 +7,22 @@ import IconEmail from "../images/globals/email-positivo.svg"
 
 const ListSocialLinks = styled.ul`
    display: flex;
-   justify-content: space-around;
-   align-items: center;
    list-style: none;
    margin: 0;
-   height: 30px;/* setagem da altura dos ícones */
+   height: 35px;
 `
 
 const ItemList = styled.li`
-   width: 100%;
    height: 100%;
    margin: 0;
    text-indent: -9999px;
    transition: transform 200ms linear;
-   /* &:not(:first-child) {
-      margin-left: 25px;
-   } */
+   margin: 0 5px;
    &:hover {
       transform: scale(1.1);
       transition: transform 200ms linear;
    }
 
-   /* ${media.lessThan("lg")`
-      &:not(:first-child) {
-         margin-left: 10px;
-      }
-   `} */
 `
 
 const ButtonLink = styled.a`
@@ -42,17 +31,9 @@ const ButtonLink = styled.a`
    position: relative;
    display: block;
    margin: 0;
-   padding: 0 20px;
-`
-
-const Icon = styled.img`
-   position: absolute;
-   line-height: 100%;
-   top: 0;
-   right: 0;
-   width: auto;
-   height: 100%;
-   
+   padding: 0 25px;
+   background-repeat: no-repeat;
+   background-size: contain;
 `
 
 const SocialLinks = ({ className }) => {
@@ -62,27 +43,36 @@ const SocialLinks = ({ className }) => {
             <ItemList>
                <ButtonLink 
                   href="https://www.facebook.com/shirousinagens/"
-                  alt="link para o perfil da Shiro no Facebook"
-                  target="_blank">
-                  <Icon src={IconFacebook} alt="imagem logo facebook"/>
+                  alt="link para o perfil da Shiro Usinagens no Facebook"
+                  target="_blank"
+                  style={{ 
+                     backgroundImage: `url(${IconFacebook})`,
+                     backgroundPosition: "center"
+                  }} >
                   Facebook
                </ButtonLink>
             </ItemList>
             <ItemList>
                <ButtonLink 
                   href="https://www.facebook.com/shirousinagens/"
-                  alt="link para o perfil da Shiro no Facebook"
-                  target="_blank">
-                  <Icon src={IconYoutube} alt="imagem logo youtube"/>
+                  alt="link para o perfil da Shiro Usinagens no Youtube"
+                  target="_blank"
+                  style={{ 
+                     backgroundImage: `url(${IconYoutube})`,
+                     backgroundPosition: "center left"
+                  }} >
                   Youtube
                </ButtonLink>
             </ItemList>
             <ItemList>
                <ButtonLink 
                   href="https://www.facebook.com/shirousinagens/"
-                  alt="link para o perfil da Shiro no Facebook"
-                  target="_blank">
-                  <Icon src={IconEmail} alt="imagem envelope"/>
+                  alt="link para enviar um e-mail para a Shiro Usinagens"
+                  target="_blank"
+                  style={{ 
+                     backgroundImage: `url(${IconEmail})`,
+                     backgroundPosition: "center right"
+                  }} >
                   E-mail
                </ButtonLink>
             </ItemList>
