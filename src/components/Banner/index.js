@@ -1,6 +1,5 @@
 import React from "react";
 import { useStaticQuery, graphql } from 'gatsby'
-// import Img from "gatsby-image"
 
 import ButtonAction from "../../objects/ButtonAction"
 import { Section, Container, Overlay, Content, Title, Description, BkgImage } from "./styles"

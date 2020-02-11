@@ -22,7 +22,7 @@ const Icon = styled(FaFileAlt)`
 `
 
 const Label = styled.a`
-width: 100%;
+   width: 100%;
    font-family: ${props => props.theme.font.secondy};
    text-transform: uppercase;
    font-size: ${props => props.theme.size.mediumSmall};
@@ -48,7 +48,7 @@ const ActionButton = styled(Link)`
    justify-content: space-between;
    align-items: center;
    border-radius: 3px;
-   padding: 0 20px;
+   padding: 0 15px;
    transition: all 0.3s linear;
    text-decoration: none;
    &.orcamento {
@@ -68,9 +68,11 @@ const ActionButton = styled(Link)`
 
    }
    &.saibamais {
+      max-width: 125px;
       background-color: ${props => props.theme.color.secondyClear};
       border: 1px solid ${props => props.theme.color.thirdMedium};
       transition: all 0.3s linear;
+      text-align: center;
       &:hover {
          background-color: ${props => props.theme.color.thirdMedium};
          border: 1px solid ${props => props.theme.color.thirdMedium};
