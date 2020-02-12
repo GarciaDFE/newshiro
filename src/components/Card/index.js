@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Card, Content, Title, Description, CardButton, HeroImage } from "./styles"
+import { CardItem, Content, Title, Description, CardButton, HeroImage } from "./styles"
 
-const CardService = ({ fixed, alt, title, description }) => {
+const Card = ({ fixed, alt, title, description, className }) => {
 
 
    return (
-      <Card>
+      <CardItem className={className}>
          <HeroImage fixed={fixed} alt={alt} />
          <Content>
             <Title>{title}</Title>
@@ -16,8 +16,8 @@ const CardService = ({ fixed, alt, title, description }) => {
                className="saibamais"
                label="Saiba mais" />
          </Content>
-      </Card>
+      </CardItem>
    )
 }
 
-export default CardService
+export default Card

@@ -1,8 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from 'gatsby'
 
-import CardService from "../CardService"
-import { Container } from "./styles"
+import { List, CardService } from "./styles" 
 
 const ListCards = () => {
 
@@ -35,7 +34,7 @@ const ListCards = () => {
    )
 
    return (
-      <Container>
+      <List>
          <CardService 
             fixed={card1.childImageSharp.fixed}
             alt="imagem de serviço de reparo mecânico em elevador"
@@ -54,7 +53,7 @@ const ListCards = () => {
             title="Serviços de Usinagem em geral"
             description="Nossos serviços de usinagem inclui fabricação, manutenção e recuperação de peças em geral."
          />
-      </Container>
+      </List>
    ) 
 
 }

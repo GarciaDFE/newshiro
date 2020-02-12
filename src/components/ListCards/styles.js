@@ -1,16 +1,24 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-const Container = styled.div`
-   position: relative;
+import Card from "../Card"
+
+const List = styled.ul`
    width: 100%;
    max-width: 960px;
-   margin: 0 auto;
-   display: flex;
-   padding: 20px 0;
+   display: inline-flex;
    justify-content: space-between;
-   background-color: ${props => props.theme.color.secondyClear};
+   align-items: center;
+   margin: 0;
 `
 
-export {
-   Container,
+const CardService = styled(Card)`
+   position: relative;
+   width: 33.33%;
+   width: 290px;
+   height: 100%;
+`
+
+export { 
+   List,
+   CardService
 }

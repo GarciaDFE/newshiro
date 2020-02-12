@@ -3,11 +3,8 @@ import Img from "gatsby-image"
 
 import ButtonAction from "../../objects/ButtonAction"
 
-const Card = styled.dl`
+const CardItem = styled.dl`
    box-sizing: border-box;
-   width: 33.33%;
-   max-width: 290px;
-   height: 100%;
    border: 0.5px solid ${props => props.theme.color.secondyLight};
    background-color: ${props => props.theme.color.secondyClear};
    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08);
@@ -53,7 +50,7 @@ const CardButton = styled(ButtonAction)`
 `
 
 export {
-   Card,
+   CardItem,
    Content,
    Title,
    Description,
