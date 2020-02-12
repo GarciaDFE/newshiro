@@ -13,7 +13,7 @@ const MainNav = styled.nav`
    margin: 0 60px;
 
    ${media.lessThan("lg")`
-      margin: 0 40px 0 60px;
+      margin: 0 40px;
    `}
 
 `
@@ -29,22 +29,22 @@ const ListItem = styled.ul`
       transition: transform 300ms linear;
    }
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       position: absolute;
       display: block;
       top: 160px;
       right: 0;
-      width: 260px;
+      width: 100vw;
       height: auto;
       text-decoration: none;
       line-height: 50px;
-      background-color:  ${props => props.theme.color.secondyClear};
-      transform: translateX(200%);
+      background-color: ${props => props.theme.color.secondyLight};
+      transform: translateX(-300%);
       transition: transform 300ms linear;
       z-index: 10;
    `}
 
-   ${media.lessThan("sm")`
+   ${media.lessThan("xs")`
       top: 140px;
    `}
 
@@ -65,7 +65,7 @@ const Item = styled.li`
       }
    `}
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       background-color: transparent;
       display: block;
       padding: 5px 0;
@@ -102,11 +102,13 @@ const Action = styled(Link)`
       font-size: ${props => props.theme.size.mediumSmall};
    `}
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       display: block;
       width: 100%;
       color: ${props => props.theme.color.secondyDark};
       padding-left: 20px;
+      background-color: transparent;
+      text-align: center;
       &:after {
          content: none;
       }
@@ -130,11 +132,11 @@ const ListSubItem = styled.ul`
       display: block;
    }
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
+      width: 100vw;
       position: relative;
       background-color: transparent;
       top: 0;
-      padding-left: 20px;
       border: none;
    `}
 
@@ -152,8 +154,10 @@ const SubItem = styled.li`
       background-color: ${props => props.theme.color.secondyLight};
    }
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       padding: 5px 0;
+      text-align: center;
+
       &:not(:last-child) {
          border-bottom: none;
       }
@@ -173,7 +177,7 @@ const SubAction = styled(Link)`
 
    ${media.lessThan("md")`
       color: ${props => props.theme.color.secondyDark};
-      padding-left: 20px;
+      font-size: ${props => props.theme.size.verySmall};
       &:hover {
          background-color: transparent;
       }
@@ -190,15 +194,17 @@ const GroupSocialLinks = styled(SocialLinks)`
       margin-top: 20px;
    }
 
-   ${media.lessThan("905px")`
+   ${media.lessThan("md")`
       &.-desktop {
          display: none;
       }
    `}
    
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       &.-tablet {
          display: inline-flex;
+         justify-content: center;
+         margin: 40px 0;
       }
    `}
    

@@ -8,7 +8,7 @@ const Container = styled.div`
    justify-content: flex-end;
    margin: 0 20px;
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       display: flex;
    `}
    

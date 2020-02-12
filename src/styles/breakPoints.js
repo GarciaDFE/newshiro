@@ -1,9 +1,9 @@
 import { generateMedia } from "styled-media-query";
 
 const mq = generateMedia({
-   //xs: "320px",
-   sm: "450px",
-   md: "768px",
+   xs: "450px",
+   sm: "768px",
+   md: "900px",
    lg: "1200px",
    xl: "1440px",
  });

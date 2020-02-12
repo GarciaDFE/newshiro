@@ -10,10 +10,10 @@ const Section = styled.section`
    justify-content: center;
    align-items: center;
    background-color: ${props => props.theme.color.secondyLight};
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       height: 60px;
    `}
-   ${media.lessThan("sm")`
+   ${media.lessThan("xs")`
       height: 40px;
    `}
 `
@@ -31,7 +31,7 @@ const Container = styled.div`
       max-width: 1020px;
       margin: 0 10px;
    `}
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       max-width: 724px;
       flex-direction: column;
       justify-content: space-evenly;
@@ -46,7 +46,7 @@ const ItemTopbar = styled.div`
    font-weight: normal;
    font-size: ${props => props.theme.size.mediumSmall};
    color: ${props => props.theme.color.secondyDark};
-   ${media.lessThan("sm")`
+   ${media.lessThan("xs")`
       width: 100%;
       justify-content: center;
       &:first-child {

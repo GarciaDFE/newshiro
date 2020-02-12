@@ -13,7 +13,7 @@ const Section = styled.header`
    align-items: center;
    background-color: ${props => props.theme.color.secondyClear};
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       height: 100px;
    `}
 
@@ -34,7 +34,7 @@ const Container = styled.section`
       margin: 0 10px;
    `}
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       margin: 0 20px;
    `}
 

@@ -11,7 +11,7 @@ const Icon = styled(FaFileAlt)`
       height: 20px;
       color: ${props => props.theme.color.secondyClear};
       margin-right: 10px;
-      ${media.lessThan("sm")`
+      ${media.lessThan("xs")`
          margin-right: 0;
       `}
    }
@@ -30,7 +30,7 @@ const Label = styled.a`
    &.orcamento {
       color: ${props => props.theme.color.secondyClear};
 
-      ${media.lessThan("sm")`
+      ${media.lessThan("xs")`
          display: none;
       `}
    }
@@ -62,7 +62,7 @@ const ActionButton = styled(Link)`
          padding: 0 10px;
       `}
 
-      ${media.lessThan("md")`
+      ${media.lessThan("sm")`
          padding: 0 15px;
       `}
 

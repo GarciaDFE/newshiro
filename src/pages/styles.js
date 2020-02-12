@@ -1,5 +1,4 @@
 import styled from "styled-components";
-//import media from "../styles/breakPoints"
 
 const ServiceSection = styled.section`
    width: 100%;
