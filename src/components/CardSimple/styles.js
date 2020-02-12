@@ -33,14 +33,15 @@ const MemberImage = styled(Img)`
 `
 
 const Skills = styled.ul`
-  font-family: ${props => props.theme.font.secondy};
-  color: ${props => props.theme.color.firstDark};
-  font-size: ${props => props.theme.size.verySmall};
-  text-transform: uppercase;
-  line-height: 1.57rem;
-  list-style: none;
-  text-align: center;
-  margin: 0;
+   display: block;
+   font-family: ${props => props.theme.font.secondy};
+   color: ${props => props.theme.color.firstDark};
+   font-size: ${props => props.theme.size.verySmall};
+   text-transform: uppercase;
+   line-height: 1.57rem;
+   list-style: none;
+   text-align: center;
+   margin: 0;
 `
 
 const Contact = styled.dd`

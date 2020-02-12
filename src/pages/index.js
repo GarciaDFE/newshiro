@@ -9,7 +9,7 @@ import Header from "../components/Header"
 import Banner from "../components/Banner"
 import ServiceCards from "../components/ServiceCards"
 import TitleSection from "../objects/TitleSection"
-import CardSimple from "../components/CardSimple"
+import MemberCards from "../components/MemberCards"
 
 const IndexPage = () => {
 
@@ -33,7 +33,7 @@ const IndexPage = () => {
       </ServiceSection>
       <ServiceSection>
         <Container>
-        <CardSimple />
+          <MemberCards />
         </Container>
       </ServiceSection>
 
