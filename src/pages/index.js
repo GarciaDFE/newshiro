@@ -7,8 +7,9 @@ import SEO from "../components/seo"
 import TopBar from "../components/TopBar"
 import Header from "../components/Header"
 import Banner from "../components/Banner"
-import ListCards from "../components/ListCards"
+import ServiceCards from "../components/ServiceCards"
 import TitleSection from "../objects/TitleSection"
+import CardSimple from "../components/CardSimple"
 
 const IndexPage = () => {
 
@@ -27,9 +28,15 @@ const IndexPage = () => {
             title="Serviços"
             subtitle="Conheça Nossos Serviços"
           />
-          <ListCards />
+          <ServiceCards />
         </Container>
       </ServiceSection>
+      <ServiceSection>
+        <Container>
+        <CardSimple />
+        </Container>
+      </ServiceSection>
+
     </Layout>
   )
 };

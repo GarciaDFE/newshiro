@@ -2,7 +2,7 @@ import React from "react";
 
 import { CardItem, Content, Title, Description, CardButton, HeroImage } from "./styles"
 
-const Card = ({ fixed, alt, title, description, className }) => {
+const CardFull = ({ fixed, alt, title, description, className }) => {
 
 
    return (
@@ -20,4 +20,4 @@ const Card = ({ fixed, alt, title, description, className }) => {
    )
 }
 
-export default Card
+export default CardFull

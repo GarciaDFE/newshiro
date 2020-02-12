@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import { List, CardService } from "./styles" 
 
-const ListCards = () => {
+const ServiceCards = () => {
 
    const { card1, card2, card3 } = useStaticQuery (
       graphql`
@@ -58,4 +58,4 @@ const ListCards = () => {
 
 }
 
-export default ListCards
+export default ServiceCards

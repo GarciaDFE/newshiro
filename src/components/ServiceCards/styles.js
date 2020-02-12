@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import media from "../../styles/breakPoints"
 
-import Card from "../Card"
+import CardFull from "../CardFull"
 
 const List = styled.ul`
    width: 100%;
@@ -18,7 +18,7 @@ const List = styled.ul`
 
 `
 
-const CardService = styled(Card)`
+const CardService = styled(CardFull)`
    position: relative;
    width: 33.33%;
    max-width: 290px;
