@@ -13,7 +13,7 @@ const CardItem = styled.dl`
 const Content = styled.li`
    list-style: none;
    margin: 0;
-   padding: 20px;
+   padding: 10px 20px 20px;
    border-top: 2px solid ${props => props.theme.color.secondyLight};
 `
 

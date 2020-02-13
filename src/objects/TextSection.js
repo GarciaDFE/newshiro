@@ -1,0 +1,25 @@
+import React from "react"
+import styled from "styled-components"
+
+const TextSection = styled.div`
+   width: 100%;
+`
+
+const Text = styled.p`
+   font-family: ${props => props.theme.font.secondy};
+   font-size: ${props => props.theme.size.mediumSmall};
+   font-weight: normal;
+   line-height: 1.56;
+   color: ${props => props.theme.color.secondyDark};
+   text-align: justify;
+   &.-inverse {
+      color: ${props => props.theme.color.secondyClear};
+   }
+
+`
+
+export default ({ className, children }) => (
+      <TextSection>
+         <Text className={className}>{children}</Text>
+      </TextSection>
+);

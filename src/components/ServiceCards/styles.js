@@ -13,7 +13,7 @@ const List = styled.ul`
 
    ${media.lessThan("md")`
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
    `}
 
 `

@@ -11,7 +11,7 @@ const List = styled.ul`
    align-items: center;
    margin: 0;
 
-   ${media.lessThan("md")`
+   ${media.lessThan("sm")`
       flex-wrap: wrap;
       justify-content: space-around;
    `}
@@ -20,20 +20,12 @@ const List = styled.ul`
 
 const CardMember = styled(CardSimple)`
    position: relative;
-   width: 33.33%;
-   max-width: 290px;
-   height: 100%;
+   width: 50%;
+   max-width: 260px;
+   height: 320px;
 
-   ${media.lessThan("md")`
-      width: 50%;
-      margin: 0 10px;
-      &:not(:last-child) {
-         margin-bottom: 20px;
-      }
-   `}
    ${media.lessThan("sm")`
       width: 100%;
-      margin: 0 auto;
    `}
 
 `
