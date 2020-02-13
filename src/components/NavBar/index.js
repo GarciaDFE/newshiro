@@ -12,7 +12,7 @@ import { MainNav,
 
 const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
    return (
-      <MainNav className={className} >
+      <MainNav className={className}>
          <ListItem className={`${isActive ? "-isActive" : "" }`} >
             <Item><Action to="/">Início</Action></Item>
             <Item><Action to="/About">Quem Somos</Action></Item>
@@ -37,9 +37,9 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
                </ListSubItem>
             </Item>
             <Item><Action to="/">Contatos</Action></Item>
-            <GroupSocialLinks className="-tablet"/>
+            <GroupSocialLinks className="-tablet" stroke="true"/>
          </ListItem>
-         <GroupSocialLinks className="-desktop"/>
+         <GroupSocialLinks className="-desktop" stroke="true"/>
       </MainNav>
    )
 }

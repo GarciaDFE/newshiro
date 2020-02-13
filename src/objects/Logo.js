@@ -15,10 +15,10 @@ const LinkLogo = styled(Link)`
    align-items: center;
 `
 
-const Logo = () => {
+const Logo = ({ className }) => {
   
    return (
-      <LinkLogo to="/">
+      <LinkLogo to="/" className={className}>
          <Img src={imgLogo} alt="logo da Shiro Usinagens"/>
       </LinkLogo>
    )

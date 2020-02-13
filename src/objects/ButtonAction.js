@@ -22,7 +22,6 @@ const Icon = styled(FaFileAlt)`
 `
 
 const Label = styled.a`
-   width: 100%;
    font-family: ${props => props.theme.font.secondy};
    text-transform: uppercase;
    font-size: ${props => props.theme.size.mediumSmall};
