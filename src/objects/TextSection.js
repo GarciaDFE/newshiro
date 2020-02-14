@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import media from "../styles/breakPoints"
+
 const TextSection = styled.div`
    width: 100%;
 `
@@ -15,6 +17,10 @@ const Text = styled.p`
    &.-inverse {
       color: ${props => props.theme.color.secondyClear};
    }
+
+   ${media.lessThan("xs")`
+      text-align: left;
+   `}
 
 `
 

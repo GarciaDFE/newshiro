@@ -14,7 +14,8 @@ import {
    Service,
    ButtonFooter,
    Contact,
-   SocialLinksFooter
+   SocialLinksFooter,
+   FooterBar
 } from "./styles.js"
 
 const Footer = () => {
@@ -37,7 +38,7 @@ const Footer = () => {
                <Text>Somos especialistas com vasta experiência nessa área, capazes de agregar eficiência, qualidade e valor para sua empresa.</Text>
                <Text>Temos preços competitivos, trabalhando com segurança e responsabilidade.</Text>
                <br></br>
-               <ButtonFooter className="orcamento" label="Peça um orçamento" />
+               <ButtonFooter className="enviemensagem" label="Envie sua mensagem" />
             </Service>
             <Contact>
                <Title>Contatos</Title>
@@ -51,6 +52,9 @@ const Footer = () => {
                <SocialLinksFooter />
             </Contact>
          </FooterContainer>
+         <FooterBar>
+            Shiro Usinagens. © Copyright 2020. Todos os direitos reservados.
+         </FooterBar>
       </FooterSection>
    )
 }

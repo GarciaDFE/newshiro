@@ -18,6 +18,9 @@ const Icon = styled(FaFileAlt)`
    &.saibamais {
       display: none;
    }
+   &.enviemensagem {
+      display: none;
+   }
 
 `
 
@@ -32,6 +35,9 @@ const Label = styled.a`
       ${media.lessThan("xs")`
          display: none;
       `}
+   }
+   &.enviemensagem {
+      color: ${props => props.theme.color.secondyClear};
    }
    &.saibamais {
       color: ${props => props.theme.color.thirdMedium};
@@ -50,7 +56,8 @@ const ActionButton = styled(Link)`
    padding: 0 15px;
    transition: all 0.3s linear;
    text-decoration: none;
-   &.orcamento {
+   &.orcamento,
+   &.enviemensagem {
       background-color: ${props => props.theme.color.firstDark};
       &:hover {
          background-color: rgba(160,0,0,0.7);

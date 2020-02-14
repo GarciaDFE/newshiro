@@ -33,7 +33,7 @@ const ServiceContainer = styled(Container)`
 
 // TEAM HOME
 const TeamSection = styled(Section)`
-   max-width: 1200px;
+   max-width: 1440px;
    background-image: ${props => props.theme.gradient.fourth};
    margin: 0 auto;
 `
