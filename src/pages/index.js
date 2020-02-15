@@ -17,6 +17,7 @@ import ServiceCards from "../components/ServiceCards"
 import TitleSection from "../objects/TitleSection"
 import TextSection from "../objects/TextSection"
 import MemberCards from "../components/MemberCards"
+import LightBox from "../components/LightBox"
 import Footer from "../components/Footer"
 
 const IndexPage = () => {
@@ -53,6 +54,7 @@ const IndexPage = () => {
           <MemberCards />
         </TeamContainer>
       </TeamSection>
+      <LightBox />
       <Footer />
     </Layout>
   )
