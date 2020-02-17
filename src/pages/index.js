@@ -5,7 +5,9 @@ import {
     ServiceContainer,
     TeamSection, 
     TeamContainer,
-    WrapTeam
+    WrapTeam,
+    PortfolioSection,
+    PortfolioContainer,
 } from "./styles"
 
 import Layout from "../components/Layout";
@@ -17,6 +19,7 @@ import ServiceCards from "../components/ServiceCards"
 import TitleSection from "../objects/TitleSection"
 import TextSection from "../objects/TextSection"
 import MemberCards from "../components/MemberCards"
+import LightBox from "../components/LightBox"
 import Footer from "../components/Footer"
 
 const IndexPage = () => {
@@ -53,6 +56,20 @@ const IndexPage = () => {
           <MemberCards />
         </TeamContainer>
       </TeamSection>
+      <PortfolioSection>
+        <PortfolioContainer>
+          <LightBox>
+              <TitleSection
+                className="-inverse"
+                title="Portfólio"
+                subtitle="Alguns de nossos serviços executados"
+              />
+              <TextSection className="-inverse">
+                Veja nossos últimos serviços executados e venha construir uma parceria conosco terceirizando seus serviços de elevadores. Com vasta experiência na área somos capazes de agregar eficiência, qualidade e valor para sua empresa.
+              </TextSection>
+          </LightBox>
+        </PortfolioContainer>
+      </PortfolioSection>
       <Footer />
     </Layout>
   )
