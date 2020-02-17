@@ -1,12 +1,12 @@
 import React from "react";
 import { useStaticQuery, graphql } from 'gatsby'
 
-import TitleSection from "../../objects/TitleSection"
-import TextSection from "../../objects/TextSection"
+// import TitleSection from "../../objects/TitleSection"
+// import TextSection from "../../objects/TextSection"
 
 import { Gallery, GalleryTitle, GalleryItem, GalleryImg } from "./styles"
 
-const LightBox = () => {
+const LightBox = ({ children }) => {
    
    const { img01, img02, img03, img04, img05,
            img06, img07, img08, img09, img10 } = useStaticQuery (
@@ -104,15 +104,7 @@ const LightBox = () => {
             <GalleryItem>
                <GalleryImg fluid={img05.childImageSharp.fluid} />
             </GalleryItem>
-            <GalleryTitle className="title-section">
-               <TitleSection
-                  title="Portfólio"
-                  subtitle="Alguns de nossos serviços executados"
-               />
-               <TextSection>
-                  Veja nossos últimos serviços executados e venha construir uma parceria conosco terceirizando seus serviços de elevadores. Com vasta experiência na área somos capazes de agregar eficiência, qualidade e valor para sua empresa.
-               </TextSection>
-            </GalleryTitle>
+            <GalleryTitle>{children}</GalleryTitle>
             <GalleryItem>
                <GalleryImg fluid={img06.childImageSharp.fluid} />
             </GalleryItem> 

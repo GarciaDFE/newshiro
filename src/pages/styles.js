@@ -69,10 +69,23 @@ const WrapTeam = styled.div`
 
 `
 
+// PORTFOLIO HOME
+const PortfolioSection = styled(Section)`
+   padding: 70px 0 30px;
+   background-color: ${props => props.theme.color.secondyClear};
+`
+
+const PortfolioContainer = styled(Container)`
+   background-color: ${props => props.theme.color.secondyClear};
+`
+
+
 export { 
    ServiceSection,
    ServiceContainer,
    TeamSection,
    TeamContainer,
-   WrapTeam
+   WrapTeam,
+   PortfolioSection,
+   PortfolioContainer,
 }
