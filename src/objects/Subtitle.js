@@ -8,6 +8,7 @@ const Subtitle = styled.h4`
   text-transform: uppercase;
   color: ${props => props.theme.color.secondyDark};
   text-align: center;
+  line-height: 1.5;
   margin-bottom: 5px;
   &.-inverse {
     color: ${props => props.theme.color.secondyClear};

@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { Gallery, GalleryTitle, GalleryItem, GalleryImg } from "./styles"
+import { Gallery, GalleryTitle, GalleryItem } from "./styles"
 
 const LightBox = ({ children }) => {
    
@@ -23,15 +23,12 @@ const LightBox = ({ children }) => {
       `
    )
 
-
    return (
       <Gallery>
-        {data.allFile.edges.map(img => (
-            <GalleryItem>
-               <GalleryImg fluid={img.node.childImageSharp.fluid} />
-            </GalleryItem> 
-        ))}
-        <GalleryTitle>{children}</GalleryTitle>
+         {data.allFile.edges.map(img => (
+            <GalleryItem fluid={img.node.childImageSharp.fluid} />
+         ))}
+         <GalleryTitle>{children}</GalleryTitle>
       </Gallery>
    )
 

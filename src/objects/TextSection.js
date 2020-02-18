@@ -20,6 +20,7 @@ const Text = styled.p`
 
    ${media.lessThan("xs")`
       text-align: left;
+      font-size: ${props => props.theme.size.verySmall};
    `}
 
 `

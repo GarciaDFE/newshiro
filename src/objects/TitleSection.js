@@ -10,7 +10,7 @@ const TitleSection = styled.div`
   text-align: center;
   margin-bottom: 50px;
   &.-inverse {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 ` 
 export default ({ title, subtitle, className }) => (
