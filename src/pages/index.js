@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from 'gatsby'
 
 import { 
     ServiceSection, 
@@ -7,8 +8,7 @@ import {
     TeamContainer,
     WrapTeam,
     PortfolioSection,
-    PortfolioContainer,
-} from "./styles"
+    PortfolioContainer } from "./styles"
 
 import Layout from "../components/Layout";
 import SEO from "../components/seo"
@@ -23,6 +23,24 @@ import LightBox from "../components/LightBox"
 import Footer from "../components/Footer"
 
 const IndexPage = () => {
+
+  const images = useStaticQuery (
+    graphql`
+       query {
+          imgPortfolio: allFile(filter: {relativeDirectory: {eq: "portfolio"}}) {
+              edges {
+                node {
+                    childImageSharp {
+                      fluid(maxWidth: 290, quality: 100) {
+                          ...GatsbyImageSharpFluid_tracedSVG
+                      }
+                    }
+                }
+              }
+          }
+      }
+    `
+  )
 
   return (
     <Layout>
@@ -58,7 +76,7 @@ const IndexPage = () => {
       </TeamSection>
       <PortfolioSection>
         <PortfolioContainer>
-          <LightBox>
+          <LightBox data={images.imgPortfolio.edges}>
               <TitleSection
                 className="-inverse"
                 title="Portfólio"
@@ -74,6 +92,5 @@ const IndexPage = () => {
     </Layout>
   )
 };
-
 
 export default IndexPage;
