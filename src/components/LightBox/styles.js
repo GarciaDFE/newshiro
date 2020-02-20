@@ -68,50 +68,71 @@ const GalleryTitle = styled.div`
 
 `
 
-const GalleryItem = styled(Img)`
-   display: block;
-   width: 100%;
-   object-fit: contain;
-   height: auto;
-   max-height: 280px;
-   filter: blur(0px);
-   transition: filter 0.3s ease-in;
-   cursor: pointer;
-   &:hover {
-      filter: blur(2px);
-   }
+const GalleryItem = styled.div`
+   background-color: ${props => props.theme.color.secondyDark};
+
 `
 
-
 const LightboxModal = styled.div`
-  position: absolute;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: ${props => (props.visible ? '1' : '0')};
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
+  background-color: rgba(0,0,0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  &.-visible {
+     opacity: 1;
+     visibility: visible;
+  }
 `
+
 const LightboxContent = styled.div`
   margin: 15px;
   max-width: 700px;
   width: 100%;
 
 `
+
 const StyledImg = styled(Img)`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  height: 100%; /* or whatever */
-  & > img {
-    object-fit: cover !important; /* or whatever */
-    object-position: 0% 0% !important; /* or whatever */
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   max-height: 280px;
+   height: 100%;
+   opacity: 1;
+   transition: opacity 0.3s linear;
+   &:hover {
+      opacity: 0.3;
+      transition: opacity 0.3s linear;
+   }
+`
+
+const LightboxImage = styled(Img)`
+   width: 100%;
+   height: 100%;
+   max-width: 90vw;
+   max-height: 90vh;
+`
+
+const Button = styled.button`
+   background-color: #00FF00;
+`
+
+const Controls = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const LeftRight = styled.div`
+  button:first-child {
+    margin-right: 10px;
   }
 `
 
@@ -121,5 +142,9 @@ export {
    GalleryItem,
    LightboxModal,
    LightboxContent,
-   StyledImg
+   StyledImg,
+   LightboxImage,
+   Button,
+   Controls,
+   LeftRight
 }

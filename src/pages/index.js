@@ -26,17 +26,18 @@ const IndexPage = () => {
 
   const images = useStaticQuery (
     graphql`
-       query {
-          imgPortfolio: allFile(filter: {relativeDirectory: {eq: "portfolio"}}) {
-              edges {
-                node {
-                    childImageSharp {
-                      fluid(maxWidth: 290, quality: 100) {
-                          ...GatsbyImageSharpFluid_tracedSVG
-                      }
-                    }
+      query {
+        imgPortfolio: 
+          allFile(filter: {relativeDirectory: {eq: "portfolio"}}) {
+            edges {
+              node {
+                childImageSharp {
+                  sizes(maxHeight: 500) {
+                    ...GatsbyImageSharpSizes
+                  }
                 }
               }
+            }
           }
       }
     `

@@ -10,7 +10,6 @@ const Section = styled.section`
 `
 
 const Container = styled.div`
-   position: relative;
    width: 100%;
    max-width: 1200px;
    margin: 0 auto;
