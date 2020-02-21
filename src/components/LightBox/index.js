@@ -1,31 +1,38 @@
 import React, { useState } from "react";
 
+import IconArrowLeft from "../../images/globals/arrow-left.svg"
+import IconArrowRight from "../../images/globals/arrow-right.svg"
+import IconClose from "../../images/globals/close.svg"
+import services from "./content"
 import { 
    Gallery, 
    GalleryTitle, 
    GalleryItem, 
    LightboxModal, 
-   LightboxContent, 
    StyledImg,
    LightboxImage,
-   Controls, 
+   LightboxContent,
    Button,
-   LeftRight } from "./styles"
+   CloseButton,
+   Arrows,
+   OverlayItem,
+   OverlayImage } from "./styles"
+
 
 const LightBox = ({ children, data }) => {
 
-   const [showLightbox, setShowLightbox] = useState("");
+   const [showLightboxModal, setShowLightboxModal] = useState("");
    const [selectedImage, setSelectedImage] = useState(0);
    
    const handleClick = (e, index) => {
       e.preventDefault();
-      setShowLightbox("-visible");
+      setShowLightboxModal("-visible");
       setSelectedImage(index);
    }
 
    const handleCloseModal = (e) => {
       e.preventDefault();
-      setShowLightbox("");
+      setShowLightboxModal("");
    }
 
    const handleGoBack = () => {
@@ -47,34 +54,48 @@ const LightBox = ({ children, data }) => {
    return (
       <>
          <Gallery>
-            {data.map((img, i) => (
-               <GalleryItem key={img.node.childImageSharp.sizes.src}>
-                  <a href={img.node.childImageSharp.sizes.src} 
-                     alt="imagem serviço"
-                     onClick={e => handleClick(e, i)}
-                  >
-                     <StyledImg sizes={img.node.childImageSharp.sizes} />
-                  </a>
-               </GalleryItem>
-            ))}
+            {data.map((img, i) => {
+               const service = services[i].label;
+               return (
+                  <GalleryItem key={img.node.childImageSharp.sizes.src}>
+                     <OverlayItem 
+                        key={img.node.childImageSharp.sizes.src}
+                        onClick={e => handleClick(e, i)}>
+                           {service}
+                     </OverlayItem>
+                     <a href={img.node.childImageSharp.sizes.src} 
+                        alt="imagem serviço">
+                           <StyledImg sizes={img.node.childImageSharp.sizes} />
+                     </a>
+                  </GalleryItem>
+               )
+            })}
             <GalleryTitle>{children}</GalleryTitle>
          </Gallery>
 
-         <LightboxModal className={showLightbox}>
+         <LightboxModal className={showLightboxModal}>
+            <CloseButton 
+               onClick={handleCloseModal}
+               style={{ backgroundImage:`url(${IconClose})` }}>
+                  Fechar
+            </CloseButton>
+            <Arrows>
+               <Button onClick={handleGoBack}
+                  style={{ backgroundImage:`url(${IconArrowLeft})` }}>
+                     Anterior
+               </Button>
+               <Button onClick={handleGoForward}
+                  style={{ backgroundImage:`url(${IconArrowRight})` }}>
+                     Próxima
+               </Button>
+            </Arrows>
             <LightboxContent>
                <LightboxImage sizes={data[selectedImage].node.childImageSharp.sizes} />
-               <Controls>
-                  <Button onClick={handleCloseModal}>Fechar</Button>
-                  <LeftRight>
-                     <Button onClick={handleGoBack}>Anterior</Button>
-                     <Button onClick={handleGoForward}>Próxima</Button>
-                  </LeftRight>
-               </Controls>
+               <OverlayImage>{services[selectedImage].label}</OverlayImage>
             </LightboxContent>
          </LightboxModal>
       </>
    )
-
 }
 
 export default LightBox
