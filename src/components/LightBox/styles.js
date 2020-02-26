@@ -194,6 +194,9 @@ const Button = styled.button`
    background-repeat: no-repeat;
    cursor: pointer;
    padding: 0 20px;
+   &:focus {
+      outline: 0;
+   }
 
    ${media.lessThan("sm")`
       font-size: ${props => props.theme.size.mediumBig};
@@ -215,6 +218,9 @@ const CloseButton = styled.button`
    background-position: center;
    background-repeat: no-repeat;
    text-indent: -9999px;
+   &:focus {
+      outline: 0;
+   }
 
    ${media.lessThan("sm")`
       font-size: ${props => props.theme.size.mediumBig};
