@@ -97,6 +97,19 @@ const Action = styled(Link)`
    &:hover:after {
       transform: scale(1);
    }
+   &.comSubmenu {
+      &:before {
+      content: "\2039";
+      width: 10px;
+      height: 5px;
+      background-color: yellow;
+      position: absolute;
+      right: 0;
+      top: 2px;
+      color: red;
+   }
+
+   }
 
    ${media.lessThan("lg")`
       font-size: ${props => props.theme.size.mediumSmall};
@@ -218,5 +231,5 @@ export {
    ListSubItem,
    SubItem,
    SubAction,
-   GroupSocialLinks
+   GroupSocialLinks,
 }

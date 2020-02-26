@@ -75,18 +75,20 @@ const Title = styled.h1`
    ${media.lessThan("1000px")`
       width: 60%;
    `}
-   ${media.lessThan("900px")`
-      width: 70%;
-   `}
    ${media.lessThan("md")`
-      font-size: ${props => props.theme.size.big};
-      text-align: center;
       width: 80%;
    `}
-   ${media.lessThan("650px")`
+   ${media.lessThan("sm")`
+      font-size: ${props => props.theme.size.big};
+      text-align: center;
+      width: 60%;
+      margin-bottom: 0;
+      line-height: 1.2;
+   `}
+   ${media.lessThan("700px")`
       width: 100%;
    `}
-   ${media.lessThan("sm")`
+   ${media.lessThan("xs")`
       font-size: ${props => props.theme.size.medium};
       margin-bottom: 5px;
       line-height: 1.2;
@@ -100,6 +102,8 @@ const Description = styled.p`
    font-size: ${props => props.theme.size.medium};
    color: ${props => props.theme.color.secondyClear};
    line-height: 1.4;
+   border-left: 5px solid ${props => props.theme.color.firstDark};
+   padding-left: 15px;
 
    ${media.lessThan("lg")`
       width: 60%;
@@ -107,21 +111,28 @@ const Description = styled.p`
    ${media.lessThan("1000px")`
       width: 70%;
    `}
-   ${media.lessThan("900px")`
-      width: 80%;
-   `}
    ${media.lessThan("md")`
+      width: 80%;
+
+   `}
+   ${media.lessThan("sm")`
       font-size: ${props => props.theme.size.small};
       text-align: center;
-      width: 90%;
+      width: 80%;
+      border-left: none;
+      padding-left: 0;
+      line-height: 1.2;
+      margin-bottom: 5px;
+
    `}
    ${media.lessThan("650px")`
       width: 100%;
    `}
-   ${media.lessThan("sm")`
+   ${media.lessThan("xs")`
       font-size: ${props => props.theme.size.verySmall};
       margin-bottom: 5px;
       line-height: 1.2;
+      width: 90%;
    `}
 
 `

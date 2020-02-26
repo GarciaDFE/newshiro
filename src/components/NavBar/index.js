@@ -1,5 +1,6 @@
 import React from "react";
-import { FaChevronDown } from "react-icons/fa"
+
+import IconChevron from "../../images/globals/email-fill.svg"
 
 import { MainNav, 
          ListItem, 
@@ -17,12 +18,9 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
             <Item><Action to="/">Início</Action></Item>
             <Item><Action to="/About">Quem Somos</Action></Item>
             <Item onClick={onClick}>
-               <Action to="/">
+               <Action className="comSubmenu" to="/">
                   Serviços
-                  <FaChevronDown 
-                     size={12} 
-                     style={{ marginLeft: 5 }}
-                  />
+                  <IconChevron />
                </Action>
                <ListSubItem className={`${isShow ? "-isShow" : "" }`}>
                      <SubItem>
