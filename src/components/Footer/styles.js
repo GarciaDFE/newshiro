@@ -123,6 +123,7 @@ const Service = styled.div`
 
 const ButtonFooter = styled(ButtonAction)`
    width: 225px;
+   text-align: center;
 `
 
 

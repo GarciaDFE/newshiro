@@ -1,23 +1,8 @@
 import styled from "styled-components";
 import media from "../styles/breakPoints"
 
-// BASE
-const Section = styled.section`
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-`
-
-const Container = styled.div`
-   width: 100%;
-   max-width: 1200px;
-   margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-`
+import Section from "../objects/Section"
+import Container from "../objects/Container"
 
 // SERVICE HOME
 const ServiceSection = styled(Section)`
