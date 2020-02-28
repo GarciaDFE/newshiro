@@ -1,7 +1,5 @@
 import React from "react";
 
-import IconChevron from "../../images/globals/email-fill.svg"
-
 import { MainNav, 
          ListItem, 
          Item, 
@@ -9,7 +7,8 @@ import { MainNav,
          ListSubItem, 
          SubItem, 
          SubAction, 
-         GroupSocialLinks } from "./styles"
+         GroupSocialLinks,
+         IconSubAction } from "./styles"
 
 const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
    return (
@@ -18,9 +17,9 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
             <Item><Action to="/">Início</Action></Item>
             <Item><Action to="/About">Quem Somos</Action></Item>
             <Item onClick={onClick}>
-               <Action className="comSubmenu" to="/">
+               <Action to="/">
                   Serviços
-                  <IconChevron />
+                  <IconSubAction className={`${isShow ? "-isActive" : "" }`} />
                </Action>
                <ListSubItem className={`${isShow ? "-isShow" : "" }`}>
                      <SubItem>

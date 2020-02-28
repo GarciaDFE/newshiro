@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 import media from "../../styles/breakPoints"
+import { FaChevronDown } from "react-icons/fa"
 
 import SocialLinks from "../../objects/SocialLinks"
+
 
 const MainNav = styled.nav`
    display: flex;
@@ -76,6 +78,17 @@ const Item = styled.li`
 
 `
 
+const IconSubAction = styled(FaChevronDown)`
+   width: 15px;
+   height: 12px;
+   margin-left: 5px;
+   transition: transform 300ms linear;
+   &.-isActive {
+      transform: rotate(180deg);
+      transition: transform 300ms linear;
+   }
+`
+
 const Action = styled(Link)`
    font-family: ${props => props.theme.font.secondy};
    font-size: ${props => props.theme.size.medium};
@@ -96,19 +109,6 @@ const Action = styled(Link)`
    }
    &:hover:after {
       transform: scale(1);
-   }
-   &.comSubmenu {
-      &:before {
-      content: "\2039";
-      width: 10px;
-      height: 5px;
-      background-color: yellow;
-      position: absolute;
-      right: 0;
-      top: 2px;
-      color: red;
-   }
-
    }
 
    ${media.lessThan("lg")`
@@ -232,4 +232,5 @@ export {
    SubItem,
    SubAction,
    GroupSocialLinks,
+   IconSubAction
 }
