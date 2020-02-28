@@ -154,5 +154,5 @@ export {
    Content,
    Title,
    Description,
-   BkgImage
+   BkgImage,
 }

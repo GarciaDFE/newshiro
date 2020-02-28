@@ -27,18 +27,24 @@ const IndexPage = () => {
   const images = useStaticQuery (
     graphql`
       query {
-        imgPortfolio: 
-          allFile(filter: {relativeDirectory: {eq: "portfolio"}}) {
-            edges {
-              node {
-                childImageSharp {
-                  sizes(maxHeight: 500) {
-                    ...GatsbyImageSharpSizes
-                  }
+        imgPortfolio: allFile(filter: {relativeDirectory: {eq: "portfolio"}}) {
+          edges {
+            node {
+              childImageSharp {
+                sizes(maxHeight: 500) {
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
           }
+        }
+        imgBanner: file(relativePath: { eq: "banner/banner-home.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1440) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
       }
     `
   )
@@ -50,7 +56,10 @@ const IndexPage = () => {
       <Header />
       <Banner
         title="Terceirização de Serviços de Elevadores"
-        description="Venha construir uma parceria delegando a responsabilidade da sua área de manutenção mecânica para nossa equipe com vasta experiência na área, agregando eficiência, qualidade e rapidez a sua empresa."  
+        description="Venha construir uma parceria delegando a responsabilidade da sua área de manutenção mecânica para nossa equipe com vasta experiência na área, agregando eficiência, qualidade e rapidez a sua empresa." 
+        classButton="saibamais"
+        imageFluid={images.imgBanner.childImageSharp.fluid}
+        imageAlt="imagem de polia de tração de elevador"
       />
       <ServiceSection>
         <ServiceContainer>

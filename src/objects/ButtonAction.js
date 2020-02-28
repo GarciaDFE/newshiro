@@ -89,6 +89,9 @@ const ActionButton = styled(Link)`
          }
       }
    }
+   &.hidden {
+      display: none;
+   }
 
 `
 
