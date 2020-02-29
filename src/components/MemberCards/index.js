@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import { List, CardMember } from "./styles" 
 
-const MemberCards = () => {
+const MemberCards = ({ className }) => {
    
    const skill1 = ["Sócio-Fundador", "Manutenção", "Montagem", "Usinagens"]
    const skill2 = ["Sócio", "Manutenção", "Mecânica"]
@@ -30,7 +30,7 @@ const MemberCards = () => {
    )
 
    return (
-      <List>
+      <List className={className}>
          <CardMember
             fixed={member1.childImageSharp.fixed}
             alt="foto de Mário Tamashiro"

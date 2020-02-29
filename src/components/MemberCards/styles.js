@@ -24,8 +24,11 @@ const CardMember = styled(CardSimple)`
    max-width: 260px;
    height: 320px;
 
-   ${media.lessThan("sm")`
+   ${media.lessThan("xs")`
       width: 100%;
+      &:not(:last-child) {
+         margin-bottom: 70px;
+      }
    `}
 
 `

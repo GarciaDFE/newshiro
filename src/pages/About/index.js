@@ -2,14 +2,16 @@ import React from "react";
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 
-
 import { 
    AboutContainer,
    Side,
+   DifferentialsContainer,
    HistoryTitleSection,
    HistoryTextSection,
    ListDifferentials,
-   ListIcon } from "./styles"
+   ListIcon,
+   TeamContainer,
+   AboutTeam } from "./styles"
 
 import Layout from "../../components/Layout";
 import SEO from "../../components/seo"
@@ -17,6 +19,7 @@ import TopBar from "../../components/TopBar"
 import Header from "../../components/Header"
 import Banner from "../../components/Banner"
 import Section from "../../objects/Section"
+import TitleSection from "../../objects/TitleSection"
 import Footer from "../../components/Footer"
 
 const AboutPage = () => {
@@ -82,7 +85,7 @@ const AboutPage = () => {
             </AboutContainer>
          </Section>
          <Section>
-            <AboutContainer>
+            <DifferentialsContainer>
                <Side>
                   <Img 
                      fluid={images.imgDifferentials.childImageSharp.fluid}
@@ -106,7 +109,16 @@ const AboutPage = () => {
                      </ListDifferentials>
                   </HistoryTextSection>
                </Side>
-            </AboutContainer>
+            </DifferentialsContainer>
+         </Section>
+         <Section>
+            <TeamContainer>
+               <TitleSection
+                  title="Equipe"
+                  subtitle="Nossos Especialistas"
+               />
+               <AboutTeam />
+            </TeamContainer>
          </Section>
          <Footer />
       </Layout>

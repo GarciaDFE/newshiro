@@ -5,6 +5,8 @@ import { FaCheck } from "react-icons/fa"
 import Container from "../../objects/Container"
 import TitleSection from "../../objects/TitleSection"
 import TextSection from "../../objects/TextSection"
+import MemberCards from "../../components/MemberCards"
+
 
 
 // History Section
@@ -20,6 +22,13 @@ const AboutContainer = styled(Container)`
    `}
 
 `
+
+// Differentials Section
+const DifferentialsContainer = styled(AboutContainer)`
+   background: ${props => props.theme.gradient.fourth};
+`
+
+
 const Side = styled.div`
    width: 50%;
    height: auto;
@@ -94,11 +103,35 @@ const ListIcon = styled(FaCheck)`
    color: ${props => props.theme.color.firstDark};
 `
 
+// TEAM
+const TeamContainer = styled(Container)`
+   max-width: 1440px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: ${props => props.theme.color.secondyLight};
+   padding: 70px 0;
+
+   ${media.lessThan("md")`
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   `}
+
+`
+
+const AboutTeam = styled(MemberCards)`
+   max-width: 700px;
+`
+
 export {
   AboutContainer,
+  DifferentialsContainer,
   Side,
   HistoryTitleSection,
   HistoryTextSection,
   ListDifferentials,
-  ListIcon
+  ListIcon,
+  TeamContainer,
+  AboutTeam
 }
