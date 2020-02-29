@@ -15,10 +15,10 @@ const Container = styled.div`
    margin: 0 auto;
 
    ${media.lessThan("lg")`
-      height: 334px;
+      height: 300px;
    `}
    ${media.lessThan("sm")`
-      height: 200px;
+      height: 220px;
    `}
 
 `
@@ -46,17 +46,18 @@ const Content = styled.div`
 
    ${media.lessThan("lg")`
       max-width: 1020px;
-      height: 334px;
+      height: 300px;
       margin: 0 auto;
    `}
    ${media.lessThan("1024px")`
-      margin: 0 10px;
+      margin: 0 60px;
    `}
    ${media.lessThan("md")`
       align-items: center;
+      margin: 0 10px;
    `}
    ${media.lessThan("sm")`
-      height: 200px;
+      height: 220px;
    `}
 
 `
@@ -72,26 +73,30 @@ const Title = styled.h1`
    ${media.lessThan("lg")`
       width: 50%;
    `}
-   ${media.lessThan("1000px")`
-      width: 60%;
+   ${media.lessThan("1024px")`
+      width: 70%;
    `}
    ${media.lessThan("md")`
-      width: 80%;
+      text-align: center;
+      margin-bottom: 5px;
+   `}
+   ${media.lessThan("800px")`
+      width: 100%;
    `}
    ${media.lessThan("sm")`
       font-size: ${props => props.theme.size.big};
-      text-align: center;
-      width: 60%;
-      margin-bottom: 0;
-      line-height: 1.2;
-   `}
-   ${media.lessThan("700px")`
       width: 100%;
-   `}
-   ${media.lessThan("xs")`
-      font-size: ${props => props.theme.size.medium};
-      margin-bottom: 5px;
       line-height: 1.2;
+   `}
+   ${media.lessThan("470px")`
+      width: 100%;
+      font-size: ${props => props.theme.size.mediumBig};
+      margin-bottom: 5px;
+      line-height: 1.1;
+   `}
+   ${media.lessThan("380px")`
+      font-size: ${props => props.theme.size.medium};
+      line-height: 1.3;
    `}
 
 `
@@ -108,31 +113,24 @@ const Description = styled.p`
    ${media.lessThan("lg")`
       width: 60%;
    `}
-   ${media.lessThan("1000px")`
-      width: 70%;
+   ${media.lessThan("1024px")`
+      width: 80%;
    `}
    ${media.lessThan("md")`
-      width: 80%;
-
-   `}
-   ${media.lessThan("sm")`
-      font-size: ${props => props.theme.size.small};
+      width: 90%;
       text-align: center;
-      width: 80%;
       border-left: none;
       padding-left: 0;
-      line-height: 1.2;
-      margin-bottom: 5px;
-
    `}
-   ${media.lessThan("650px")`
-      width: 100%;
+   ${media.lessThan("sm")`
+      width: 90%;
+      font-size: ${props => props.theme.size.small};
+      line-height: 1.3;
+      margin-bottom: 10px;
    `}
    ${media.lessThan("xs")`
+      width: 100%;
       font-size: ${props => props.theme.size.verySmall};
-      margin-bottom: 5px;
-      line-height: 1.2;
-      width: 90%;
    `}
 
 `
