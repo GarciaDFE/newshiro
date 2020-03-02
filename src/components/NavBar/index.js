@@ -33,7 +33,7 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
                      </SubItem>
                </ListSubItem>
             </Item>
-            <Item><Action to="/">Contatos</Action></Item>
+            <Item><Action to="/Contact">Contatos</Action></Item>
             <GroupSocialLinks className="-tablet" stroke="true"/>
          </ListItem>
          <GroupSocialLinks className="-desktop" stroke="true"/>

@@ -54,7 +54,7 @@ const AboutPage = () => {
   
    return (
       <Layout>
-         <SEO title="About"/>
+         <SEO title="Sobre"/>
          <TopBar />
          <Header />
          <Banner
@@ -62,7 +62,7 @@ const AboutPage = () => {
             description="Conheça um pouco da nossa história e o perfil e experiência da nossa equipe técnica."
             classButton="hidden"
             imageFluid={images.imgBanner.childImageSharp.fluid}
-            imageAlt="imagem de polia de tração de elevador"    
+            imageAlt="imagem da oficina da Shiro Usinagens"    
          />
          <Section>
             <AboutContainer>
