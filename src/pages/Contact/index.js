@@ -1,7 +1,15 @@
 import React from "react";
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { FormContainer, WrapContent, WrapForm, MapContainer } from "./styles";
+import { 
+   FormContainer, 
+   WrapContent, 
+   ContentItem, 
+   ContactForm, 
+   InputItem,
+   ButtonSubmit,
+   TextAreaItem,
+   MapContainer } from "./styles";
 
 import Layout from "../../components/Layout";
 import SEO from "../../components/seo";
@@ -45,38 +53,27 @@ const ContactPage = () => {
          <Section>
             <FormContainer>
                <WrapContent>
-                  Contatos
+                  <ContentItem className="-local">
+                     Rua Coronel Fawcett, 454 – Vila Moraes <br></br>
+                     São Paulo-SP – CEP 04167-030
+                  </ContentItem>
+                  <ContentItem className="-whatsapp">
+                     (11) 94901-5967 – Mário <br></br>
+                     (11) 98763-9248 – Ed
+                  </ContentItem>
+                  <ContentItem className="-email">
+                     mariokt.mt@gmail.com <br></br>
+                     edsonfox2010@hotmail.com
+                  </ContentItem>
                </WrapContent>
-               <WrapForm>
-                  <form action="" method="POST">
-                     <div className="field">
-                        <label for="name" className="label">Nome</label>
-                        <input id="name" className="input" type="text" placeholder="Seu nome completo" />
-                     </div>
-
-                     <div className="field">
-                        <label for="company" className="label">Empresa</label>
-                        <input id="company" className="input" type="text" placeholder="Nome da empresa" />
-                     </div>
-
-                     <div className="field">
-                        <label for="email" className="label">Email</label>
-                        <input type="email" id="email" className="input" placeholder="Seu e-mail" />
-                     </div>
-
-                     <div className="field">
-                        <label for="phone" className="label">Telefone</label>
-                        <input id="phone" className="input" type="text" placeholder="Ex.: (99) 99999 9999"/>
-                     </div>
-
-                     <div className="field">
-                        <label for="message" className="label">Mensagem</label>
-                        <input type="text-area" id="message" className="input" placeholder="Digite aqui sua mensagem." />
-                     </div>
-
-                     <button type="submit" id="btn-submit" className="btn-submit">Enviar</button>
-                  </form>   
-               </WrapForm>
+               <ContactForm action="#" method="POST">
+                  <InputItem id="name" type="text" placeholder="Nome" />
+                  <InputItem id="company" type="text" placeholder="Empresa" />
+                  <InputItem id="email" type="email" placeholder="E-mail" />
+                  <InputItem id="phone" type="text" placeholder="Telefone" />
+                  <TextAreaItem id="message" rows="3" placeholder="Deixe sua mensagem." />
+                  <ButtonSubmit type="submit" id="btn-submit" label="Enviar" className="enviemensagem" />
+               </ContactForm>
             </FormContainer>
          </Section>
          <Section>
