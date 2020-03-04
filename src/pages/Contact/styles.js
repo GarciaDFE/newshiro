@@ -1,5 +1,5 @@
 import styled from "styled-components";
-//import media from "../../styles/breakPoints"
+import media from "../../styles/breakPoints"
 
 import Container from "../../objects/Container"
 
@@ -21,8 +21,22 @@ const WrapForm = styled.div`
    background-color: violet;
 `
 
+const MapContainer = styled.div`
+   width: 100%;
+   max-width: 1440px;
+   height: 400px;
+   background-color: aliceblue;
+   ${media.lessThan("sm")`
+      height: 300px;
+   `}
+   ${media.lessThan("xs")`
+      height: 200px;
+   `}
+`
+
 export {
    FormContainer,
    WrapContent,
-   WrapForm
+   WrapForm,
+   MapContainer
 }
