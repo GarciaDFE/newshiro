@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStaticQuery, graphql, navigate } from 'gatsby';
 
 import { 
    FormContainer, 
    WrapContent, 
    ContentItem, 
-   ContactForm, 
-   InputItem,
-   ButtonSubmit,
-   TextAreaItem,
+   // ContactForm, 
+   // InputItem,
+   // ButtonSubmit,
+   // TextAreaItem,
    MapContainer } from "./styles";
 
 import Layout from "../../components/Layout";
@@ -19,6 +19,12 @@ import Banner from "../../components/Banner";
 import Section from "../../objects/Section";
 import LocalMap from "../../objects/LocalMap"
 import Footer from "../../components/Footer";
+
+function encode(data) {
+   return Object.keys(data)
+     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+     .join('&')
+ }
 
 const ContactPage = () => {
 
@@ -38,23 +44,26 @@ const ContactPage = () => {
       `
    )
   
-   const [state, setState] = useState({})
+   const [state, setState] = React.useState({})
 
    const handleChange = (e) => {
-      setState({...state, [e.target.name]: e.target.value })
+     setState({ ...state, [e.target.name]: e.target.value })
    }
-
+ 
    const handleSubmit = (e) => {
-      e.preventDefault()
-      const form = e.target
-      fetch("/", {
-         method: "POST",
-         headers: { "Contenty-Type": "application/x-www-form-urlencoded" },
-      })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch((error) => alert(error))
-   }
-   
+     e.preventDefault()
+     const form = e.target
+     fetch('/', {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+       body: encode({
+         'form-name': form.getAttribute('name'),
+         ...state,
+       }),
+     })
+       .then(() => navigate(form.getAttribute('action')))
+       .catch((error) => alert(error))
+   }   
    
    return (
       <Layout>
@@ -84,50 +93,51 @@ const ContactPage = () => {
                      edsonfox2010@hotmail.com
                   </ContentItem>
                </WrapContent>
-               <ContactForm 
-                  name="contact"
-                  action="/About"
-                  method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  onSubmit={handleSubmit}
-               >
-                  <InputItem 
-                     id="name" 
-                     type="text" 
-                     placeholder="Nome" 
-                     onChange={handleChange} />
-                  <InputItem 
-                     id="company" 
-                     type="text" 
-                     placeholder="Empresa"
-                     onChange={handleChange} />
-                  <InputItem 
-                     id="email" 
-                     type="email" 
-                     placeholder="E-mail"
-                     onChange={handleChange} />
-                  <InputItem 
-                     id="phone" 
-                     type="text" 
-                     placeholder="Telefone"
-                     onChange={handleChange} />
-                  <TextAreaItem 
-                     id="message" 
-                     rows="3" 
-                     placeholder="Deixe sua mensagem."
-                     onChange={handleChange} />
-                  <ButtonSubmit 
-                     type="submit" 
-                     label="Enviar" 
-                     className="enviemensagem" />
-               </ContactForm>
             </FormContainer>
          </Section>
          <Section>
             <MapContainer>
                <LocalMap local={local}/>
             </MapContainer>
+            <form
+        name="contact"
+        method="post"
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label>
+            Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your name:
+            <br />
+            <input type="text" name="name" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your email:
+            <br />
+            <input type="email" name="email" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message:
+            <br />
+            <textarea name="message" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
          </Section>
          <Footer />
       </Layout>
