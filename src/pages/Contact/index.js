@@ -66,13 +66,18 @@ const ContactPage = () => {
                      edsonfox2010@hotmail.com
                   </ContentItem>
                </WrapContent>
-               <ContactForm action="#" method="POST">
+               <ContactForm 
+                  name="contact" netlify
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+               >
                   <InputItem id="name" type="text" placeholder="Nome" />
                   <InputItem id="company" type="text" placeholder="Empresa" />
                   <InputItem id="email" type="email" placeholder="E-mail" />
                   <InputItem id="phone" type="text" placeholder="Telefone" />
                   <TextAreaItem id="message" rows="3" placeholder="Deixe sua mensagem." />
-                  <ButtonSubmit type="submit" id="btn-submit" label="Enviar" className="enviemensagem" />
+                  <ButtonSubmit type="submit" label="Enviar" className="enviemensagem" />
                </ContactForm>
             </FormContainer>
          </Section>
