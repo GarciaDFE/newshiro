@@ -53,6 +53,7 @@ const ContactPage = () => {
    const handleSubmit = (e) => {
       e.preventDefault()
       const form = e.target
+      console.log("ENVIADO: ", form)
       fetch("/", {
          method: "POST",
          headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -61,7 +62,7 @@ const ContactPage = () => {
             ...state,
          }),
       })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => navigate(form.getAttribute("action")))
       .catch((error) => alert(error))
    }   
    
@@ -132,10 +133,7 @@ const ContactPage = () => {
                      rows="3" 
                      placeholder="Deixe sua mensagem."
                      onChange={handleChange} />
-                  <ButtonSubmit 
-                     type="submit" 
-                     label="Enviar" 
-                     className="enviemensagem" />
+                  <ButtonSubmit type="submit">Enviar</ButtonSubmit>
                </ContactForm>
             </FormContainer>
          </Section>

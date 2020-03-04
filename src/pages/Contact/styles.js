@@ -5,10 +5,8 @@ import Container from "../../objects/Container"
 import localItem from "../../images/globals/local-item.svg"
 import whatsappItem from "../../images/globals/whatsapp-item.svg"
 import emailItem from "../../images/globals/email-item.svg"
-import ButtonAction from "../../objects/ButtonAction"
 
-
-// Firn Contact Section
+// Forn Contact Section
 const FormContainer = styled(Container)`
    max-width: 1440px;
    background: ${props => props.theme.gradient.fourth};
@@ -111,9 +109,27 @@ const TextAreaItem = styled.textarea`
    margin-bottom: 20px;
 `
 
-const ButtonSubmit = styled(ButtonAction)`
-   padding: 0 25px;
+const ButtonSubmit = styled.button`
+   height: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 3px;
+   padding: 0 30px;
+   transition: all 0.3s linear;
+   text-decoration: none;
+   font-family: ${props => props.theme.font.secondy};
+   text-transform: uppercase;
+   font-size: ${props => props.theme.size.mediumSmall};
+   font-weight: bold;
+   color: ${props => props.theme.color.secondyClear};
    letter-spacing: 0.05rem;
+   background-color: ${props => props.theme.color.firstDark};
+   cursor: pointer;
+   &:hover {
+      background-color: rgba(160,0,0,0.7);
+      transition: all 0.3s linear;
+   }
 `
 
 const ContentItem = styled.div`

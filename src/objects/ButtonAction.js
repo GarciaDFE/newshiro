@@ -96,10 +96,10 @@ const ActionButton = styled(Link)`
 `
 
 
-const ButtonAction = ({ className="saibamais", label="Label" }) => {
+const ButtonAction = ({ className="saibamais", label="Label", onClick }) => {
   
    return (
-      <ActionButton to="/" className={className}>
+      <ActionButton to="/" className={className} onClick={onClick}>
          <Icon className={className}/>
          <Label className={className}>{label}</Label>
       </ActionButton>
