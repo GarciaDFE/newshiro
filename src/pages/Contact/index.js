@@ -53,7 +53,6 @@ const ContactPage = () => {
    const handleSubmit = (e) => {
       e.preventDefault()
       const form = e.target
-      console.log("ENVIADO: ", form)
       fetch("/", {
          method: "POST",
          headers: { "Content-Type": "application/x-www-form-urlencoded" },
