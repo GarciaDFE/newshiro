@@ -1,5 +1,5 @@
-import React from "react";
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useState } from "react";
+import { useStaticQuery, graphql, navigate } from 'gatsby';
 
 import { 
    FormContainer, 
@@ -38,6 +38,24 @@ const ContactPage = () => {
       `
    )
   
+   const [state, setState] = useState({})
+
+   const handleChange = (e) => {
+      setState({...state, [e.target.name]: e.target.value })
+   }
+
+   const handleSubmit = (e) => {
+      e.preventDefault()
+      const form = e.target
+      fetch("/", {
+         method: "POST",
+         headers: { "Contenty-Type": "application/x-www-form-urlencoded" },
+      })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch((error) => alert(error))
+   }
+   
+   
    return (
       <Layout>
          <SEO title="Contatos"/>
@@ -67,17 +85,42 @@ const ContactPage = () => {
                   </ContentItem>
                </WrapContent>
                <ContactForm 
-                  name="contact" netlify
+                  name="contact"
+                  action="/About"
                   method="POST"
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
                >
-                  <InputItem id="name" type="text" placeholder="Nome" />
-                  <InputItem id="company" type="text" placeholder="Empresa" />
-                  <InputItem id="email" type="email" placeholder="E-mail" />
-                  <InputItem id="phone" type="text" placeholder="Telefone" />
-                  <TextAreaItem id="message" rows="3" placeholder="Deixe sua mensagem." />
-                  <ButtonSubmit type="submit" label="Enviar" className="enviemensagem" />
+                  <InputItem 
+                     id="name" 
+                     type="text" 
+                     placeholder="Nome" 
+                     onChange={handleChange} />
+                  <InputItem 
+                     id="company" 
+                     type="text" 
+                     placeholder="Empresa"
+                     onChange={handleChange} />
+                  <InputItem 
+                     id="email" 
+                     type="email" 
+                     placeholder="E-mail"
+                     onChange={handleChange} />
+                  <InputItem 
+                     id="phone" 
+                     type="text" 
+                     placeholder="Telefone"
+                     onChange={handleChange} />
+                  <TextAreaItem 
+                     id="message" 
+                     rows="3" 
+                     placeholder="Deixe sua mensagem."
+                     onChange={handleChange} />
+                  <ButtonSubmit 
+                     type="submit" 
+                     label="Enviar" 
+                     className="enviemensagem" />
                </ContactForm>
             </FormContainer>
          </Section>
