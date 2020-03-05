@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql, navigate } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import { 
    FormContainer, 
@@ -41,11 +41,11 @@ const ContactPage = () => {
    )
 
    //FORM
-   const encode = (data) => {
-      return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&")
-   }
+   // const encode = (data) => {
+   //    return Object.keys(data)
+   //      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+   //      .join("&")
+   // }
   
    const [state, setState] = React.useState({})
 
@@ -53,20 +53,20 @@ const ContactPage = () => {
      setState({ ...state, [e.target.name]: e.target.value })
    }
  
-   const handleSubmit = (e) => {
-      e.preventDefault()
-      const form = e.target
-      fetch("/", {
-         method: "POST",
-         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-         body: encode({
-            "form-name": form.getAttribute("name"),
-            ...state,
-         }),
-      })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch((error) => alert(error))
-   }   
+   // const handleSubmit = (e) => {
+   //    e.preventDefault()
+   //    const form = e.target
+   //    fetch("/", {
+   //       method: "POST",
+   //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+   //       body: encode({
+   //          "form-name": form.getAttribute("name"),
+   //          ...state,
+   //       }),
+   //    })
+   //    .then(() => navigate(form.getAttribute("action")))
+   //    .catch((error) => alert(error))
+   // }   
    
    return (
       <Layout>
@@ -97,44 +97,50 @@ const ContactPage = () => {
                   </ContentItem>
                </WrapContent>
                <ContactForm 
-                  name="contact"
-                  action="/About/"
-                  method="post"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  onSubmit={handleSubmit}
+                  action="https://formspree.io/xeqkvdvp"
+                  method="POST"
                >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <p hidden>
-                     <label>Don’t fill this out: 
-                        <input name="bot-field" onChange={handleChange} />
-                     </label>
-                  </p>
+                  <input 
+                     type="hidden" 
+                     name="_cc" 
+                     value="mrgempdig@gmail.com" />
+                  <input 
+                     type="hidden" 
+                     name="_subject" 
+                     value="Mensagem recebido pelo formulário de contato do site" />
                   <InputItem 
                      id="name" 
+                     name="Nome"
                      type="text" 
                      placeholder="Nome" 
-                     onChange={handleChange} />
+                     onChange={handleChange}
+                     required />
                   <InputItem 
                      id="company" 
+                     name="Empresa" 
                      type="text" 
                      placeholder="Empresa"
                      onChange={handleChange} />
                   <InputItem 
-                     id="email" 
+                     id="email"
+                     name="e-mail" 
                      type="email" 
                      placeholder="E-mail"
                      onChange={handleChange} />
                   <InputItem 
-                     id="phone" 
+                     id="phone"
+                     name="Telefone"  
                      type="text" 
                      placeholder="Telefone"
-                     onChange={handleChange} />
+                     onChange={handleChange}
+                     required />
                   <TextAreaItem 
                      id="message" 
+                     name="Mensagem" 
                      rows="3" 
                      placeholder="Deixe sua mensagem."
-                     onChange={handleChange} />
+                     onChange={handleChange}
+                     required />
                   <ButtonSubmit type="submit">Enviar</ButtonSubmit>
                </ContactForm>
             </FormContainer>
