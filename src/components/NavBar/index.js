@@ -23,7 +23,7 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
                </Action>
                <ListSubItem className={`${isShow ? "-isShow" : "" }`}>
                      <SubItem>
-                        <SubAction to="/">Reparos mecânicos</SubAction>
+                        <SubAction to="/ReparosMecanicos">Reparos mecânicos</SubAction>
                      </SubItem>
                      <SubItem>
                         <SubAction to="/">Retífica de polias de tração</SubAction>
