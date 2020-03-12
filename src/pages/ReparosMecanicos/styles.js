@@ -2,11 +2,13 @@ import styled from "styled-components";
 import media from "../../styles/breakPoints"
 import { FaArrowRight } from "react-icons/fa"
 
+import Section from "../../objects/Section"
 import Container from "../../objects/Container"
 import TitleSection from "../../objects/TitleSection"
 import TextSection from "../../objects/TextSection"
 
-// History Section
+
+// SERVICES LIST SECTION
 const ServicesListContainer = styled(Container)`
    max-width: 1440px;
    justify-content: space-between;
@@ -19,6 +21,7 @@ const ServicesListContainer = styled(Container)`
    `}
 
 `
+
 const Side = styled.div`
    width: 50%;
    height: auto;
@@ -66,7 +69,7 @@ const ServicesTitleSection = styled(TitleSection)`
 
 `
 
-const ServicesListSection = styled(TextSection)`
+const ServicesTextSection = styled(TextSection)`
 
    ${media.lessThan("xl")`
       margin-top: 15px;
@@ -92,12 +95,41 @@ const ListIcon = styled(FaArrowRight)`
    color: ${props => props.theme.color.firstDark};
 `
 
+// BEFORE-AFTER SECTION
+const BeforeAfterSection = styled(Section)`
+   max-width: 1440px;
+   background: ${props => props.theme.gradient.primary};
+`
+
+const BeforeAfterContainer = styled(Container)`
+   max-width: 1200px;
+   justify-content: space-between;
+   background-color: transparent;
+   color: ${props => props.theme.color.secondyClear};
+   padding: 70px 0;
+
+   ${media.lessThan("md")`
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   `}
+
+`
+
+const BeforeAfterTextSection = styled(ServicesTextSection)`
+   color: ${props => props.theme.color.secondyClear};
+`
+
+
 
 export {
    ServicesListContainer,
    Side,
    ServicesTitleSection,
-   ServicesListSection,
+   ServicesTextSection,
    ListServices,
    ListIcon,
+   BeforeAfterSection,
+   BeforeAfterContainer,
+   BeforeAfterTextSection,
  }

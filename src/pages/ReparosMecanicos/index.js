@@ -6,16 +6,20 @@ import {
    ServicesListContainer,
    Side,
    ServicesTitleSection,
-   ServicesListSection,
+   ServicesTextSection,
    ListServices,
-   ListIcon } from "./styles";
+   ListIcon,
+   BeforeAfterSection,
+   BeforeAfterContainer,
+   BeforeAfterTextSection } from "./styles";
 
 import Layout from "../../components/Layout";
 import SEO from "../../components/seo";
 import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
-import Section from "../../objects/Section"
+import Section from "../../objects/Section";
+import ImageComparison from "../../components/ImageComparison";
 import Footer from "../../components/Footer";
 
 const ReparosMecanicos = () => {
@@ -33,6 +37,20 @@ const ReparosMecanicos = () => {
             imgService: file(relativePath: { eq: "reparos-mecanicos.jpg" }) {
                childImageSharp {
                   fluid(maxWidth: 1440) {
+                     ...GatsbyImageSharpFluid_tracedSVG
+                  }
+               }
+            }
+            imgBefore: file(relativePath: { eq: "reparo-mecanico-antes.jpg" }) {
+               childImageSharp {
+                  fluid(maxWidth: 600, maxHeight: 300) {
+                     ...GatsbyImageSharpFluid_tracedSVG
+                  }
+               }
+            }
+            imgAfter: file(relativePath: { eq: "reparo-mecanico-depois.jpg" }) {
+               childImageSharp {
+                  fluid(maxWidth: 600, maxHeight: 300) {
                      ...GatsbyImageSharpFluid_tracedSVG
                   }
                }
@@ -60,7 +78,7 @@ const ReparosMecanicos = () => {
                      title="Serviços"
                      subtitle="de Reparos Mecânicos"
                   />
-                  <ServicesListSection>
+                  <ServicesTextSection>
                      <ListServices>
                         <li><ListIcon />
                            Troca de cabos e polias de tração. Instalação de novas máquinas;
@@ -81,7 +99,7 @@ const ReparosMecanicos = () => {
                            Elevadores hidráulicos: reparo dos pistões e geral;
                         </li>
                      </ListServices>
-                  </ServicesListSection>
+                  </ServicesTextSection>
                </Side>
                <Side>
                   <Img 
@@ -90,6 +108,26 @@ const ReparosMecanicos = () => {
                   />
                </Side>
             </ServicesListContainer>
+         </Section>
+         <Section>
+            <BeforeAfterSection>
+               <BeforeAfterContainer>
+                  <Side>
+                     <ImageComparison />
+                  </Side>
+                  <Side className="-content">
+                     <ServicesTitleSection
+                        title="Antes e Depois"
+                        subtitle="Exemplo de serviço"
+                        className="-inverse"
+                     />
+                     <BeforeAfterTextSection >
+                        <p>Exemplo do antes e depois em serviço de reparo no motor de tração realizado pela Shiro Usinagens.</p>
+                        <p>Foi trocado lorem ipsum lorem ipsum e ajustado lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>
+                     </BeforeAfterTextSection>
+                  </Side>
+               </BeforeAfterContainer>
+            </BeforeAfterSection>
          </Section>
          <Footer />
       </Layout>
