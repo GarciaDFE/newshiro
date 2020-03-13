@@ -6,7 +6,9 @@ import Section from "../../objects/Section"
 import Container from "../../objects/Container"
 import TitleSection from "../../objects/TitleSection"
 import TextSection from "../../objects/TextSection"
+import ImageComparison from "../../components/ImageComparison";
 
+import { measures } from "./content"
 
 // SERVICES LIST SECTION
 const ServicesListContainer = styled(Container)`
@@ -120,7 +122,28 @@ const BeforeAfterTextSection = styled(ServicesTextSection)`
    color: ${props => props.theme.color.secondyClear};
 `
 
+const ComparisonServiceMechanical = styled(ImageComparison)`
+   /* width: ${measures.width}px;
+   height: ${measures.height}px;
+ */
+   ${media.lessThan("lg")`
+      width: ${measures.width * 0.6666}px;
+      height: ${measures.height * 0.6666}px;
+   `}
+   ${media.lessThan("md")`
+      width: ${measures.width}px;
+      height: ${measures.height}px;
+   `}
+   ${media.lessThan("sm")`
+      width: ${measures.width * 0.6666}px;
+      height: ${measures.height * 0.6666}px;
+   `}
+   ${media.lessThan("xs")`
+      width: ${measures.width * 0.5}px;
+      height: ${measures.height * 0.5}px;
+   `}
 
+`
 
 export {
    ServicesListContainer,
@@ -132,4 +155,5 @@ export {
    BeforeAfterSection,
    BeforeAfterContainer,
    BeforeAfterTextSection,
+   ComparisonServiceMechanical
  }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image";
 
 import { 
@@ -9,42 +8,33 @@ import {
    Scroller,
    IconScroller } from "./styles"
 
-const ImageComparison = () => {
-
-   const images = useStaticQuery (
-      graphql`
-         query {
-            imgBefore: file(relativePath: { eq: "reparo-mecanico-antes.jpg" }) {
-               childImageSharp {
-                  fixed(width: 600, height: 300) {
-                     ...GatsbyImageSharpFixed_tracedSVG
-                  }
-               }
-            }
-            imgAfter: file(relativePath: { eq: "reparo-mecanico-depois.jpg" }) {
-               childImageSharp {
-                  fixed(width: 600, height: 300) {
-                     ...GatsbyImageSharpFixed_tracedSVG
-                  }
-               }
-            }
-         }
-      `
-   )
+const ImageComparison = ({ 
+   className,
+   imgAfter, 
+   altAfter, 
+   imgBefore, 
+   altBefore, 
+   labelAfter, 
+   labelBefore,
+   imgHeight,
+   imgWidth }) => {
 
    const [ active, setActive ] = useState(false);
    const [ recWrapper, setRecWrapper] = useState();
    const [ widthWrapper, setWidthWrapper] = useState();
-   const [ imgBeforeWidth, setImgBeforeWidth ] = useState("300px");
-   const [ leftScroller, setLeftScroller ] = useState("300px");
+   const [ imgBeforeWidth, setImgBeforeWidth ] = useState();
+   const [ leftScroller, setLeftScroller ] = useState();
    const [ classscroller, setClassscroller ] = useState("");
-
+   
    // WRAPPER EVENT
    const handleWonLoad = (event) => {
       setRecWrapper(event.target.getBoundingClientRect().left);
+      setImgBeforeWidth((imgWidth * 0.5) + "px");
       setWidthWrapper(event.target.getBoundingClientRect().width);
+      setLeftScroller((imgWidth * 0.5) + "px");
    }
-
+   
+   
    // SCROLLER EVENTS
    const handleSMouseDown = () => {
       setActive(true);
@@ -76,9 +66,8 @@ const ImageComparison = () => {
       setActive(false);
       setClassscroller("");
       document.body.removeEventListener('mousemove', handleBodyMouseMove);
-
    });
-
+   
    // BODY FUNCTION
    const handleBodyMouseMove = event => {
       let posX = event.pageX;
@@ -91,23 +80,25 @@ const ImageComparison = () => {
       let transform = Math.max(0, (Math.min(posX, widthWrapper )));
       setImgBeforeWidth(transform + "px");
       setLeftScroller(transform + "px");
-      
    }
 
    return (
       <WrapComparison 
-         onLoad={handleWonLoad}>          
-         <ImageAfter>
-            <Img
-               fixed={images.imgAfter.childImageSharp.fixed}
-               alt="imagem depois"
-               draggable="false"/>
+         className={className}
+         onLoad={handleWonLoad}
+         onChange={handleWonLoad}> 
+         <ImageAfter 
+            className={className} 
+            labelAfter={labelAfter} 
+            imgHeight={imgHeight}>
+            <Img fixed={imgAfter} alt={altAfter} draggable="false" />
          </ImageAfter>
-         <ImageBefore imgWidth={imgBeforeWidth}>
-            <Img 
-               fixed={images.imgBefore.childImageSharp.fixed}
-               alt="imagem antes"
-               draggable="false"/>
+         <ImageBefore 
+            className={className}
+            labelBefore={labelBefore} 
+            imgHeight={imgHeight}
+            imgBeforeWidth={imgBeforeWidth}>
+            <Img fixed={imgBefore} alt={altBefore} draggable="false" />
          </ImageBefore>
          <Scroller 
             active={active}

@@ -11,7 +11,10 @@ import {
    ListIcon,
    BeforeAfterSection,
    BeforeAfterContainer,
-   BeforeAfterTextSection } from "./styles";
+   BeforeAfterTextSection,
+   ComparisonServiceMechanical } from "./styles";
+
+import { labels, measures } from "./content"
 
 import Layout from "../../components/Layout";
 import SEO from "../../components/seo";
@@ -19,7 +22,6 @@ import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import Section from "../../objects/Section";
-import ImageComparison from "../../components/ImageComparison";
 import Footer from "../../components/Footer";
 
 const ReparosMecanicos = () => {
@@ -41,17 +43,17 @@ const ReparosMecanicos = () => {
                   }
                }
             }
-            imgBefore: file(relativePath: { eq: "reparo-mecanico-antes.jpg" }) {
+            imgAfter: file(relativePath: { eq: "reparo-mecanico-depois.jpg" }) {
                childImageSharp {
-                  fluid(maxWidth: 600, maxHeight: 300) {
-                     ...GatsbyImageSharpFluid_tracedSVG
+                  fixed(width: 600) {
+                     ...GatsbyImageSharpFixed_tracedSVG
                   }
                }
             }
-            imgAfter: file(relativePath: { eq: "reparo-mecanico-depois.jpg" }) {
+            imgBefore: file(relativePath: { eq: "reparo-mecanico-antes.jpg" }) {
                childImageSharp {
-                  fluid(maxWidth: 600, maxHeight: 300) {
-                     ...GatsbyImageSharpFluid_tracedSVG
+                  fixed(width: 600) {
+                     ...GatsbyImageSharpFixed_tracedSVG
                   }
                }
             }
@@ -59,6 +61,7 @@ const ReparosMecanicos = () => {
       `
    )
  
+
    return (
       <Layout>
          <SEO title="Reparos Mecânicos"/>
@@ -113,7 +116,17 @@ const ReparosMecanicos = () => {
             <BeforeAfterSection>
                <BeforeAfterContainer>
                   <Side>
-                     <ImageComparison />
+                     <ComparisonServiceMechanical 
+                        imgAfter={images.imgAfter.childImageSharp.fixed}
+                        altAfter="imagem de depois"
+                        labelAfter={labels.after}
+                        imgBefore={images.imgBefore.childImageSharp.fixed}
+                        altBefore="imagem de antes"
+                        labelBefore={labels.before}
+                        imgHeight={measures.height}
+                        widthWrapper={measures.width}
+                        imgWidth={measures.width}
+                     />
                   </Side>
                   <Side className="-content">
                      <ServicesTitleSection

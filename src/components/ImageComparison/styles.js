@@ -3,23 +3,21 @@ import { FaArrowsAltH } from "react-icons/fa";
 
 const WrapComparison = styled.div`
    position: relative;
-   width: 600px;
-   height: 300px;
-   overflow:hidden;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   margin: 0 auto;
 `
 
 const ImageBefore = styled.div`
-   width: ${props => props.imgWidth};
-   height: 100%;
-   position: absolute;
-   top: 0;
-   left: 0;
+   width: ${props => props.imgBeforeWidth};
+   height: ${props => props.imgHeight};
    pointer-events: none;
    overflow: hidden;
    user-select: none;
-   z-index: 10;
+   z-index: 40;
    &:before {
-      content: "antes";
+      content: "${props => props.labelBefore}";
       position: absolute;
       color: black;
       font-size: 18px;
@@ -34,8 +32,8 @@ const ImageBefore = styled.div`
 `
 
 const ImageAfter = styled.div`
-   width: 100%;
-   height: 100%;
+   width: ${props => props.imgWidth};
+   height: ${props => props.imgHeight};
    position: absolute;
    top: 0;
    left: 0;
@@ -43,8 +41,8 @@ const ImageAfter = styled.div`
    overflow: hidden;
    pointer-events: none;
    user-select: none;
-   &:before {
-      content: "depois";
+   &:after {
+      content: "${props => props.labelAfter}";
       position: absolute;
       color: black;
       font-size: 18px;
@@ -54,7 +52,6 @@ const ImageAfter = styled.div`
       padding: 5px 10px;
       border: 1px solid gray;
       background-color: rgba(255,255,255,0.7);
-      z-index: 2;
    }
 `
 
@@ -70,8 +67,7 @@ const Scroller = styled.div`
    pointer-events: auto;
    border: 5px solid ${props => props.theme.color.secondyClear};
    cursor: pointer;
-   z-index: 30;
-
+   z-index: 50;
    &:hover {
       opacity: 1;
    }
@@ -97,6 +93,7 @@ const Scroller = styled.div`
       pointer-events: none;
       opacity: 1;
    }
+
 `
 
 const IconScroller = styled(FaArrowsAltH)`
