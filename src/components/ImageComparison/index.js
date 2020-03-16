@@ -16,22 +16,27 @@ const ImageComparison = ({
    altBefore, 
    labelAfter, 
    labelBefore,
-   imgHeight,
-   imgWidth }) => {
+   widthComponent,
+   heightComponent,
+   small }) => {
 
    const [ active, setActive ] = useState(false);
    const [ recWrapper, setRecWrapper] = useState();
-   const [ widthWrapper, setWidthWrapper] = useState();
-   const [ imgBeforeWidth, setImgBeforeWidth ] = useState();
-   const [ leftScroller, setLeftScroller ] = useState();
+   const [ widthWrapper, setWidthWrapper] = useState(widthComponent);
+   const [ heightWrapper, setHeightWrapper ] = useState(heightComponent);
+   const [ imgBeforeWidth, setImgBeforeWidth ] = useState(widthComponent * 0.5);
+   const [ leftScroller, setLeftScroller ] = useState(widthComponent * 0.5);
    const [ classscroller, setClassscroller ] = useState("");
+   const [ statusSmall, setStatusSmall ] = useState(small);
    
    // WRAPPER EVENT
    const handleWonLoad = (event) => {
       setRecWrapper(event.target.getBoundingClientRect().left);
-      setImgBeforeWidth((imgWidth * 0.5) + "px");
-      setWidthWrapper(event.target.getBoundingClientRect().width);
-      setLeftScroller((imgWidth * 0.5) + "px");
+      setImgBeforeWidth(widthComponent * 0.5);
+      setWidthWrapper(widthComponent);
+      setHeightWrapper(heightComponent);
+      setLeftScroller(widthComponent * 0.5)
+      setStatusSmall(small);
    }
    
    
@@ -78,30 +83,31 @@ const ImageComparison = ({
    // SCROLLER & IMAGE FUNCTIONS
    const scrollIt = (posX) => {
       let transform = Math.max(0, (Math.min(posX, widthWrapper )));
-      setImgBeforeWidth(transform + "px");
-      setLeftScroller(transform + "px");
+      setImgBeforeWidth(transform);
+      setLeftScroller(transform);
    }
 
    return (
       <WrapComparison 
          className={className}
-         onLoad={handleWonLoad}
-         onChange={handleWonLoad}> 
+         onLoad={handleWonLoad}> 
          <ImageAfter 
-            className={className} 
-            labelAfter={labelAfter} 
-            imgHeight={imgHeight}>
+            className={className}
+            widthComponent={widthWrapper}
+            heightComponent={heightWrapper}   
+            labelAfter={labelAfter}>
             <Img fixed={imgAfter} alt={altAfter} draggable="false" />
          </ImageAfter>
          <ImageBefore 
             className={className}
-            labelBefore={labelBefore} 
-            imgHeight={imgHeight}
+            heightComponent={heightWrapper}   
+            labelBefore={labelBefore}
             imgBeforeWidth={imgBeforeWidth}>
             <Img fixed={imgBefore} alt={altBefore} draggable="false" />
          </ImageBefore>
          <Scroller 
             active={active}
+            statusSmall={statusSmall}
             className={classscroller}
             onMouseDown={handleSMouseDown}
             onPointerDown={handleSMouseDown}

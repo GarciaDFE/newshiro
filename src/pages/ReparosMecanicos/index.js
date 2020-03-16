@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useStatus } from "react";
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image"
 
@@ -12,7 +12,7 @@ import {
    BeforeAfterSection,
    BeforeAfterContainer,
    BeforeAfterTextSection,
-   ComparisonServiceMechanical } from "./styles";
+   SideComparison } from "./styles";
 
 import { labels, measures } from "./content"
 
@@ -22,6 +22,7 @@ import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import Section from "../../objects/Section";
+import ComparisonServiceMechanical from "../../components/ImageComparison"
 import Footer from "../../components/Footer";
 
 const ReparosMecanicos = () => {
@@ -43,16 +44,30 @@ const ReparosMecanicos = () => {
                   }
                }
             }
-            imgAfter: file(relativePath: { eq: "reparo-mecanico-depois.jpg" }) {
+            imgAfterLarge: file(relativePath: { eq: "comparison/reparo-mecanico-depois-large.jpg" }) {
                childImageSharp {
                   fixed(width: 600) {
                      ...GatsbyImageSharpFixed_tracedSVG
                   }
                }
             }
-            imgBefore: file(relativePath: { eq: "reparo-mecanico-antes.jpg" }) {
+            imgBeforeLarge: file(relativePath: { eq: "comparison/reparo-mecanico-antes-large.jpg" }) {
                childImageSharp {
                   fixed(width: 600) {
+                     ...GatsbyImageSharpFixed_tracedSVG
+                  }
+               }
+            }
+            imgAfterSmall: file(relativePath: { eq: "comparison/reparo-mecanico-depois-small.jpg" }) {
+               childImageSharp {
+                  fixed(width: 300) {
+                     ...GatsbyImageSharpFixed_tracedSVG
+                  }
+               }
+            }
+            imgBeforeSmall: file(relativePath: { eq: "comparison/reparo-mecanico-antes-small.jpg" }) {
+               childImageSharp {
+                  fixed(width: 300) {
                      ...GatsbyImageSharpFixed_tracedSVG
                   }
                }
@@ -61,8 +76,9 @@ const ReparosMecanicos = () => {
       `
    )
  
+   const smallImage = false;
 
-   return (
+    return (
       <Layout>
          <SEO title="Reparos Mecânicos"/>
          <TopBar />
@@ -115,19 +131,23 @@ const ReparosMecanicos = () => {
          <Section>
             <BeforeAfterSection>
                <BeforeAfterContainer>
-                  <Side>
-                     <ComparisonServiceMechanical 
-                        imgAfter={images.imgAfter.childImageSharp.fixed}
+                  <SideComparison>
+                     <ComparisonServiceMechanical
+                        className=""
+                        // imgAfter={images.imgAfterSmall.childImageSharp.fixed}
+                        imgAfter={smallImage ? images.imgAfterSmall.childImageSharp.fixed : images.imgAfterLarge.childImageSharp.fixed}
                         altAfter="imagem de depois"
                         labelAfter={labels.after}
-                        imgBefore={images.imgBefore.childImageSharp.fixed}
+                        // imgBefore={images.imgBeforeSmall.childImageSharp.fixed}
+                        imgBefore={smallImage ? images.imgBeforeSmall.childImageSharp.fixed : images.imgBeforeLarge.childImageSharp.fixed}
                         altBefore="imagem de antes"
                         labelBefore={labels.before}
-                        imgHeight={measures.height}
-                        widthWrapper={measures.width}
-                        imgWidth={measures.width}
+                        widthComponent={measures.width}
+                        heightComponent={measures.height}
+                        proporcaoSmall={measures.proporcaoSmall}
+                        small={smallImage}
                      />
-                  </Side>
+                  </SideComparison>
                   <Side className="-content">
                      <ServicesTitleSection
                         title="Antes e Depois"
