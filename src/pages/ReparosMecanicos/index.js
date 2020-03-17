@@ -75,9 +75,11 @@ const ReparosMecanicos = () => {
       `
    )
 
+
    let smallImage = false
+   let getWidthWindow = window.innerWidth;
+
    const statusImage = () => {
-      const getWidthWindow = window.innerWidth;
       if (getWidthWindow < 768) {
          return smallImage = true
       } else if (getWidthWindow >= 900 && getWidthWindow <= 1200) {
