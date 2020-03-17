@@ -64,7 +64,7 @@ const ImageComparison = ({ className,
    // }
 
 
-   // SCROLLER EVENTS
+   // SCROLLER EVENTS POINTER
    const handleSMouseDown = () => {
       setActive(true);
       setClassscroller("-scrolling");
@@ -141,11 +141,14 @@ const ImageComparison = ({ className,
             active={active}
             className={classscroller}
             onMouseDown={handleSMouseDown}
+            onTouchStart={handleSMouseDown}
             onPointerDown={handleSMouseDown}
             leftScroller={leftScroller}
             onMouseUp={handleSMouseUp}
             onPointerUp={handleSMouseUp}
-            onPointerLeave={handleSMouseLeave}>
+            onTouchEnd={handleSMouseUp}
+            onPointerLeave={handleSMouseLeave}
+            onTouchCancel={handleSMouseLeave}>
             <IconScroller />
          </Scroller>
       </WrapComparison>
