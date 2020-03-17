@@ -77,7 +77,7 @@ const ReparosMecanicos = () => {
 
 
    let smallImage = false
-   let getWidthWindow = window.innerWidth;
+   let getWidthWindow = screen.width
 
    const statusImage = () => {
       if (getWidthWindow < 768) {
