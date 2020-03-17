@@ -71,8 +71,6 @@ const ImageComparison = ({ className,
       if (typeof document !== `undefined`) {
          document.body.addEventListener('mousemove', handleBodyMouseMove);
       }
-   
-      // document.body.addEventListener('mousemove', handleBodyMouseMove);
    }
 
    const handleSMouseUp = () => {
@@ -88,18 +86,22 @@ const ImageComparison = ({ className,
    }
 
    // BODY EVENTS
-   document.body.addEventListener('mouseup', () => {
-      setActive(false);
-      setClassscroller("");
-      document.body.removeEventListener('mousemove', handleBodyMouseMove);
+   if (typeof document !== `undefined`) {
+      document.body.addEventListener('mouseup', () => {
+         setActive(false);
+         setClassscroller("");
+         document.body.removeEventListener('mousemove', handleBodyMouseMove);
+      });
+   }
 
-   });
 
-   document.body.addEventListener('mouseleave', () => {
-      setActive(false);
-      setClassscroller("");
-      document.body.removeEventListener('mousemove', handleBodyMouseMove);
-   });
+   if (typeof document !== `undefined`) {
+      document.body.addEventListener('mouseleave', () => {
+         setActive(false);
+         setClassscroller("");
+         document.body.removeEventListener('mousemove', handleBodyMouseMove);
+      });
+   }
    
    // BODY FUNCTION
    const handleBodyMouseMove = event => {
