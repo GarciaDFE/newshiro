@@ -36,40 +36,13 @@ const ImageComparison = ({ className,
          setLeftScroller(widthComponent * 0.5)
    }
    
-   
-   // let defaultWidth
-   // let smallImage = false
-
-
-   // const useWindowSize = () => {
-   //    const [dimensions, setDimensions] = useState(defaultWidth)
-
-   //    useEffect(() => {
-   //       const handler = () => setDimensions(window.innerWidth)
-   //       window.addEventListener(`resize`, handler)
-   //       return () => window.removeEventListener(`resize`, handler)
-   //    }, [])
-
-   //    return dimensions
-   // }
-
-   // let getWidthWindow = useWindowSize()
-
-   // if (getWidthWindow < 768) {
-   //    smallImage = true
-   // } else if (getWidthWindow >= 900 && getWidthWindow <= 1200) {
-   //    smallImage = true
-   // } else {
-   //    smallImage = false
-   // }
-
-
-   // SCROLLER EVENTS POINTER
+   // SCROLLER EVENTS POINTER AND TOUCH
    const handleSMouseDown = () => {
       setActive(true);
       setClassscroller("-scrolling");
       if (typeof document !== `undefined`) {
          document.body.addEventListener('mousemove', handleBodyMouseMove);
+         document.body.addEventListener('touchstart', handleBodyMouseMove);
       }
    }
 
@@ -77,12 +50,14 @@ const ImageComparison = ({ className,
       setActive(false);
       setClassscroller("");
       document.body.removeEventListener('mousemove', handleBodyMouseMove);
+      document.body.removeEventListener('touchstart', handleBodyMouseMove);
    }
 
    const handleSMouseLeave = () => {
       setActive(false);
       setClassscroller("");
       document.body.removeEventListener('mousemove', handleBodyMouseMove);
+      document.body.removeEventListener('touchstart', handleBodyMouseMove);
    }
 
    // BODY EVENTS
@@ -92,6 +67,11 @@ const ImageComparison = ({ className,
          setClassscroller("");
          document.body.removeEventListener('mousemove', handleBodyMouseMove);
       });
+      document.body.addEventListener('touchend', () => {
+         setActive(false);
+         setClassscroller("");
+         document.body.removeEventListener('touchstart', handleBodyMouseMove);
+      });
    }
 
 
@@ -100,6 +80,12 @@ const ImageComparison = ({ className,
          setActive(false);
          setClassscroller("");
          document.body.removeEventListener('mousemove', handleBodyMouseMove);
+      });
+      document.body.addEventListener('touchleave', () => {
+         setActive(false);
+         setClassscroller("");
+         document.body.removeEventListener('mousemove', handleBodyMouseMove);
+         document.body.removeEventListener('touchstart', handleBodyMouseMove);
       });
    }
    

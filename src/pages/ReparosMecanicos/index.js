@@ -10,6 +10,7 @@ import { ServicesListContainer,
          ListIcon,
          BeforeAfterSection,
          BeforeAfterContainer,
+         BeforeAfterTitleSection,
          BeforeAfterTextSection,
          SideComparison } from "./styles";
 
@@ -173,7 +174,7 @@ const ReparosMecanicos = () => {
                      />
                   </SideComparison>
                   <Side className="-content">
-                     <ServicesTitleSection
+                     <BeforeAfterTitleSection
                         title="Antes e Depois"
                         subtitle="Exemplo de serviço"
                         className="-inverse"

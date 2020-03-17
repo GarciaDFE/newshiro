@@ -121,7 +121,14 @@ const SideComparison = styled(Side)`
    align-items: center;
 `
 
+const BeforeAfterTitleSection = styled(ServicesTitleSection)`
+   pointer-events: none;
+   user-select: none;
+`
+
 const BeforeAfterTextSection = styled(ServicesTextSection)`
+   pointer-events: none;
+   user-select: none;
    color: ${props => props.theme.color.secondyClear};
 `
 
@@ -134,6 +141,7 @@ export {
    ListIcon,
    BeforeAfterSection,
    BeforeAfterContainer,
+   BeforeAfterTitleSection,
    BeforeAfterTextSection,
    SideComparison
  }

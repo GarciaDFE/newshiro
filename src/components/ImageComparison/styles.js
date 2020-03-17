@@ -17,8 +17,8 @@ const ImageBefore = styled.div`
    position: absolute;
    top: 0;
    left: 0;
-   pointer-events: none;
    overflow: hidden;
+   pointer-events: none;
    user-select: none;
    &:before{
       content: "${props => props.labelBefore}";
