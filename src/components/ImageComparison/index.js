@@ -37,11 +37,42 @@ const ImageComparison = ({ className,
    }
    
    
+   // let defaultWidth
+   // let smallImage = false
+
+
+   // const useWindowSize = () => {
+   //    const [dimensions, setDimensions] = useState(defaultWidth)
+
+   //    useEffect(() => {
+   //       const handler = () => setDimensions(window.innerWidth)
+   //       window.addEventListener(`resize`, handler)
+   //       return () => window.removeEventListener(`resize`, handler)
+   //    }, [])
+
+   //    return dimensions
+   // }
+
+   // let getWidthWindow = useWindowSize()
+
+   // if (getWidthWindow < 768) {
+   //    smallImage = true
+   // } else if (getWidthWindow >= 900 && getWidthWindow <= 1200) {
+   //    smallImage = true
+   // } else {
+   //    smallImage = false
+   // }
+
+
    // SCROLLER EVENTS
    const handleSMouseDown = () => {
       setActive(true);
       setClassscroller("-scrolling");
-      document.body.addEventListener('mousemove', handleBodyMouseMove);
+      if (typeof document !== `undefined`) {
+         document.body.addEventListener('mousemove', handleBodyMouseMove);
+      }
+   
+      // document.body.addEventListener('mousemove', handleBodyMouseMove);
    }
 
    const handleSMouseUp = () => {
