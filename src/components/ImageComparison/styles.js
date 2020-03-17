@@ -23,43 +23,28 @@ const ImageBefore = styled.div`
    &:before{
       content: "${props => props.labelBefore}";
       position: absolute;
-      color: black;
-      font-size: 18px;
-      top: 20px;
-      left: 20px;
+      color: ${props => props.theme.color.secondyDark};
+      font-size: ${props => props.theme.size.verySmall};
+      top: 10px;
+      left: 10px;
       text-transform: uppercase;
       padding: 5px 10px;
-      border: 1px solid gray;
-      background-color: rgba(255,255,255,0.7);
+      border-radius: 3px;
+      background-color: rgba(255,255,255,0.9);
       z-index: 1;
    }
 
    ${media.lessThan("lg")`
       width: ${props => props.imgBeforeWidth * 0.5}px;
       height: ${props => props.heightComponent * 0.5}px;
-      &:before {
-         font-size: 14px;
-         top: 10px;
-         left: 10px;
-      }
    `}
    ${media.lessThan("md")`
       width: ${props => props.imgBeforeWidth}px;
       height: ${props => props.heightComponent}px;
-      &:before {
-         font-size: 18px;
-         top: 20px;
-         left: 20px;
-      }
    `}
    ${media.lessThan("sm")`
       width: ${props => props.imgBeforeWidth * 0.5}px;
       height: ${props => props.heightComponent * 0.5}px;
-      &:before {
-         font-size: 14px;
-         top: 10px;
-         left: 10px;
-      }
    `}
 
 `
@@ -74,47 +59,29 @@ const ImageAfter = styled.div`
    &:after {
       content: "${props => props.labelAfter}";
       position: absolute;
-      color: black;
-      font-size: 18px;
-      top: 20px;
-      right: 20px;
+      color: ${props => props.theme.color.secondyDark};
+      font-size: ${props => props.theme.size.verySmall};
+      top: 10px;
+      right: 10px;
       text-transform: uppercase;
       padding: 5px 10px;
-      border: 1px solid gray;
-      background-color: rgba(255,255,255,0.7);
+      border-radius: 3px;
+      background-color: rgba(255,255,255,0.9);
    }
 
    ${media.lessThan("lg")`
       width: ${props => props.widthComponent * 0.5}px;
       height: ${props => props.heightComponent * 0.5}px;
-      &:after {
-         font-size: 14px;
-         top: 10px;
-         right: 10px;
-      }
-   }
-
    `}
    ${media.lessThan("md")`
       width: ${props => props.widthComponent}px;
       height: ${props => props.heightComponent}px;
-      &:after {
-         font-size: 18px;
-         top: 20px;
-         right: 20px;
-      }
 
    `}
    ${media.lessThan("sm")`
       width: ${props => props.widthComponent * 0.5}px;
       height: ${props => props.heightComponent * 0.5}px;
-      &:after {
-         font-size: 14px;
-         top: 10px;
-         right: 10px;
-      }
    `}
-
 
 `
 
@@ -128,7 +95,7 @@ const Scroller = styled.div`
    border-radius: 50%;
    opacity: 0.7;
    pointer-events: auto;
-   border: 5px solid ${props => props.theme.color.secondyClear};
+   border: 3px solid ${props => props.theme.color.secondyClear};
    cursor: pointer;
    z-index: 60;
    &:hover {
@@ -138,11 +105,11 @@ const Scroller = styled.div`
    &:after {
       content:" ";
       display: block;
-      width: 7px;
+      width: 4px;
       height: 9999px;
       position: absolute;
       left: 50%;
-      margin-left: -3.5px;
+      margin-left: -1.2px;
       transition: 0.1s;
       background: ${props => props.theme.color.secondyClear};
    }
@@ -156,25 +123,6 @@ const Scroller = styled.div`
       pointer-events: none;
       opacity: 1;
    }
-
-   ${media.lessThan("lg")`
-      left: ${props => props.leftScroller * 0.5}px;
-   `}
-   ${media.lessThan("md")`
-      left: ${props => props.leftScroller}px;
-   `}
-   ${media.lessThan("sm")`
-      left: ${props => props.leftScroller * 0.5}px;
-      border: 2px solid ${props => props.theme.color.secondyClear};
-      &:before,
-      &:after {
-         width: 2px;
-         margin-left: -1.5px;
-      }
-
-   `}
- 
-
 `
 
 const IconScroller = styled(FaArrowsAltH)`

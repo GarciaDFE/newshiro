@@ -1,18 +1,17 @@
-import React, { useStatus } from "react";
+import React from "react";
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image"
 
-import { 
-   ServicesListContainer,
-   Side,
-   ServicesTitleSection,
-   ServicesTextSection,
-   ListServices,
-   ListIcon,
-   BeforeAfterSection,
-   BeforeAfterContainer,
-   BeforeAfterTextSection,
-   SideComparison } from "./styles";
+import { ServicesListContainer,
+         Side,
+         ServicesTitleSection,
+         ServicesTextSection,
+         ListServices,
+         ListIcon,
+         BeforeAfterSection,
+         BeforeAfterContainer,
+         BeforeAfterTextSection,
+         SideComparison } from "./styles";
 
 import { labels, measures } from "./content"
 
@@ -75,10 +74,21 @@ const ReparosMecanicos = () => {
          }
       `
    )
- 
-   const smallImage = false;
 
-    return (
+   let smallImage = false
+   const statusImage = () => {
+      const getWidthWindow = window.innerWidth;
+      if (getWidthWindow < 768) {
+         return smallImage = true
+      } else if (getWidthWindow >= 900 && getWidthWindow <= 1200) {
+         return smallImage = true
+      } else {
+         return smallImage = false
+      }
+   }
+   statusImage();
+
+   return (
       <Layout>
          <SEO title="Reparos Mecânicos"/>
          <TopBar />
@@ -134,17 +144,14 @@ const ReparosMecanicos = () => {
                   <SideComparison>
                      <ComparisonServiceMechanical
                         className=""
-                        // imgAfter={images.imgAfterSmall.childImageSharp.fixed}
                         imgAfter={smallImage ? images.imgAfterSmall.childImageSharp.fixed : images.imgAfterLarge.childImageSharp.fixed}
                         altAfter="imagem de depois"
                         labelAfter={labels.after}
-                        // imgBefore={images.imgBeforeSmall.childImageSharp.fixed}
                         imgBefore={smallImage ? images.imgBeforeSmall.childImageSharp.fixed : images.imgBeforeLarge.childImageSharp.fixed}
                         altBefore="imagem de antes"
                         labelBefore={labels.before}
                         widthComponent={measures.width}
                         heightComponent={measures.height}
-                        proporcaoSmall={measures.proporcaoSmall}
                         small={smallImage}
                      />
                   </SideComparison>

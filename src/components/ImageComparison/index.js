@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 import Img from "gatsby-image";
 
-import { 
-   WrapComparison,
-   ImageBefore,
-   ImageAfter,
-   Scroller,
-   IconScroller } from "./styles"
+import { WrapComparison,
+         ImageBefore,
+         ImageAfter,
+         Scroller,
+         IconScroller } from "./styles"
 
-const ImageComparison = ({ 
-   className,
-   imgAfter, 
-   altAfter, 
-   imgBefore, 
-   altBefore, 
-   labelAfter, 
-   labelBefore,
-   widthComponent,
-   heightComponent,
-   small }) => {
+const ImageComparison = ({ className,
+                           imgAfter, 
+                           altAfter, 
+                           imgBefore, 
+                           altBefore, 
+                           labelAfter, 
+                           labelBefore,
+                           widthComponent,
+                           heightComponent, small }) => {
 
    const [ active, setActive ] = useState(false);
    const [ recWrapper, setRecWrapper] = useState();
@@ -27,7 +24,6 @@ const ImageComparison = ({
    const [ imgBeforeWidth, setImgBeforeWidth ] = useState(widthComponent * 0.5);
    const [ leftScroller, setLeftScroller ] = useState(widthComponent * 0.5);
    const [ classscroller, setClassscroller ] = useState("");
-   const [ statusSmall, setStatusSmall ] = useState(small);
    
    // WRAPPER EVENT
    const handleWonLoad = (event) => {
@@ -35,8 +31,9 @@ const ImageComparison = ({
       setImgBeforeWidth(widthComponent * 0.5);
       setWidthWrapper(widthComponent);
       setHeightWrapper(heightComponent);
-      setLeftScroller(widthComponent * 0.5)
-      setStatusSmall(small);
+      small ? 
+         setLeftScroller(widthComponent * 0.25) : 
+         setLeftScroller(widthComponent * 0.5)
    }
    
    
@@ -83,8 +80,10 @@ const ImageComparison = ({
    // SCROLLER & IMAGE FUNCTIONS
    const scrollIt = (posX) => {
       let transform = Math.max(0, (Math.min(posX, widthWrapper )));
-      setImgBeforeWidth(transform);
       setLeftScroller(transform);
+      small ? 
+         setImgBeforeWidth(transform * 2) : 
+         setImgBeforeWidth(transform)
    }
 
    return (
@@ -107,7 +106,6 @@ const ImageComparison = ({
          </ImageBefore>
          <Scroller 
             active={active}
-            statusSmall={statusSmall}
             className={classscroller}
             onMouseDown={handleSMouseDown}
             onPointerDown={handleSMouseDown}
