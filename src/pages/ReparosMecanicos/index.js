@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image"
 
@@ -76,19 +76,34 @@ const ReparosMecanicos = () => {
    )
 
 
+   let defaultWidth
    let smallImage = false
-   let getWidthWindow = screen.width
 
-   const statusImage = () => {
-      if (getWidthWindow < 768) {
-         return smallImage = true
-      } else if (getWidthWindow >= 900 && getWidthWindow <= 1200) {
-         return smallImage = true
-      } else {
-         return smallImage = false
-      }
+   if (typeof window !== `undefined`) {
+      defaultWidth = window.innerWidth
    }
-   statusImage();
+
+   const useWindowSize = () => {
+      const [dimensions, setDimensions] = useState(defaultWidth)
+
+      useEffect(() => {
+         const handler = () => setDimensions(window.innerWidth)
+         window.addEventListener(`resize`, handler)
+         return () => window.removeEventListener(`resize`, handler)
+      }, [])
+
+      return dimensions
+   }
+
+   let getWidthWindow = useWindowSize()
+
+   if (getWidthWindow < 768) {
+      smallImage = true
+   } else if (getWidthWindow >= 900 && getWidthWindow <= 1200) {
+      smallImage = true
+   } else {
+      smallImage = false
+   }
 
    return (
       <Layout>

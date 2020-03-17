@@ -112,7 +112,7 @@ const ImageComparison = ({ className,
             leftScroller={leftScroller}
             onMouseUp={handleSMouseUp}
             onPointerUp={handleSMouseUp}
-            onPoniterLeave={handleSMouseLeave}>
+            onPointerLeave={handleSMouseLeave}>
             <IconScroller />
          </Scroller>
       </WrapComparison>
