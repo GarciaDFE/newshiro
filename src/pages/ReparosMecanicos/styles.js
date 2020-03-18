@@ -44,17 +44,17 @@ const Side = styled.div`
       order: 2;
       &.-content {
          order: 1;
-         padding: 0 70px 70px;
+         padding: 70px;
       }
    `}
    ${media.lessThan("sm")`
       &.-content {
-         padding: 0 25px 70px;
+         padding: 70px 25px;
       }
    `}
    ${media.lessThan("xs")`
       &.-content {
-         padding: 0 10px 50px;
+         padding: 50px 10px;
       }
    `}
 
@@ -111,6 +111,7 @@ const BeforeAfterContainer = styled(Container)`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 0 0 70px;
    `}
 
 `

@@ -41,20 +41,20 @@ const ImageComparison = ({ className,
       setActive(true);
       setClassscroller("-scrolling");
       if (typeof document !== `undefined`) {
-         document.body.addEventListener('mousemove', handleBodyMouseMove);
+         document.body.addEventListener("mousemove", handleBodyMouseMove);
       }
    }
 
    const handleSMouseUp = () => {
       setActive(false);
       setClassscroller("");
-      document.body.removeEventListener('mousemove', handleBodyMouseMove);
+      document.body.removeEventListener("mousemove", handleBodyMouseMove);
    }
 
    const handleSMouseLeave = () => {
       setActive(false);
       setClassscroller("");
-      document.body.removeEventListener('mousemove', handleBodyMouseMove);
+      document.body.removeEventListener("mousemove", handleBodyMouseMove);
    }
 
    // SCROLLER EVENTS TOUCH
@@ -62,46 +62,46 @@ const ImageComparison = ({ className,
       setActive(true);
       setClassscroller("-scrolling");
       if (typeof document !== `undefined`) {
-         document.body.addEventListener('touchstart', handleBodyTouchMove);
+         document.body.addEventListener("touchmove", handleBodyTouchMove);
       }
    }
 
    const handleSTouchEnd = () => {
       setActive(false);
       setClassscroller("");
-      document.body.removeEventListener('touchstart', handleBodyTouchMove);
+      document.body.removeEventListener("touchmove", handleBodyTouchMove);
    }
 
    const handleSTouchCancel = () => {
       setActive(false);
       setClassscroller("");
-      document.body.removeEventListener('touchstart', handleBodyTouchMove);
+      document.body.removeEventListener("touchmove", handleBodyTouchMove);
    }
 
    // BODY EVENTS
    if (typeof document !== `undefined`) {
-      document.body.addEventListener('mouseup', () => {
+      document.body.addEventListener("mouseup", () => {
          setActive(false);
          setClassscroller("");
-         document.body.removeEventListener('mousemove', handleBodyMouseMove);
+         document.body.removeEventListener("mousemove", handleBodyMouseMove);
       });
-      document.body.addEventListener('touchend', () => {
+      document.body.addEventListener("touchend", () => {
          setActive(false);
          setClassscroller("");
-         document.body.removeEventListener('touchstart', handleBodyTouchMove);
+         document.body.removeEventListener("touchmove", handleBodyTouchMove);
       });
    }
 
    if (typeof document !== `undefined`) {
-      document.body.addEventListener('mouseleave', () => {
+      document.body.addEventListener("mouseleave", () => {
          setActive(false);
          setClassscroller("");
-         document.body.removeEventListener('mousemove', handleBodyMouseMove);
+         document.body.removeEventListener("mousemove", handleBodyMouseMove);
       });
-      document.body.addEventListener('touchleave', () => {
+      document.body.addEventListener("touchleave", () => {
          setActive(false);
          setClassscroller("");
-         document.body.removeEventListener('touchstart', handleBodyTouchMove);
+         document.body.removeEventListener("touchmove", handleBodyTouchMove);
       });
    }
    
