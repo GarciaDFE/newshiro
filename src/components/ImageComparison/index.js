@@ -114,7 +114,7 @@ const ImageComparison = ({ className,
 
    // BODY FUNCTION MOVE TOUCH
    const handleBodyTouchMove = event => {
-      let posX = event.pageX;
+      let posX = event.touches[0].clientX;
       posX -= recWrapper;
       scrollIt(posX);
    }
