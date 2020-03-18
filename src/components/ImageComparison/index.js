@@ -36,13 +36,12 @@ const ImageComparison = ({ className,
          setLeftScroller(widthComponent * 0.5)
    }
    
-   // SCROLLER EVENTS POINTER AND TOUCH
+   // SCROLLER EVENTS POINTER
    const handleSMouseDown = () => {
       setActive(true);
       setClassscroller("-scrolling");
       if (typeof document !== `undefined`) {
          document.body.addEventListener('mousemove', handleBodyMouseMove);
-         document.body.addEventListener('touchstart', handleBodyMouseMove);
       }
    }
 
@@ -50,14 +49,33 @@ const ImageComparison = ({ className,
       setActive(false);
       setClassscroller("");
       document.body.removeEventListener('mousemove', handleBodyMouseMove);
-      document.body.removeEventListener('touchstart', handleBodyMouseMove);
    }
 
    const handleSMouseLeave = () => {
       setActive(false);
       setClassscroller("");
       document.body.removeEventListener('mousemove', handleBodyMouseMove);
-      document.body.removeEventListener('touchstart', handleBodyMouseMove);
+   }
+
+   // SCROLLER EVENTS TOUCH
+   const handleSTouchStart = () => {
+      setActive(true);
+      setClassscroller("-scrolling");
+      if (typeof document !== `undefined`) {
+         document.body.addEventListener('touchstart', handleBodyTouchMove);
+      }
+   }
+
+   const handleSTouchEnd = () => {
+      setActive(false);
+      setClassscroller("");
+      document.body.removeEventListener('touchstart', handleBodyTouchMove);
+   }
+
+   const handleSTouchCancel = () => {
+      setActive(false);
+      setClassscroller("");
+      document.body.removeEventListener('touchstart', handleBodyTouchMove);
    }
 
    // BODY EVENTS
@@ -70,10 +88,9 @@ const ImageComparison = ({ className,
       document.body.addEventListener('touchend', () => {
          setActive(false);
          setClassscroller("");
-         document.body.removeEventListener('touchstart', handleBodyMouseMove);
+         document.body.removeEventListener('touchstart', handleBodyTouchMove);
       });
    }
-
 
    if (typeof document !== `undefined`) {
       document.body.addEventListener('mouseleave', () => {
@@ -84,19 +101,25 @@ const ImageComparison = ({ className,
       document.body.addEventListener('touchleave', () => {
          setActive(false);
          setClassscroller("");
-         document.body.removeEventListener('mousemove', handleBodyMouseMove);
-         document.body.removeEventListener('touchstart', handleBodyMouseMove);
+         document.body.removeEventListener('touchstart', handleBodyTouchMove);
       });
    }
    
-   // BODY FUNCTION
+   // BODY FUNCTION MOVE POINTER
    const handleBodyMouseMove = event => {
       let posX = event.pageX;
       posX -= recWrapper;
       scrollIt(posX);
    }
 
-   // SCROLLER & IMAGE FUNCTIONS
+   // BODY FUNCTION MOVE TOUCH
+   const handleBodyTouchMove = event => {
+      let posX = event.pageX;
+      posX -= recWrapper;
+      scrollIt(posX);
+   }
+
+   // SCROLLER & IMAGE FUNCTIONS POINTER AND TOUCH
    const scrollIt = (posX) => {
       let transform = Math.max(0, (Math.min(posX, widthWrapper )));
       setLeftScroller(transform);
@@ -127,14 +150,14 @@ const ImageComparison = ({ className,
             active={active}
             className={classscroller}
             onMouseDown={handleSMouseDown}
-            onTouchStart={handleSMouseDown}
+            onTouchStart={handleSTouchStart}
             onPointerDown={handleSMouseDown}
             leftScroller={leftScroller}
             onMouseUp={handleSMouseUp}
             onPointerUp={handleSMouseUp}
-            onTouchEnd={handleSMouseUp}
+            onTouchEnd={handleSTouchEnd}
             onPointerLeave={handleSMouseLeave}
-            onTouchCancel={handleSMouseLeave}>
+            onTouchCancel={handleSTouchCancel}>
             <IconScroller />
          </Scroller>
       </WrapComparison>
