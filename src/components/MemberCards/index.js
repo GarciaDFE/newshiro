@@ -8,7 +8,7 @@ const MemberCards = ({ className }) => {
    const skill1 = ["Sócio-Fundador", "Manutenção", "Montagem", "Usinagens"]
    const skill2 = ["Sócio", "Manutenção", "Mecânica"]
 
-   const { member1 } = useStaticQuery (
+   const { member1, member2 } = useStaticQuery (
       graphql`
          query {
             member1: file(relativePath: { eq: "team/member1.jpg" }) {
@@ -18,7 +18,7 @@ const MemberCards = ({ className }) => {
                   }
                }
             }
-            member2: file(relativePath: { eq: "team/member1.jpg" }) {
+            member2: file(relativePath: { eq: "team/member2.jpg" }) {
                childImageSharp {
                   fixed(width: 260) {
                      ...GatsbyImageSharpFixed_tracedSVG
@@ -39,7 +39,7 @@ const MemberCards = ({ className }) => {
             contact="(11) 94901-5967"
          />
          <CardMember
-            fixed={member1.childImageSharp.fixed}
+            fixed={member2.childImageSharp.fixed}
             alt="foto de Edson Souza"
             name="Edson Souza"
             skills={skill2.map(item => {return <li>{item}</li>})}

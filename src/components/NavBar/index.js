@@ -17,7 +17,7 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
             <Item><Action to="/">Início</Action></Item>
             <Item><Action to="/About">Quem Somos</Action></Item>
             <Item onClick={onClick}>
-               <Action to="/">
+               <Action >
                   Serviços
                   <IconSubAction className={`${isShow ? "-isActive" : "" }`} />
                </Action>
