@@ -3,7 +3,8 @@ import React from "react";
 import { MainNav, 
          ListItem, 
          Item, 
-         Action, 
+         Action,
+         ActionSpan, 
          ListSubItem, 
          SubItem, 
          SubAction, 
@@ -17,10 +18,10 @@ const NavBar = ({ isActive=false, isShow=false, className, onClick }) => {
             <Item><Action to="/">Início</Action></Item>
             <Item><Action to="/About">Quem Somos</Action></Item>
             <Item onClick={onClick}>
-               <Action >
+               <ActionSpan>
                   Serviços
                   <IconSubAction className={`${isShow ? "-isActive" : "" }`} />
-               </Action>
+               </ActionSpan>
                <ListSubItem className={`${isShow ? "-isShow" : "" }`}>
                      <SubItem>
                         <SubAction to="/ReparosMecanicos">Reparos mecânicos</SubAction>

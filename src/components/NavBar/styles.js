@@ -130,6 +130,46 @@ const Action = styled(Link)`
 `
 
 // SUBMENU
+const ActionSpan = styled.span`
+   font-family: ${props => props.theme.font.secondy};
+   font-size: ${props => props.theme.size.medium};
+   font-weight: normal;
+   color: ${props => props.theme.color.secondyDark};
+   text-decoration: none;
+   &:after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: ${props => props.theme.color.firstDark};
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 200ms linear;
+      transform-origin: center;
+   }
+   &:hover:after {
+      transform: scale(1);
+   }
+
+   ${media.lessThan("lg")`
+      font-size: ${props => props.theme.size.mediumSmall};
+   `}
+
+   ${media.lessThan("sm")`
+      display: block;
+      width: 100%;
+      color: ${props => props.theme.color.secondyDark};
+      padding-left: 20px;
+      background-color: transparent;
+      text-align: center;
+      &:after {
+         content: none;
+      }
+   `}
+
+`
+
 const ListSubItem = styled.ul`
    width: 260px;
    position: absolute;
@@ -228,6 +268,7 @@ export {
    ListItem,
    Item,
    Action,
+   ActionSpan,
    ListSubItem,
    SubItem,
    SubAction,
