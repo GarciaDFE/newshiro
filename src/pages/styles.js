@@ -63,6 +63,43 @@ const PortfolioContainer = styled(Container)`
    background-color: ${props => props.theme.color.secondyClear};
 `
 
+const GalleryTitle = styled.div`
+   grid-row-start: 2;
+   grid-row-end: 3;
+   grid-column-start: 2;
+   grid-column-end: 4;
+   width: 100%;
+   height: auto;
+   max-height: 280px;
+   background-color: ${props => props.theme.color.firstDark};
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 60px;
+
+   ${media.lessThan("lg")`
+      padding: 40px;
+   `}
+   ${media.lessThan("md")`
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      padding: 0 80px;
+   `}
+   ${media.lessThan("sm")`
+      padding: 0 40px;
+   `}
+   ${media.lessThan("xs")`
+      padding: 20px;
+      grid-row-start: 5;
+      grid-row-end: 6;
+      grid-column-start: 1;
+      grid-column-end: 2;
+   `}
+
+`
 
 export { 
    ServiceSection,
@@ -72,4 +109,5 @@ export {
    WrapTeam,
    PortfolioSection,
    PortfolioContainer,
+   GalleryTitle
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from 'gatsby'
 
+import services from "./content"
 import { 
     ServiceSection, 
     ServiceContainer,
@@ -8,7 +9,8 @@ import {
     TeamContainer,
     WrapTeam,
     PortfolioSection,
-    PortfolioContainer } from "./styles"
+    PortfolioContainer,
+    GalleryTitle } from "./styles"
 
 import Layout from "../components/Layout";
 import SEO from "../components/seo"
@@ -86,7 +88,8 @@ const IndexPage = () => {
       </TeamSection>
       <PortfolioSection>
         <PortfolioContainer>
-          <LightBox data={images.imgPortfolio.edges}>
+          <LightBox data={images.imgPortfolio.edges} services={services}>
+            <GalleryTitle>
               <TitleSection
                 className="-inverse"
                 title="Portfólio"
@@ -95,6 +98,7 @@ const IndexPage = () => {
               <TextSection className="-inverse">
                 Veja nossos últimos serviços executados e venha construir uma parceria conosco terceirizando seus serviços de elevadores. Com vasta experiência na área somos capazes de agregar eficiência, qualidade e valor para sua empresa.
               </TextSection>
+            </GalleryTitle>
           </LightBox>
         </PortfolioContainer>
       </PortfolioSection>

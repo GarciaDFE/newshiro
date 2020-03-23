@@ -12,9 +12,12 @@ import { ServicesListContainer,
          BeforeAfterContainer,
          BeforeAfterTitleSection,
          BeforeAfterTextSection,
-         SideComparison } from "./styles";
+         SideComparison,
+         PortfolioSection,
+         PortfolioContainer,
+         GalleryContainer } from "./styles";
 
-import { labels, measures } from "./content"
+import { labels, measures, services } from "./content"
 
 import Layout from "../../components/Layout";
 import SEO from "../../components/seo";
@@ -22,7 +25,9 @@ import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import Section from "../../objects/Section";
+import TitleSection from "../../objects/TitleSection"
 import ComparisonServiceMechanical from "../../components/ImageComparison"
+import LightBox from "../../components/LightBox"
 import Footer from "../../components/Footer";
 
 const ReparosMecanicos = () => {
@@ -72,6 +77,17 @@ const ReparosMecanicos = () => {
                   }
                }
             }
+            imgGallery: allFile(filter: {relativeDirectory: {eq: "portfolio-mecanica"}}) {
+               edges {
+                 node {
+                   childImageSharp {
+                     sizes(maxHeight: 500) {
+                       ...GatsbyImageSharpSizes
+                     }
+                   }
+                 }
+               }
+            }     
          }
       `
    )
@@ -187,6 +203,17 @@ const ReparosMecanicos = () => {
                </BeforeAfterContainer>
             </BeforeAfterSection>
          </Section>
+         <PortfolioSection>
+            <PortfolioContainer>
+               <TitleSection
+                  title="Galeria"
+                  subtitle="Conheça nossos trabalhos"
+               />
+               <GalleryContainer>
+                  <LightBox data={images.imgGallery.edges} services={services}></LightBox>
+               </GalleryContainer>
+            </PortfolioContainer>
+         </PortfolioSection>
          <Footer />
       </Layout>
    )

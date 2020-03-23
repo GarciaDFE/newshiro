@@ -133,6 +133,23 @@ const BeforeAfterTextSection = styled(ServicesTextSection)`
    color: ${props => props.theme.color.secondyClear};
 `
 
+// PORTFOLIO HOME
+const PortfolioSection = styled(Section)`
+   max-width: 1440px;
+   background-color: ${props => props.theme.color.secondyLight};
+   padding: 70px 0;
+   margin: 0 auto;
+`
+
+const PortfolioContainer = styled(Container)`
+   display: block;
+   max-width: 1200px;
+`
+
+const GalleryContainer = styled(Container)`
+   background-color: transparent;
+`
+
 export {
    ServicesListContainer,
    Side,
@@ -144,5 +161,8 @@ export {
    BeforeAfterContainer,
    BeforeAfterTitleSection,
    BeforeAfterTextSection,
-   SideComparison
+   SideComparison,
+   PortfolioSection,
+   PortfolioContainer,
+   GalleryContainer
  }

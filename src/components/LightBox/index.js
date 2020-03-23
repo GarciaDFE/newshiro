@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import IconArrowLeft from "../../images/globals/arrow-left.svg"
 import IconArrowRight from "../../images/globals/arrow-right.svg"
 import IconClose from "../../images/globals/close.svg"
-import services from "./content"
 import { 
    Gallery, 
-   GalleryTitle, 
    GalleryItem, 
    LightboxModal, 
    StyledImg,
@@ -19,7 +17,7 @@ import {
    OverlayImage } from "./styles"
 
 
-const LightBox = ({ children, data }) => {
+const LightBox = ({ children, data, services }) => {
 
    const [showLightboxModal, setShowLightboxModal] = useState("");
    const [selectedImage, setSelectedImage] = useState(0);
@@ -56,6 +54,7 @@ const LightBox = ({ children, data }) => {
          <Gallery>
             {data.map((img, i) => {
                const service = services[i].label;
+               const altImg = services[i].alt;
                return (
                   <GalleryItem key={img.node.childImageSharp.sizes.src}>
                      <OverlayItem 
@@ -64,13 +63,13 @@ const LightBox = ({ children, data }) => {
                            {service}
                      </OverlayItem>
                      <a href={img.node.childImageSharp.sizes.src} 
-                        alt="imagem serviço">
+                        alt={altImg}>
                            <StyledImg sizes={img.node.childImageSharp.sizes} />
                      </a>
                   </GalleryItem>
                )
             })}
-            <GalleryTitle>{children}</GalleryTitle>
+            {children}
          </Gallery>
 
          <LightboxModal className={showLightboxModal}>
