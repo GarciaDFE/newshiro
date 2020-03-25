@@ -10,7 +10,7 @@ import { Section,
          BkgImage } from "./styles"
 
 
-const Banner = ({ title, description, classButton, imageFluid, imageAlt }) => {
+const Banner = ({ title, description, classButton, action, imageFluid, imageAlt }) => {
   
    return (
       <Section>
@@ -19,7 +19,10 @@ const Banner = ({ title, description, classButton, imageFluid, imageAlt }) => {
                <Content>
                   <Title>{title}</Title>
                   <Description>{description}</Description>
-                  <ButtonAction className={classButton} label="Saiba mais" />
+                  <ButtonAction 
+                     action={action} 
+                     className={classButton} 
+                     label="Saiba mais" />
                </Content> 
             </Overlay>
             <BkgImage 

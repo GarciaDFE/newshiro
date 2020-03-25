@@ -2,7 +2,7 @@ import React from "react";
 
 import { CardItem, Content, Title, Description, CardButton, HeroImage } from "./styles"
 
-const CardFull = ({ fixed, alt, title, description, className }) => {
+const CardFull = ({ fixed, alt, title, description, className, action }) => {
 
 
    return (
@@ -13,6 +13,7 @@ const CardFull = ({ fixed, alt, title, description, className }) => {
             <Description>{description}  
             </Description>
             <CardButton 
+               action={action}
                className="saibamais"
                label="Saiba mais" />
          </Content>

@@ -75,6 +75,7 @@ const ContactPage = () => {
                   </ContentItem>
                </WrapContent>
                <ContactForm 
+                  id="contact-form"
                   action="https://formspree.io/xeqkvdvp"
                   method="POST"
                >

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "gatsby";
 
 import media from "../../styles/breakPoints"
 
@@ -61,8 +62,8 @@ const Text = styled.p`
 
 // COL1 = SITEMAP
 const LogoFooter = styled(Logo)`
-   height: 102px;
-   margin-bottom: 45px;
+   height: 90px;
+   margin-bottom: 15px;
    & img {
       padding: 0;
    }
@@ -87,12 +88,13 @@ const ListItems = styled.ul`
 `
 
 const Item = styled.li`
-   padding: 2px 0;
+   padding: 1.2px 0;
    margin: 0;
    cursor: pointer;
 `
 
-const Action = styled.a`
+const Action = styled(Link)`
+   text-decoration: none;
    font-family: ${props => props.theme.font.secondy};
    font-size: ${props => props.theme.size.verySmall};
    font-weight: normal;
@@ -130,7 +132,6 @@ const ButtonFooter = styled(ButtonAction)`
 // COL3 = CONTATOS
 const Contact = styled.div`
    display: block;
-   background-color: white;
 
    ${media.lessThan("sm")`
       order: 1;

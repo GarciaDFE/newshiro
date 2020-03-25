@@ -1,6 +1,5 @@
 import React from "react"
 
-
 import { 
    FooterSection, 
    FooterContainer, 
@@ -27,9 +26,11 @@ const Footer = () => {
                <Title>Mapa do site</Title>
                <ListItems>
                   <Item><Action to="/">Início</Action></Item>
-                  <Item><Action to="/">Quem somos</Action></Item>
-                  <Item><Action to="/">Serviços</Action></Item>
-                  <Item><Action to="/">Contatos</Action></Item>
+                  <Item><Action to="/About">Quem somos</Action></Item>
+                  <Item><Action to="/ReparosMecanicos">Reparos mecãnicos</Action></Item>
+                  <Item><Action to="/RetificaPolias">Retífica de polias</Action></Item>
+                  <Item><Action to="/Usinagem">Usinagem</Action></Item>
+                  <Item><Action to="/Contact">Contatos</Action></Item>
                </ListItems>
             </Sitemap>
             <Service>
@@ -38,7 +39,7 @@ const Footer = () => {
                <Text>Somos especialistas com vasta experiência nessa área, capazes de agregar eficiência, qualidade e valor para sua empresa.</Text>
                <Text>Temos preços competitivos, trabalhando com segurança e responsabilidade.</Text>
                <br></br>
-               <ButtonFooter className="enviemensagem" label="Envie sua mensagem" />
+               <ButtonFooter action="/Contact#contact-form" className="enviemensagem" label="Envie sua mensagem" />
             </Service>
             <Contact>
                <Title>Contatos</Title>

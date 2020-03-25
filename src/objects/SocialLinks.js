@@ -60,9 +60,8 @@ const SocialLinks = ({ className, stroke=false }) => {
             </ItemList>
             <ItemList>
                <ButtonLink 
-                  href="https://www.facebook.com/shirousinagens/"
-                  alt="link para o perfil da Shiro Usinagens no Youtube"
-                  target="_blank"
+                  href="/"
+                  alt="link para o canal da Shiro Usinagens no Youtube"
                   style={{ 
                      backgroundImage: 
                         stroke ? 
@@ -75,7 +74,7 @@ const SocialLinks = ({ className, stroke=false }) => {
             </ItemList>
             <ItemList>
                <ButtonLink 
-                  href="https://www.facebook.com/shirousinagens/"
+                  href="mailto:mariokt.mt@gmail.com"
                   alt="link para enviar um e-mail para a Shiro Usinagens"
                   target="_blank"
                   style={{ 

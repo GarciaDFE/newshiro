@@ -60,6 +60,7 @@ const IndexPage = () => {
         title="Terceirização de Serviços de Elevadores"
         description="Venha construir uma parceria delegando a responsabilidade da sua área de manutenção mecânica para nossa equipe com vasta experiência na área, agregando eficiência, qualidade e rapidez a sua empresa." 
         classButton="saibamais"
+        action="/About"
         imageFluid={images.imgBanner.childImageSharp.fluid}
         imageAlt="imagem de polia de tração de elevador"
       />

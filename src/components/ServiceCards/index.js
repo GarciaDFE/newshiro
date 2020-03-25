@@ -40,18 +40,21 @@ const ServiceCards = () => {
             alt="imagem de serviço de reparo mecânico em elevador"
             title="Serviços de Reparos Mecânicos"
             description="Recondicionamento de máquinas e motores de tração, limitadores de velocidade, alinhamento de guias…"
+            action="/ReparosMecanicos"
          />
          <CardService 
             fixed={card2.childImageSharp.fixed}
             alt="imagem de serviço de retífica de polia de tração de elevador"
             title="Retífica de Polia de Tração"
             description="Correção nos desgastes dos canais das polias de tração com torno portátil direto na casa de máquinas."
+            action="/RetificaPolias"
          />
          <CardService 
             fixed={card3.childImageSharp.fixed}
             alt="imagem de serviço de usinagem para elevador"
             title="Serviços de Usinagem em geral"
             description="Nossos serviços de usinagem inclui fabricação, manutenção e recuperação de peças em geral."
+            action="/Usinagem"
          />
       </List>
    ) 

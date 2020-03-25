@@ -39,7 +39,7 @@ const Header = () => {
             <NavButtonMenu
                isOpen={isopen} 
                onClick={handleClickButtonMenu} />
-            <ButtonAction className="orcamento" label="Orçamento" />
+            <ButtonAction action="/Contact#contact-form" className="orcamento" label="Orçamento" />
          </Container>
       </Section>
    )
