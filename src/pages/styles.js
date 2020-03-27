@@ -3,6 +3,8 @@ import media from "../styles/breakPoints"
 
 import Section from "../objects/Section"
 import Container from "../objects/Container"
+import TitleSection from "../objects/TitleSection"
+import TextSection from "../objects/TextSection"
 
 // SERVICE HOME
 const ServiceSection = styled(Section)`
@@ -79,24 +81,67 @@ const GalleryTitle = styled.div`
    padding: 60px;
 
    ${media.lessThan("lg")`
-      padding: 40px;
+      padding: 20px;
+      max-height: 215px;
    `}
    ${media.lessThan("md")`
-      grid-row-start: 3;
-      grid-row-end: 4;
-      grid-column-start: 1;
-      grid-column-end: 3;
-      padding: 0 80px;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 4;
+      padding: 0 15px;
+      max-height: 190px;
    `}
    ${media.lessThan("sm")`
-      padding: 0 40px;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 6;
+      padding: 20px;
+      max-height: 100%;
+   `}
+   ${media.lessThan("576px")`
+      padding: 20px;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
    `}
    ${media.lessThan("xs")`
       padding: 20px;
-      grid-row-start: 5;
-      grid-row-end: 6;
+      grid-row-start: 2;
+      grid-row-end: 3;
       grid-column-start: 1;
-      grid-column-end: 2;
+      grid-column-end: 3;
+   `}
+   ${media.lessThan("576px")`
+      max-height: 155px;
+      padding: 0 10px;
+   `}
+`
+
+const TitleGallery = styled(TitleSection)`
+
+   ${media.lessThan("lg")`
+      &.-inverse {
+         margin-bottom: 5px;
+      }
+   `}
+
+`
+const TextGallery = styled(TextSection)`
+
+   ${media.lessThan("lg")`
+      line-height: 1.3;
+   `}
+   ${media.lessThan("md")`
+      text-align: center;
+   `}
+   ${media.lessThan("sm")`
+      line-height: 1.5;
+   `}
+   ${media.lessThan("576px")`
+      display: none;
    `}
 
 `
@@ -109,5 +154,7 @@ export {
    WrapTeam,
    PortfolioSection,
    PortfolioContainer,
-   GalleryTitle
+   GalleryTitle,
+   TitleGallery,
+   TextGallery
 }

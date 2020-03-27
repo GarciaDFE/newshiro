@@ -10,7 +10,9 @@ import {
     WrapTeam,
     PortfolioSection,
     PortfolioContainer,
-    GalleryTitle } from "./styles"
+    GalleryTitle,
+    TitleGallery,
+    TextGallery } from "./styles"
 
 import Layout from "../components/Layout";
 import SEO from "../components/seo"
@@ -91,14 +93,14 @@ const IndexPage = () => {
         <PortfolioContainer>
           <LightBox data={images.imgPortfolio.edges} services={services}>
             <GalleryTitle>
-              <TitleSection
+              <TitleGallery
                 className="-inverse"
                 title="Portfólio"
                 subtitle="Alguns de nossos serviços executados"
               />
-              <TextSection className="-inverse">
+              <TextGallery className="-inverse">
                 Veja nossos últimos serviços executados e venha construir uma parceria conosco terceirizando seus serviços de elevadores. Com vasta experiência na área somos capazes de agregar eficiência, qualidade e valor para sua empresa.
-              </TextSection>
+              </TextGallery>
             </GalleryTitle>
           </LightBox>
         </PortfolioContainer>

@@ -18,7 +18,7 @@ const Text = styled.p`
       color: ${props => props.theme.color.secondyClear};
    }
 
-   ${media.lessThan("xs")`
+   ${media.lessThan("md")`
       text-align: left;
       font-size: ${props => props.theme.size.verySmall};
    `}

@@ -15,17 +15,24 @@ const Gallery = styled.div`
    background-color: transparent;
 
    ${media.lessThan("lg")`
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(4, 1fr);
+      max-width: 900px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
    `}
    ${media.lessThan("md")`
+      max-width: 768px;
+   `}
+   ${media.lessThan("sm")`
+      max-width: 576px;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 10px;
+   `}
+   ${media.lessThan("576px")`
+      max-width: 320px;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(6, 1fr);
-   `}
-   ${media.lessThan("xs")`
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(11, 1fr);
-      grid-column-gap: 0;
+      grid-column-gap: 10px;
    `}
 
 `
@@ -34,6 +41,19 @@ const GalleryItem = styled.div`
    position: relative;
    background-color: ${props => props.theme.color.secondyDark};
    box-sizing: border-box;
+
+   ${media.lessThan("lg")`
+      max-height: 215px;
+   `}
+   ${media.lessThan("md")`
+      max-height: 183px;
+   `}
+   ${media.lessThan("sm")`
+      max-height: 105px;
+   `}
+   ${media.lessThan("576px")`
+      max-height: 155px;
+   `}
 
 `
 
@@ -60,6 +80,13 @@ const OverlayItem = styled.div`
       opacity: 1;
       transition: opacity 0.3s ease-out;
    }
+
+   ${media.lessThan("md")`
+      font-size: ${props => props.theme.size.medium};
+   `}
+   ${media.lessThan("sm")`
+      font-size: ${props => props.theme.size.small};
+   `}
 
 `
 
@@ -108,6 +135,20 @@ const StyledImg = styled(Img)`
    width: 100%;
    max-height: 280px;
    height: 100%;
+
+   ${media.lessThan("lg")`
+      max-height: 215px;
+   `}
+   ${media.lessThan("md")`
+      max-height: 183px;
+   `}
+   ${media.lessThan("sm")`
+      max-height: 105px;
+   `}
+   ${media.lessThan("576px")`
+      max-height: 140px;
+   `}
+
 `
 
 const OverlayImage = styled.div`
