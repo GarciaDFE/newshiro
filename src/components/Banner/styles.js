@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Img from "gatsby-image"
 
 import media from "../../styles/breakPoints"
@@ -27,7 +27,7 @@ const Overlay = styled.div`
    position: absolute;
    width: 100%;
    height: 100%;
-   background: ${props => props.theme.gradient.third};
+   background: ${props => props.theme.gradient.secondy};
    z-index: 5;
    display: flex;
    justify-content: flex-start;
@@ -62,6 +62,17 @@ const Content = styled.div`
 
 `
 
+
+const FadeInLeftBig = keyframes`
+   0% {
+      transform: translateX(-500%);
+   }
+   100% {
+      transform: translateX(0);
+   }
+`
+
+
 const Title = styled.h1`
    width: 40%;
    font-family: ${props => props.theme.font.primary};
@@ -70,7 +81,19 @@ const Title = styled.h1`
    text-transform: uppercase;
    line-height: 1.3;
 
+   transform: translateX(-500%);
+
+   animation-name: ${FadeInLeftBig};
+   animation-timing-function: ease-in-out;
+   animation-delay: 1s;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: forwards;
+   animation-play-state: running;
+
    ${media.lessThan("lg")`
+      animation-name: none;
       width: 50%;
    `}
    ${media.lessThan("1024px")`
@@ -101,6 +124,19 @@ const Title = styled.h1`
 
 `
 
+
+const FadeInRight = keyframes`
+   0% {
+      opacity: 0;
+      transform: translateX(100%);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+`
+
+
 const Description = styled.p`
    width: 50%;
    font-family: ${props => props.theme.font.secondy};
@@ -110,8 +146,21 @@ const Description = styled.p`
    border-left: 5px solid ${props => props.theme.color.firstDark};
    padding-left: 15px;
 
+   opacity: 0;
+   transform: translateX(100%);
+
+   animation-name: ${FadeInRight};
+   animation-timing-function: ease-in-out;
+   animation-delay: 1s;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: forwards;
+   animation-play-state: running;
+
    ${media.lessThan("lg")`
       width: 60%;
+      animation-name: none;
    `}
    ${media.lessThan("1024px")`
       width: 80%;
