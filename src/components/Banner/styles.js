@@ -1,4 +1,7 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { FadeInLeftBig, 
+         FadeInRight } from "animate-css-styled-components"
+
 import Img from "gatsby-image"
 
 import media from "../../styles/breakPoints"
@@ -27,7 +30,7 @@ const Overlay = styled.div`
    position: absolute;
    width: 100%;
    height: 100%;
-   background: ${props => props.theme.gradient.secondy};
+   background: ${props => props.theme.gradient.third};
    z-index: 5;
    display: flex;
    justify-content: flex-start;
@@ -62,59 +65,44 @@ const Content = styled.div`
 
 `
 
-
-const FadeInLeftBig = keyframes`
-   0% {
-      transform: translateX(-500%);
-   }
-   100% {
-      transform: translateX(0);
-   }
-`
-
-
-const Title = styled.h1`
+const AnimateTitle = styled(FadeInLeftBig)`
    width: 40%;
-   font-family: ${props => props.theme.font.primary};
-   font-size: ${props => props.theme.size.veryBig};
-   color: ${props => props.theme.color.secondyClear};
-   text-transform: uppercase;
-   line-height: 1.3;
-
-   transform: translateX(-500%);
-
-   animation-name: ${FadeInLeftBig};
-   animation-timing-function: ease-in-out;
-   animation-delay: 1s;
-   animation-duration: 1s;
-   animation-iteration-count: 1;
-   animation-direction: normal;
-   animation-fill-mode: forwards;
-   animation-play-state: running;
 
    ${media.lessThan("lg")`
-      animation-name: none;
       width: 50%;
    `}
    ${media.lessThan("1024px")`
       width: 70%;
    `}
-   ${media.lessThan("md")`
-      text-align: center;
-      margin-bottom: 5px;
-   `}
    ${media.lessThan("800px")`
       width: 100%;
    `}
    ${media.lessThan("sm")`
-      font-size: ${props => props.theme.size.big};
       width: 100%;
-      line-height: 1.2;
    `}
    ${media.lessThan("470px")`
       width: 100%;
-      font-size: ${props => props.theme.size.mediumBig};
       margin-bottom: 5px;
+   `}
+
+`
+const Title = styled.h1`
+   font-family: ${props => props.theme.font.primary};
+   font-size: ${props => props.theme.size.veryBig};
+   color: ${props => props.theme.color.secondyClear};
+   text-transform: uppercase;
+   line-height: 1.3;
+   width: 100%;
+
+   ${media.lessThan("md")`
+      text-align: center;
+   `}
+   ${media.lessThan("sm")`
+      font-size: ${props => props.theme.size.big};
+      line-height: 1.2;
+   `}
+   ${media.lessThan("470px")`
+      font-size: ${props => props.theme.size.mediumBig};
       line-height: 1.1;
    `}
    ${media.lessThan("380px")`
@@ -125,64 +113,128 @@ const Title = styled.h1`
 `
 
 
-const FadeInRight = keyframes`
-   0% {
-      opacity: 0;
-      transform: translateX(100%);
-   }
-   100% {
-      opacity: 1;
-      transform: translateX(0);
-   }
-`
+// const Title = styled.h1`
+//    width: 40%;
+//    font-family: ${props => props.theme.font.primary};
+//    font-size: ${props => props.theme.size.veryBig};
+//    color: ${props => props.theme.color.secondyClear};
+//    text-transform: uppercase;
+//    line-height: 1.3;
+//    background-color: red;
+
+//    ${media.lessThan("lg")`
+//       width: 50%;
+//    `}
+//    ${media.lessThan("1024px")`
+//       width: 70%;
+//    `}
+//    ${media.lessThan("md")`
+//       text-align: center;
+//       margin-bottom: 5px;
+//    `}
+//    ${media.lessThan("800px")`
+//       width: 100%;
+//    `}
+//    ${media.lessThan("sm")`
+//       font-size: ${props => props.theme.size.big};
+//       width: 100%;
+//       line-height: 1.2;
+//    `}
+//    ${media.lessThan("470px")`
+//       width: 100%;
+//       font-size: ${props => props.theme.size.mediumBig};
+//       margin-bottom: 5px;
+//       line-height: 1.1;
+//    `}
+//    ${media.lessThan("380px")`
+//       font-size: ${props => props.theme.size.medium};
+//       line-height: 1.3;
+//    `}
+
+// `
 
 
-const Description = styled.p`
+const AnimateDescription = styled(FadeInRight)`
    width: 50%;
-   font-family: ${props => props.theme.font.secondy};
-   font-size: ${props => props.theme.size.medium};
-   color: ${props => props.theme.color.secondyClear};
-   line-height: 1.4;
-   border-left: 5px solid ${props => props.theme.color.firstDark};
-   padding-left: 15px;
-
-   opacity: 0;
-   transform: translateX(100%);
-
-   animation-name: ${FadeInRight};
-   animation-timing-function: ease-in-out;
-   animation-delay: 1s;
-   animation-duration: 1s;
-   animation-iteration-count: 1;
-   animation-direction: normal;
-   animation-fill-mode: forwards;
-   animation-play-state: running;
 
    ${media.lessThan("lg")`
       width: 60%;
-      animation-name: none;
    `}
    ${media.lessThan("1024px")`
       width: 80%;
    `}
    ${media.lessThan("md")`
       width: 90%;
+   `}
+   ${media.lessThan("sm")`
+      width: 90%;
+      margin-bottom: 10px;
+   `}
+   ${media.lessThan("xs")`
+      width: 100%;
+   `}
+
+`
+
+const Description = styled.p`
+   font-family: ${props => props.theme.font.secondy};
+   font-size: ${props => props.theme.size.medium};
+   color: ${props => props.theme.color.secondyClear};
+   line-height: 1.4;
+   border-left: 5px solid ${props => props.theme.color.firstDark};
+   padding-left: 15px;
+   width: 100%;
+
+   ${media.lessThan("md")`
       text-align: center;
       border-left: none;
       padding-left: 0;
    `}
    ${media.lessThan("sm")`
-      width: 90%;
       font-size: ${props => props.theme.size.small};
       line-height: 1.3;
-      margin-bottom: 10px;
    `}
    ${media.lessThan("xs")`
-      width: 100%;
       font-size: ${props => props.theme.size.verySmall};
    `}
 
 `
+
+// const Description = styled.p`
+//    width: 50%;
+//    font-family: ${props => props.theme.font.secondy};
+//    font-size: ${props => props.theme.size.medium};
+//    color: ${props => props.theme.color.secondyClear};
+//    line-height: 1.4;
+//    border-left: 5px solid ${props => props.theme.color.firstDark};
+//    padding-left: 15px;
+
+//    ${media.lessThan("lg")`
+//       width: 60%;
+//    `}
+//    ${media.lessThan("1024px")`
+//       width: 80%;
+//    `}
+//    ${media.lessThan("md")`
+//       width: 90%;
+//       text-align: center;
+//       border-left: none;
+//       padding-left: 0;
+//    `}
+//    ${media.lessThan("sm")`
+//       width: 90%;
+//       font-size: ${props => props.theme.size.small};
+//       line-height: 1.3;
+//       margin-bottom: 10px;
+//    `}
+//    ${media.lessThan("xs")`
+//       width: 100%;
+//       font-size: ${props => props.theme.size.verySmall};
+//    `}
+
+// `
+
+
 
 const BkgImage = styled(Img)`
    max-width: 1440px;
@@ -199,7 +251,9 @@ export {
    Container,
    Overlay,
    Content,
+   AnimateTitle,
    Title,
+   AnimateDescription,
    Description,
    BkgImage,
 }
