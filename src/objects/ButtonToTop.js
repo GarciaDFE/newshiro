@@ -40,7 +40,7 @@ const ButtonToTop = () => {
 
    const [visible, setVisible] = useState("")
 
-   window.onscroll = () => {
+   const handleScroll = () => {
       let top = window.pageYOffset;
       if (top >= 300) {
          setVisible("-visible")
@@ -48,10 +48,17 @@ const ButtonToTop = () => {
          setVisible("")
       }
    }
-   
+
    const handleClick = () => {
-      smoothScroll(window, 1500, 0)
+      if (typeof window !== `undefined`) {
+         smoothScroll(window, 1500, 0)
+      }   
    }
+
+   if (typeof window !== `undefined`) {
+      window.addEventListener("scroll", handleScroll);
+   }
+
 
    return (
       <Button className={visible} onClick={handleClick}>
