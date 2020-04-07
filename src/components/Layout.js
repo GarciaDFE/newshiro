@@ -4,6 +4,7 @@ import GlobalStyles from "../styles/globalStyles";
 import theme from "../styles/projectStyles";
 import "typeface-ubuntu";
 import "typeface-roboto";
+import ButtonToTop from "../objects/ButtonToTop"
 
 const Layout = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <>
           {children}
+          <ButtonToTop />
         </>
       </ThemeProvider>
     </>

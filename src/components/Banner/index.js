@@ -5,9 +5,7 @@ import { Section,
          Container, 
          Overlay, 
          Content, 
-         AnimateTitle,
          Title, 
-         AnimateDescription,
          Description, 
          BkgImage } from "./styles"
 
@@ -19,12 +17,8 @@ const Banner = ({ title, description, classButton, action, imageFluid, imageAlt 
          <Container>
             <Overlay>
                <Content>
-                  <AnimateTitle duration="1s" delay="1s">
-                     <Title>{title}</Title>                  
-                  </AnimateTitle>
-                  <AnimateDescription duration="1s" delay="1s">
-                     <Description>{description}</Description>
-                  </AnimateDescription>
+                  <Title>{title}</Title>                  
+                  <Description>{description}</Description>
                   <ButtonAction 
                      action={action} 
                      className={classButton} 
