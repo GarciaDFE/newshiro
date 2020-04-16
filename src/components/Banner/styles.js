@@ -74,6 +74,7 @@ const Title = styled.h1`
 
    ${media.lessThan("lg")`
       width: 50%;
+      transform: translateX(0);
       animation: none;
    `}
    ${media.lessThan("1024px")`
@@ -117,6 +118,7 @@ const Description = styled.p`
 
    ${media.lessThan("lg")`
       width: 60%;
+      transform: translateX(0);
       animation: none;
    `}
    ${media.lessThan("1024px")`

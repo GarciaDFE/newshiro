@@ -27,7 +27,7 @@ const Container = styled.section`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background-color: ${props => props.theme.color.secondyClear};
+   background-color: yellow; /*${props => props.theme.color.secondyClear};*/
 
    ${media.lessThan("lg")`
       max-width: 1020px;
