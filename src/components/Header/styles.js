@@ -12,6 +12,20 @@ const Section = styled.header`
    justify-content: center;
    align-items: center;
    background-color: ${props => props.theme.color.secondyClear};
+   z-index: 10;
+   transition: height 300ms ease-out;
+ 
+   ${media.greaterThan("md")`
+      &.-retract {
+         height: 100px;
+         position: fixed;
+         top: 0;
+         left: 50%;
+         z-index: 100;
+         transform: translateX(-50%);
+         transition: height 300ms ease-out;
+      }
+   `}
 
    ${media.lessThan("sm")`
       height: 100px;
@@ -27,7 +41,8 @@ const Container = styled.section`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background-color: yellow; /*${props => props.theme.color.secondyClear};*/
+
+   background-color: ${props => props.theme.color.secondyClear};
 
    ${media.lessThan("lg")`
       max-width: 1020px;

@@ -638,5 +638,7 @@ const globalStyles = createGlobalStyle`
   body {
     overflow-x: hidden;
   }
+}
+
 `
 export default globalStyles

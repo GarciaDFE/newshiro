@@ -8,9 +8,11 @@ import { Section, Container, NavButtonMenu } from "./styles"
 
 
 const Header = () => {
+
    const [isopen, setIsopen] = useState(false);
    const [isactive, setIsactive] = useState(false);
    const [isshow, setIsshow] = useState(false);
+   const [retract, setRetract] = useState(false);
 
    const handleClickButtonMenu = event => {
       event.preventDefault();
@@ -23,13 +25,29 @@ const Header = () => {
       }
    }
 
+   const handleScroll = () => {
+      let top = window.pageYOffset;
+      if (top >= 40) {
+         setRetract(true)
+         document.body.style.marginTop = '100px'
+      } else {
+         setRetract(false)
+         document.body.style.marginTop = '0'
+      }
+   }
+
    const handleClickItemDropDown = event => {
       event.preventDefault();
       isshow ? setIsshow(false) : setIsshow(true)
    }
 
+
+   if (typeof window !== `undefined`) {
+      window.addEventListener("scroll", handleScroll);
+   }
+
    return (
-      <Section>
+      <Section className={`${retract ? "-retract" : "" }`}>
          <Container>
             <Logo />
             <NavBar 
