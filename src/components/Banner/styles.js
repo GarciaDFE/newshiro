@@ -69,7 +69,8 @@ const Title = styled.h1`
    color: ${props => props.theme.color.secondyClear};
    text-transform: uppercase;
    line-height: 1.3;
-   animation: 1s ${props => props.theme.animation.fadeInLeft} ease 1s;
+   transform: translateX(-2000px);
+   animation: 1s ${props => props.theme.animation.fadeInLeft} ease 1s forwards;
 
    ${media.lessThan("lg")`
       width: 50%;
@@ -111,7 +112,8 @@ const Description = styled.p`
    line-height: 1.4;
    border-left: 5px solid ${props => props.theme.color.firstDark};
    padding-left: 15px;
-   animation: 1s ${props => props.theme.animation.fadeInRight} ease 1s;
+   transform: translateX(3000px);
+   animation: 1s ${props => props.theme.animation.fadeInRight} ease 1s forwards;
 
    ${media.lessThan("lg")`
       width: 60%;
