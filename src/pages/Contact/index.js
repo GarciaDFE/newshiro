@@ -5,10 +5,10 @@ import {
    FormContainer, 
    WrapContent, 
    ContentItem, 
-   ContactForm, 
-   InputItem,
-   ButtonSubmit,
-   TextAreaItem,
+   // ContactForm, 
+   // InputItem,
+   // ButtonSubmit,
+   // TextAreaItem,
    MapContainer } from "./styles";
 
 import Layout from "../../components/Layout";
@@ -17,6 +17,7 @@ import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import Section from "../../objects/Section";
+import ContactForm from "../../components/ContactForm";
 import LocalMap from "../../objects/LocalMap"
 import Footer from "../../components/Footer";
 
@@ -40,11 +41,11 @@ const ContactPage = () => {
       `
    )
 
-   const [state, setState] = React.useState({})
+   // const [state, setState] = React.useState({})
 
-   const handleChange = (e) => {
-     setState({ ...state, [e.target.name]: e.target.value })
-   }
+   // const handleChange = (e) => {
+   //   setState({ ...state, [e.target.name]: e.target.value })
+   // }
     
    return (
       <Layout>
@@ -74,7 +75,9 @@ const ContactPage = () => {
                      edsonfox2010@hotmail.com
                   </ContentItem>
                </WrapContent>
-               <ContactForm 
+               <ContactForm /> 
+
+               {/* <ContactForm 
                   id="contact-form"
                   action="https://formspree.io/xeqkvdvp"
                   method="POST"
@@ -121,7 +124,7 @@ const ContactPage = () => {
                      onChange={handleChange}
                      required />
                   <ButtonSubmit type="submit">Enviar</ButtonSubmit>
-               </ContactForm>
+               </ContactForm> */}
             </FormContainer>
          </Section>
          <Section>
