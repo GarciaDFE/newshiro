@@ -1,11 +1,14 @@
 import React from "react"
 import axios from "axios"
-import { Formik, Field, ErrorMessage } from "formik"
+import { Formik } from "formik"
 import validationForm from "../../objects/ValidationForm"
 
 import { 
    WrapForm,
    InputItem,
+   FieldItem,
+   MsgError,
+   TextAreaItem,
    Button } from "./styles";
 
 const ContactForm = () => {
@@ -60,19 +63,19 @@ const ContactForm = () => {
                   value="Mensagem recebido pelo formulário de contato do site" 
                />
                <InputItem>
-                  <Field 
+                  <FieldItem 
                      id="name" 
                      name="name"
                      type="text" 
                      placeholder="Nome" 
                   />
-                  <ErrorMessage 
+                  <MsgError 
                      name="name"
                      component="p"
                   />
                </InputItem> 
                <InputItem>
-                  <Field
+                  <FieldItem
                      id="company" 
                      name="company" 
                      type="text" 
@@ -80,42 +83,42 @@ const ContactForm = () => {
                   />
                </InputItem>
                <InputItem>
-                  <Field
+                  <FieldItem
                      id="email"
                      name="email" 
                      type="email" 
                      placeholder="E-mail"
                   />
-                  <ErrorMessage 
+                  <MsgError 
                      name="email"
                      component="p"
                   />
                </InputItem>
                <InputItem>
-                  <Field
+                  <FieldItem
                      id="phone"
                      name="phone"  
                      type="text" 
                      placeholder="Telefone"
                   />
-                  <ErrorMessage 
+                  <MsgError 
                      name="phone"
                      component="p"
                   />
                </InputItem>
-               <InputItem>
-                  <Field
+               <TextAreaItem>
+                  <FieldItem
                      id="message" 
                      name="message" 
                      rows="3" 
                      placeholder="Deixe sua mensagem."
                      component="textarea"
                   />
-                  <ErrorMessage 
+                  <MsgError 
                      name="message"
                      component="p"
                   />
-               </InputItem>
+               </TextAreaItem>
                <Button type="submit">Enviar</Button>
             </WrapForm>   
          )}

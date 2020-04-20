@@ -1,20 +1,20 @@
 import * as Yup from 'yup'
 
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
 const validationForm = Yup.object().shape({
    name: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Name is Required!'),
+      .min(2, "* Nome muito curto!")
+      .max(50, "* Nome muito longo!")
+      .required("* Preenchimento obrigatório!"),
    email: Yup.string()
-      .email('Enter a Valid Email!')
-      .required('Email is Required!'),
-   phone: Yup.number()
-      .typeError('Enter a Valid Phone!')
-      .integer("Coloque apenas números")
-      .min(8, 'Mínimo 8 dígitos')
-      .required('Phone is Required!'),
+      .email("* Digite um e-mail válido!")
+      .required("* Preenchimento obrigatório!"),
+   phone: Yup.string()
+      .matches(phoneRegExp, "* Digite um telefone válido!")
+      .min(8, "* Digite no mínimo 8 números"),
    message: Yup.string()
-      .required('Message is Required!'),
+      .required("* Preenchimento obrigatório!"),
 })
 
 export default validationForm

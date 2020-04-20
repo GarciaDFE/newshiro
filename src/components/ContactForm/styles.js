@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import media from "../../styles/breakPoints"
+import { Field, ErrorMessage } from "formik"
 
 const WrapForm = styled.form`
    width: 100%;
@@ -33,16 +34,12 @@ const WrapForm = styled.form`
 `
 
 const InputItem = styled.div`
+   position: relative;
    width: 48%;
    max-width: 330px;
    height: 40px;
-   color: ${props => props.theme.color.secondyMedium};
-   font-family: ${props => props.theme.font.secondy};
-   font-size: ${props => props.theme.size.mediumSmall};
-   padding: 10px;
-   outline: none;
-   border: 1px solid blue; /* ${props => props.theme.color.secondyMedium};*/
-   margin-bottom: 20px;
+   border: 1px solid ${props => props.theme.color.secondyMedium};
+   margin-bottom: 30px;
 
    ${media.lessThan("xs")`
       width: 100%;
@@ -50,17 +47,36 @@ const InputItem = styled.div`
    `}
 
 `
-
-const TextAreaItem = styled.textarea`
+const TextAreaItem = styled(InputItem)`
    width: 100%;
+   max-width: 100%;
+   height: 120px;
+`
+
+
+const FieldItem = styled(Field)`
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
    color: ${props => props.theme.color.secondyMedium};
    font-family: ${props => props.theme.font.secondy};
    font-size: ${props => props.theme.size.mediumSmall};
    padding: 10px;
+   border: none;
    outline: none;
    resize: none;
-   border: 1px solid ${props => props.theme.color.secondyMedium};
-   margin-bottom: 20px;
+`
+
+const MsgError = styled(ErrorMessage)`
+   width: 100%;
+   position: absolute;
+   bottom: -40px;
+   left: 0;
+   font-family: ${props => props.theme.font.secondy};
+   font-size: ${props => props.theme.size.mediumSmall};
+   color: ${props => props.theme.color.firstDark};
 `
 
 const Button = styled.button`
@@ -89,6 +105,8 @@ const Button = styled.button`
 export {
    WrapForm,
    InputItem,
+   FieldItem,
    TextAreaItem,
+   MsgError,
    Button
 }
