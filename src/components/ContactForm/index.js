@@ -69,10 +69,7 @@ const ContactForm = () => {
                      type="text" 
                      placeholder="Nome" 
                   />
-                  <MsgError 
-                     name="name"
-                     component="p"
-                  />
+                  <MsgError name="name" component="p" />
                </InputItem> 
                <InputItem>
                   <FieldItem
@@ -89,10 +86,7 @@ const ContactForm = () => {
                      type="email" 
                      placeholder="E-mail"
                   />
-                  <MsgError 
-                     name="email"
-                     component="p"
-                  />
+                  <MsgError name="email" component="p" />
                </InputItem>
                <InputItem>
                   <FieldItem
@@ -101,10 +95,7 @@ const ContactForm = () => {
                      type="text" 
                      placeholder="Telefone"
                   />
-                  <MsgError 
-                     name="phone"
-                     component="p"
-                  />
+                  <MsgError name="phone" component="p" />
                </InputItem>
                <TextAreaItem>
                   <FieldItem
@@ -114,10 +105,7 @@ const ContactForm = () => {
                      placeholder="Deixe sua mensagem."
                      component="textarea"
                   />
-                  <MsgError 
-                     name="message"
-                     component="p"
-                  />
+                  <MsgError name="message" component="p" />
                </TextAreaItem>
                <Button type="submit">Enviar</Button>
             </WrapForm>   

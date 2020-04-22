@@ -69,7 +69,7 @@ const OverlayItem = styled.div`
    color: ${props => props.theme.color.secondyClear};
    line-height: 1.3;
    text-align: center;
-   z-index: 5;
+   z-index: 75;
    padding: 40px;
    cursor: pointer;
    opacity: 0;
@@ -102,7 +102,7 @@ const LightboxModal = styled.div`
   background-color: rgba(0,0,0, 0.8);
   opacity: 0;
   visibility: hidden;
-  z-index: 10;
+  z-index: 80;
   &.-visible {
      opacity: 1;
      visibility: visible;
@@ -117,7 +117,7 @@ const LightboxContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 15;
+  z-index: 85;
 
   ${media.lessThan("md")`
       max-width: 80vw;
@@ -166,7 +166,7 @@ const OverlayImage = styled.div`
    color: ${props => props.theme.color.secondyLight};
    line-height: 1.3;
    letter-spacing: 0.05rem;
-   z-index: 30;
+   z-index: 100;
    padding: 10px;
 
    ${media.lessThan("sm")`
@@ -212,7 +212,7 @@ const CloseButton = styled.button`
    top: 0;
    right: 0;
    background-color: transparent;
-   z-index: 20;
+   z-index: 90;
    font-size: ${props => props.theme.size.big};
    padding: 0 20px;
    margin: 20px;
@@ -238,7 +238,7 @@ const Arrows = styled.div`
    justify-content: space-between;
    align-items: center;
    padding: 0 20px;
-   z-index: 20;
+   z-index: 90;
 
    ${media.lessThan("md")`
       padding: 0 15px;

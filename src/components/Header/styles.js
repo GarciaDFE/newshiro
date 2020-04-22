@@ -21,7 +21,7 @@ const Section = styled.header`
          position: fixed;
          top: 0;
          left: 50%;
-         z-index: 100;
+         z-index: 50;
          transform: translateX(-50%);
          transition: height 300ms ease-out;
       }

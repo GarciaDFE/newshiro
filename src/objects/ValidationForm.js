@@ -1,6 +1,6 @@
 import * as Yup from 'yup'
 
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+const phoneRegExp = /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm
 
 const validationForm = Yup.object().shape({
    name: Yup.string()
@@ -11,10 +11,7 @@ const validationForm = Yup.object().shape({
       .email("* Digite um e-mail válido!")
       .required("* Preenchimento obrigatório!"),
    phone: Yup.string()
-      .matches(phoneRegExp, "* Digite um telefone válido!")
-      .min(8, "* Digite no mínimo 8 números"),
-   message: Yup.string()
-      .required("* Preenchimento obrigatório!"),
+      .matches(phoneRegExp, "* Digite um telefone válido!"),
 })
 
 export default validationForm
