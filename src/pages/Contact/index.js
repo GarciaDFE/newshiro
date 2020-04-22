@@ -5,10 +5,6 @@ import {
    FormContainer, 
    WrapContent, 
    ContentItem, 
-   // ContactForm, 
-   // InputItem,
-   // ButtonSubmit,
-   // TextAreaItem,
    MapContainer } from "./styles";
 
 import Layout from "../../components/Layout";
@@ -41,12 +37,6 @@ const ContactPage = () => {
       `
    )
 
-   // const [state, setState] = React.useState({})
-
-   // const handleChange = (e) => {
-   //   setState({ ...state, [e.target.name]: e.target.value })
-   // }
-    
    return (
       <Layout>
          <SEO title="Contatos"/>
@@ -76,55 +66,6 @@ const ContactPage = () => {
                   </ContentItem>
                </WrapContent>
                <ContactForm /> 
-
-               {/* <ContactForm 
-                  id="contact-form"
-                  action="https://formspree.io/xeqkvdvp"
-                  method="POST"
-               >
-                  <input 
-                     type="hidden" 
-                     name="_cc" 
-                     value="mrgempdig@gmail.com" />
-                  <input 
-                     type="hidden" 
-                     name="_subject" 
-                     value="Mensagem recebido pelo formulário de contato do site" />
-                  <InputItem 
-                     id="name" 
-                     name="Nome"
-                     type="text" 
-                     placeholder="Nome" 
-                     onChange={handleChange}
-                     required />
-                  <InputItem 
-                     id="company" 
-                     name="Empresa" 
-                     type="text" 
-                     placeholder="Empresa"
-                     onChange={handleChange} />
-                  <InputItem 
-                     id="email"
-                     name="e-mail" 
-                     type="email" 
-                     placeholder="E-mail"
-                     onChange={handleChange} />
-                  <InputItem 
-                     id="phone"
-                     name="Telefone"  
-                     type="text" 
-                     placeholder="Telefone"
-                     onChange={handleChange}
-                     required />
-                  <TextAreaItem 
-                     id="message" 
-                     name="Mensagem" 
-                     rows="3" 
-                     placeholder="Deixe sua mensagem."
-                     onChange={handleChange}
-                     required />
-                  <ButtonSubmit type="submit">Enviar</ButtonSubmit>
-               </ContactForm> */}
             </FormContainer>
          </Section>
          <Section>

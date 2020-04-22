@@ -69,7 +69,7 @@ const FieldItem = styled(Field)`
    resize: none;
 `
 
-const MsgError = styled(ErrorMessage)`
+const MsgErrorField = styled(ErrorMessage)`
    width: 100%;
    position: absolute;
    bottom: -40px;
@@ -79,12 +79,24 @@ const MsgError = styled(ErrorMessage)`
    color: ${props => props.theme.color.firstDark};
 `
 
+const MsgSend = styled.p`
+   font-family: ${props => props.theme.font.secondy};
+   font-size: ${props => props.theme.size.medium};
+   &.-msgok {
+      color: ${props => props.theme.color.msgok};
+   }
+   &.-msgerr {
+      color: ${props => props.theme.color.msgerr};
+   }
+`
+
 const Button = styled.button`
    height: 40px;
    display: flex;
    justify-content: space-between;
    align-items: center;
    border-radius: 3px;
+   outline: none;
    padding: 0 30px;
    transition: all 0.3s linear;
    text-decoration: none;
@@ -107,6 +119,7 @@ export {
    InputItem,
    FieldItem,
    TextAreaItem,
-   MsgError,
+   MsgErrorField,
+   MsgSend,
    Button
 }

@@ -15,6 +15,8 @@ const theme = {
     secondyMedium: "#757575", // medium gray
     secondyDark: "#000000", // black
     thirdMedium: "#0089FF", // medium blue
+    msgerr: "#FF0000",
+    msgok: "#019601",
     overlay: "rgba(0,0,0,0.7)" // opacity 70% black
   },
   font: {

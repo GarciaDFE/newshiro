@@ -143,7 +143,7 @@ const ContentItem = styled.div`
    padding-left: 65px;
    line-height: 2.8rem;
    &:not(:last-child) {
-      margin-bottom: 35px;
+      margin-bottom: 50px;
    }
    background-repeat: no-repeat;
    background-position: left center;

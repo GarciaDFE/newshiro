@@ -1,17 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import axios from "axios"
 import { Formik } from "formik"
-import validationForm from "../../objects/ValidationForm"
+import validationForm from "../../util/validationForm"
 
 import { 
    WrapForm,
    InputItem,
    FieldItem,
-   MsgError,
+   MsgErrorField,
+   MsgSend,
    TextAreaItem,
    Button } from "./styles";
 
 const ContactForm = () => {
+
+   const [serverRes, setServerRes] = useState()
+   const handleServerRes = (ok, message) => {
+      setServerRes({ok, message})
+   }
 
    const handleSubmit = (values, actions) => {
       axios({
@@ -21,13 +27,12 @@ const ContactForm = () => {
       })
          .then(response => {
             actions.setSubmitting(false)
-            console.log(values)
-            alert("SUCESSO!!")
             actions.resetForm()
+            handleServerRes(true, "Mensagem enviada com sucesso!")
          })
          .catch(error => {
             actions.setSubmitting(false)
-            console.log("OPS ERRO: ", error)
+            handleServerRes(false, `Ops! Erro: ${error.response.data.error}`)
          })
    }
    
@@ -69,7 +74,7 @@ const ContactForm = () => {
                      type="text" 
                      placeholder="Nome" 
                   />
-                  <MsgError name="name" component="p" />
+                  <MsgErrorField name="name" component="p" />
                </InputItem> 
                <InputItem>
                   <FieldItem
@@ -86,7 +91,7 @@ const ContactForm = () => {
                      type="email" 
                      placeholder="E-mail"
                   />
-                  <MsgError name="email" component="p" />
+                  <MsgErrorField name="email" component="p" />
                </InputItem>
                <InputItem>
                   <FieldItem
@@ -95,7 +100,7 @@ const ContactForm = () => {
                      type="text" 
                      placeholder="Telefone"
                   />
-                  <MsgError name="phone" component="p" />
+                  <MsgErrorField name="phone" component="p" />
                </InputItem>
                <TextAreaItem>
                   <FieldItem
@@ -105,9 +110,17 @@ const ContactForm = () => {
                      placeholder="Deixe sua mensagem."
                      component="textarea"
                   />
-                  <MsgError name="message" component="p" />
+                  <MsgErrorField 
+                     name="message" 
+                     component="p" 
+                  />
                </TextAreaItem>
                <Button type="submit">Enviar</Button>
+               {serverRes && (
+                  <MsgSend className={!serverRes.ok ? "-msgerr" : "-msgok"}>
+                     {serverRes.message}
+                  </MsgSend>  
+               )}
             </WrapForm>   
          )}
       />

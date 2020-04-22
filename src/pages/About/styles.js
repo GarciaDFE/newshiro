@@ -8,7 +8,6 @@ import TextSection from "../../objects/TextSection"
 import MemberCards from "../../components/MemberCards"
 
 
-
 // History Section
 const AboutContainer = styled(Container)`
    max-width: 1440px;
