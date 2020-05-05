@@ -1,18 +1,55 @@
-## NOVO PROJETO SITE SHIRO USINAGENS
+<h1 align="center">
+    <img alt="Project website Shiro Usinagens" src="https://user-images.githubusercontent.com/43100363/80760044-aa3aba80-8b0e-11ea-8a74-b6607daa569d.jpg" />
+    <br> Projeto website Shiro Usinagens
+</h1><br>
 
-### Desenvolvimento Front End de site institucional utilizando Gatsby como gerador de site estático
+<p align="center">
+  <a href="#art-prototypes">Prototypes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#building_construction-wireframes">Wireframes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#pencil-architecture">Architecture</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
+</p></br>
 
-### Recursos pré-instalados no template do projeto:
-- SHARP -> high performance image processing
-- STYLED-COMPONENTS -> CSS in JS library
-- TYPOGRAPH -> lib typograph with minimal configuration Google Fonts
-- REACT-ICONS -> include popular icons easly, which utilizes ES6 imports that allows you to include only the icons that your project is using
-- STYLED-MEDIA-QUERY -> media queries better than CSS @media for styled-components with ability to specify custom breakpoints
-- NPROGRESS -> automatically shows indicator when a page is delayed in loading
-- MANIFEST -> provides configuration and icons to the phone (part of the PWA specification) enabled by this plugin allows users to add your site to their home screen on most mobile browsers
-- OFFLINE -> add drop-in support for making site work offline e more resistant to bad network connections it creates a service worker for the site and loads into the client
-- SITEMAP -> create a sitemap for your site in production mode
-- PAGE-CREATOR -> automatically creates pages from React components in specified directories, any that lives in the specified pages folder/subfolders to generate a page and the following giles are automatically excluded and exclude custom patterns 
+<img alt="Screenshot project website Shiro Usinagens" src="https://user-images.githubusercontent.com/43100363/80760168-db1aef80-8b0e-11ea-9884-5074f35b3530.jpg" /><br>
 
-### Recursos instalados posteriormente específicos para o projeto:
-- 
+<p align="center">
+  <a href="https://newshiro.netlify.app" target="_blank">
+    <img alt="Demo on Netlify" src="https://user-images.githubusercontent.com/43100363/78935401-13389080-7a83-11ea-9e7b-24d806be0220.png">
+  </a>
+</p><br>
+
+## :art: Prototypes
+<h4>Alguns protótipos da Homepage desenvolvidos para o projeto</h4>
+<img alt="Protótipos projeto website Shiro Usinagens" src="https://user-images.githubusercontent.com/43100363/80762620-436bd000-8b13-11ea-885c-d8c37dfbab3c.jpg" /><br>
+
+## :building_construction: Wireframes
+<h4>Alguns wireframes da Homepage desenvolvidos para o projeto</h4>
+<img alt="Wireframes projeto website Shiro Usinagens" src="https://user-images.githubusercontent.com/43100363/80762648-51b9ec00-8b13-11ea-814e-f54980830046.jpg" /><br>
+
+## :pencil: Architecture
+<h4>Alguns gráficos dos fluxos de informação desenvolvidos para o projeto</h4>
+<img alt="Gráficos de fluxos de informações projeto website Shiro Usinagens" src="https://user-images.githubusercontent.com/43100363/80762688-65655280-8b13-11ea-8b9f-43fc437f04ab.jpg" /><br>
+
+## :rocket: Technologies
+
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+-  [GatsbyJS](https://www.gatsbyjs.org/)
+-  [ReactJS](https://pt-br.reactjs.org/)
+-  [GraphQL](https://graphql.org/)
+-  [Styled components](https://styled-components.com/)
+-  [Formik](https://jaredpalmer.com/formik)
+-  [Yup](https://github.com/jquense/yup)
+-  [VS Code](https://code.visualstudio.com/)
+-  [Adobe XD](https://www.adobe.com/products/xd.html)
+-  [Photoshop](https://www.adobe.com/products/photoshop.html)
+-  [Illustrator](https://www.adobe.com/products/illustrator.html)
+-  [Zeplin](https://zeplin.io/)
+
+## :memo: License
+Shiro Usinagens. Copyright 2020. Todos os direitos reservados.
+
+---
+
+- Made with ♥ by [Marcial Garcia](https://www.linkedin.com/in/marcial-garcia/)
