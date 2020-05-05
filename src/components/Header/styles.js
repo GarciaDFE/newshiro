@@ -15,18 +15,6 @@ const Section = styled.header`
    z-index: 10;
    transition: height 300ms ease-out;
  
-   ${media.greaterThan("md")`
-      &.-retract {
-         height: 100px;
-         position: fixed;
-         top: 0;
-         left: 50%;
-         z-index: 50;
-         transform: translateX(-50%);
-         transition: height 300ms ease-out;
-      }
-   `}
-
    ${media.lessThan("sm")`
       height: 100px;
    `}
@@ -46,10 +34,6 @@ const Container = styled.section`
 
    ${media.lessThan("lg")`
       max-width: 1020px;
-      margin: 0 10px;
-   `}
-
-   ${media.lessThan("sm")`
       margin: 0 20px;
    `}
 

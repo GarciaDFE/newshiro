@@ -15,7 +15,7 @@ const MainNav = styled.nav`
    margin: 0 60px;
 
    ${media.lessThan("lg")`
-      margin: 0 40px;
+      margin: 0 20px 0 40px;
    `}
 
 `

@@ -29,7 +29,7 @@ const Container = styled.div`
    background-color: transparent;
    ${media.lessThan("lg")`
       max-width: 1020px;
-      margin: 0 10px;
+      margin: 0 20px;
    `}
    ${media.lessThan("sm")`
       max-width: 724px;
