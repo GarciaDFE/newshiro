@@ -10,7 +10,7 @@ const Section = styled.section`
    justify-content: center;
    align-items: center;
    /* background-color: ${props => props.theme.color.secondyLight}; */
-   background-color: violet;
+   background-color: greenyellow;
    ${media.lessThan("sm")`
       height: 60px;
    `}
