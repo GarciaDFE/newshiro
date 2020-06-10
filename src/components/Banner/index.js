@@ -1,37 +1,45 @@
 import React from "react";
+import PropTypes from "prop-types"
 
 import ButtonAction from "../../objects/ButtonAction"
-import { Section, 
-         Container, 
-         Overlay, 
-         Content, 
-         Title, 
-         Description, 
-         BkgImage } from "./styles"
+import * as S from "./styles"
 
+const Banner = ({ title, 
+                  description, 
+                  classButton, 
+                  action, 
+                  imageFluid, 
+                  imageAlt }) => {
 
-const Banner = ({ title, description, classButton, action, imageFluid, imageAlt }) => {
-  
    return (
-      <Section>
-         <Container>
-            <Overlay>
-               <Content>
-                  <Title>{title}</Title>                  
-                  <Description>{description}</Description>
+      <S.Section>
+         <S.Container>
+            <S.Overlay>
+               <S.Content>
+                  <S.Title>{title}</S.Title>                  
+                  <S.Description>{description}</S.Description>
                   <ButtonAction 
                      action={action} 
                      className={classButton} 
                      label="Saiba mais" />
-               </Content> 
-            </Overlay>
-            <BkgImage 
+               </S.Content> 
+            </S.Overlay>
+            <S.BkgImage 
                fluid={imageFluid}
                alt={imageAlt}
             />
-         </Container>
-      </Section>
+         </S.Container>
+      </S.Section>
    )
+}
+
+Banner.propTypes = {
+   title: PropTypes.string.isRequired, 
+   description: PropTypes.string.isRequired, 
+   classButton: PropTypes.string, 
+   action: PropTypes.string, 
+   imageFluid: PropTypes.string.isRequired, 
+   imageAlt: PropTypes.string
 }
 
 export default Banner;

@@ -9,7 +9,8 @@ const icons = {
    marginRight: "5px",
 }
 
-const TopBar = () => {
+const TopBar = ({ andress, whatsapp }) => {
+
    return (
       <Section>
          <Container>
@@ -19,7 +20,7 @@ const TopBar = () => {
                   color={ icons.color }
                   style={{ marginRight: icons.marginRight }}
                />
-                  Rua Coronel Fawcett, 454 – Vila Morais – São Paulo-SP
+                  {andress}
             </ItemTopbar>
             <ItemTopbar>
                <FaWhatsapp 
@@ -27,7 +28,7 @@ const TopBar = () => {
                   color={ icons.color }
                   style={{ marginRight: icons.marginRight }}
                />
-                  (11) 94901-5967 / (11) 98763-9248
+               {whatsapp}
             </ItemTopbar>
          </Container>
       </Section>

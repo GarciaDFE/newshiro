@@ -28,7 +28,7 @@ import Footer from "../components/Footer"
 
 const IndexPage = () => {
 
-  const images = useStaticQuery (
+  const content = useStaticQuery (
     graphql`
       query {
         imgPortfolio: allFile(filter: {relativeDirectory: {eq: "portfolio"}}) {
@@ -49,6 +49,18 @@ const IndexPage = () => {
             }
           }
         }
+        infos: markdownRemark {
+          frontmatter {
+            action
+            classButton
+            description
+            imageAlt
+            imageFluid
+            title
+            whatsapp
+            andress
+          }
+        }
       }
     `
   )
@@ -56,15 +68,18 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home"/>
-      <TopBar />
+      <TopBar 
+        andress={content.infos.frontmatter.andress}
+        whatsapp={content.infos.frontmatter.whatsapp}
+      />
       <Header />
       <Banner
-        title="Terceirização de Serviços de Elevadores"
-        description="Venha construir uma parceria delegando a responsabilidade da sua área de manutenção mecânica para nossa equipe com vasta experiência na área, agregando eficiência, qualidade e rapidez a sua empresa." 
-        classButton="saibamais"
-        action="/About"
-        imageFluid={images.imgBanner.childImageSharp.fluid}
-        imageAlt="imagem de polia de tração de elevador"
+        title={content.infos.frontmatter.title}
+        description={content.infos.frontmatter.description}
+        action={content.infos.frontmatter.action}
+        imageFluid={content.imgBanner.childImageSharp.fluid}
+        imageAlt={content.infos.frontmatter.imageAlt}
+        classButton={content.infos.frontmatter.classButton}
       />
       <ServiceSection>
         <ServiceContainer>
@@ -91,7 +106,7 @@ const IndexPage = () => {
       </TeamSection>
       <PortfolioSection>
         <PortfolioContainer>
-          <LightBox data={images.imgPortfolio.edges} services={services}>
+          <LightBox data={content.imgPortfolio.edges} services={services}>
             <GalleryTitle>
               <TitleGallery
                 className="-inverse"
