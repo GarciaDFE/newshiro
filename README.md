@@ -11,7 +11,7 @@
   <a href="#memo-license">License</a>
 </p></br>
 
-<img alt="Screenshot project website Shiro Usinagens" src="https://user-images.githubusercontent.com/43100363/80760168-db1aef80-8b0e-11ea-9884-5074f35b3530.jpg" /><br>
+<img alt="Screenshot project website Shiro Usinagens" src="https://user-images.githubusercontent.com/43100363/81120640-865ae880-8f03-11ea-91d2-d30906d52008.jpg" /><br>
 
 <p align="center">
   <a href="https://newshiro.netlify.app" target="_blank">
