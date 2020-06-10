@@ -9,7 +9,8 @@ const Section = styled.section`
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: ${props => props.theme.color.secondyLight};
+   /* background-color: ${props => props.theme.color.secondyLight}; */
+   background-color: violet;
    ${media.lessThan("sm")`
       height: 60px;
    `}

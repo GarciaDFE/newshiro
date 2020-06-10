@@ -125,7 +125,10 @@ const UsinagemGeral = () => {
    return (
       <Layout>
          <SEO title="Usinagens em geral"/>
-         <TopBar />
+         <TopBar 
+            andress="Rua Coronel Fawcett, 454 – Vila Morais – São Paulo-SP"
+            whatsapp="(11) 94901-5967 / (11) 98763-9248"
+         />
          <Header />
          <Banner
             title="Usinagens em geral"

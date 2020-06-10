@@ -55,7 +55,10 @@ const AboutPage = () => {
    return (
       <Layout>
          <SEO title="Sobre"/>
-         <TopBar />
+         <TopBar 
+            andress="Rua Coronel Fawcett, 454 – Vila Morais – São Paulo-SP"
+            whatsapp="(11) 94901-5967 / (11) 98763-9248"
+         />
          <Header />
          <Banner
             title="Quem somos"
